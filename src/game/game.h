@@ -345,7 +345,7 @@ bool game_map_unlocked(const Game *g, int map_idx);
 /* Toast anzeigen (Benachrichtigung unten rechts). tier = -1 fuer neutral. */
 void game_toast(Game *g, int tier, u32 color, const char *fmt, ...)
 #if defined(__GNUC__)
-    __attribute__((format(printf, 5, 6)))
+    __attribute__((format(printf, 4, 5)))
 #endif
     ;
 
