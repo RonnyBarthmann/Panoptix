@@ -232,4 +232,14 @@ bool main_quest_claim(Game *g, char *err);
 void mail_add(Game *g, const char *title, const char *text, Currency cur, i64 amount);
 bool mail_claim(Game *g, int index);
 
+/* ======================================================================== */
+/* Zusaetze (additiv)                                                        */
+/* ======================================================================== */
+/* Gold pro Kill (vor Kommandeur-Bonus). */
+float game_kill_gold(int monster_level, Tier tier);
+/* Skill-AI-Standardwerte eines Skills in ein SkillAi uebertragen. */
+void skill_ai_from_def(SkillAi *out, const SkillDef *s);
+/* Map-Level -> Akt (1..11), fuer Magiesteine. */
+int act_for_level(int level);
+
 #endif /* PNX_RULES_RULES_H */

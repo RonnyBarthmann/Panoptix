@@ -306,6 +306,10 @@ typedef struct Game {
     bool dirty_save;             /* Aenderung seit letztem Speichern */
     bool cheat_mode;             /* --cheat: Debug-Funktionen in der UI */
     double autosave_timer;
+    /* ---- Laufzeit (von game_update verwaltet, nicht gespeichert) ---- */
+    double tick_acc;          /* Akkumulator fuer feste Simulationsschritte */
+    double second_timer;      /* 1-s-Takt fuer Resets/Stats */
+    double post_timer;        /* 60-s-Takt fuer den Kommandoposten */
 } Game;
 
 /* ======================================================================== */
