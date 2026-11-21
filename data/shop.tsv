@@ -1,0 +1,66 @@
+# Panoptix shop.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+# Spalte item: Item-ID, Klasse (book_class), Waehrung (currency) oder Tier (chest) je nach kind.
+id	name	desc	tab	kind	item	qty	currency	price	limit	period	price_growth	min_player_level
+free_diamonds_daily	Tägliche Diamanten	1000 Diamanten, einmal täglich.	free	currency	diamonds	1000	gold	0	1	daily	0	1
+free_diamonds_weekly	Wöchentliche Diamanten	2000 Diamanten, einmal pro Woche.	free	currency	diamonds	2000	gold	0	1	weekly	0	1
+free_diamonds_monthly	Monatliche Diamanten	5000 Diamanten, einmal im Monat.	free	currency	diamonds	5000	gold	0	1	monthly	0	1
+free_random_ring	Gratis-Ring	Ein zufälliger Ring, täglich gratis.	free	random_ring		1	gold	0	1	daily	0	1
+free_random_necklace	Gratis-Halskette	Eine zufällige Halskette, wöchentlich gratis.	free	random_necklace		1	gold	0	1	weekly	0	1
+free_random_book	Gratis-Skillbuch	Ein zufälliges Skillbuch, täglich gratis.	free	random_book		1	gold	0	1	daily	0	1
+free_tickets	Tägliche Rabenfedern	30 Rabenfedern für Tempel-Tickets.	free	currency	raven_feathers	30	gold	0	1	daily	0	1
+dia_wings_magic	Flügel (Magisch)	Ein Paar Flügel, begrenzte Menge.	diamonds	wings	wings_magic	1	diamonds	5000	1	monthly	0	20
+dia_wings_rare	Flügel (Selten)	Ein Paar Flügel, begrenzte Menge.	diamonds	wings	wings_rare	1	diamonds	15000	1	monthly	0	20
+dia_wings_unique	Flügel (Einzigartig)	Ein Paar Flügel, begrenzte Menge.	diamonds	wings	wings_unique	1	diamonds	40000	1	monthly	0	20
+dia_wings_boss	Flügel (Boss)	Ein Paar Flügel, begrenzte Menge.	diamonds	wings	wings_boss	1	diamonds	100000	1	monthly	0	20
+dia_wings_legendary	Flügel (Legendär)	Ein Paar Flügel, begrenzte Menge.	diamonds	wings	wings_legendary	1	diamonds	250000	1	monthly	0	20
+dia_slots_inv	Inventar +20	20 zusätzliche Inventarplätze.	diamonds	slots_inv		20	diamonds	500	0	none	0.25	1
+dia_slots_hero	Heldenplatz-Ticket	Ein zusätzlicher Heldenplatz (max. 16).	diamonds	slots_hero		1	diamonds	10000	0	none	0.5	15
+dia_mana_stones	Manasteine x50	50 Manasteine, einmal täglich.	diamonds	item	stone_enchant_unique	50	diamonds	500	1	daily	0	1
+dia_mana_stones_10	Manasteine x10	10 Manasteine für Verzauberungen.	diamonds	item	stone_enchant_unique	10	diamonds	100	5	daily	0	1
+dia_mana_core	Manakern x10	10 Manakerne (Boss-Verzauberung).	diamonds	item	stone_enchant_boss	10	diamonds	400	3	daily	0	40
+rnd_ring	Zufalls-Ring	Ein Ring, Tier-Verteilung wird angezeigt.	random	random_ring		1	diamonds	200	0	none	0	1
+rnd_necklace	Zufalls-Halskette	Eine Halskette, Tier-Verteilung wird angezeigt.	random	random_necklace		1	diamonds	200	0	none	0	1
+rnd_book	Zufalls-Skillbuch	Ein Skillbuch, Grad-Verteilung wird angezeigt.	random	random_book		1	diamonds	150	10	daily	0	1
+gen_enh_weapon_magic	Waffen-Verbesserungsstein x10 (Magisch)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_weapon_magic	10	gold	20000	5	daily	0	5
+gen_enh_weapon_rare	Waffen-Verbesserungsstein x10 (Selten)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_weapon_rare	10	gold	80000	5	daily	0	10
+gen_enh_weapon_unique	Waffen-Verbesserungsstein x10 (Einzigartig)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_weapon_unique	10	gold	300000	5	daily	0	15
+gen_enh_armor_magic	Rüstungs-Verbesserungsstein x10 (Magisch)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_armor_magic	10	gold	20000	5	daily	0	5
+gen_enh_armor_rare	Rüstungs-Verbesserungsstein x10 (Selten)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_armor_rare	10	gold	80000	5	daily	0	10
+gen_enh_armor_unique	Rüstungs-Verbesserungsstein x10 (Einzigartig)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_armor_unique	10	gold	300000	5	daily	0	15
+gen_enh_jewel_magic	Schmuck-Verbesserungsstein x10 (Magisch)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_jewel_magic	10	gold	20000	5	daily	0	5
+gen_enh_jewel_rare	Schmuck-Verbesserungsstein x10 (Selten)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_jewel_rare	10	gold	80000	5	daily	0	10
+gen_enh_jewel_unique	Schmuck-Verbesserungsstein x10 (Einzigartig)	Verbesserungssteine für Gold, Tageslimit.	general	item	stone_enh_jewel_unique	10	gold	300000	5	daily	0	15
+gen_slots_inv	Inventar +20	20 zusätzliche Inventarplätze (Gold).	general	slots_inv		20	gold	50000	0	none	0.25	1
+gen_slots_hero	Heldenplatz-Ticket	Ein zusätzlicher Heldenplatz (max. 16).	general	slots_hero		1	gold	5000000	0	none	1	15
+gen_bag_normal	Lederbeutel	Tragetasche mit +5 Kistenplätzen.	general	item	bag_normal	1	gold	5000	0	none	0	1
+gen_bag_magic	Reisetasche	Tragetasche mit +9 Kistenplätzen.	general	item	bag_magic	1	gold	50000	0	none	0	10
+gen_weak_mana	Schwacher Manastein	Für Selten-Verzauberungen, max. 5 pro Tag.	general	item	stone_enchant_rare	1	gold	25000	5	daily	0	10
+gen_essence_magic	Gute Essenz	Trank-Essenz, absichtlich teuer.	general	item	mat_essence_magic	1	gold	100000	5	daily	0	5
+gen_essence_rare	Reine Essenz	Trank-Essenz, absichtlich teuer.	general	item	mat_essence_rare	1	gold	1000000	3	daily	0	20
+gen_glass_vial	Glasphiole x10	Zutat für Tränke.	general	item	special_glass_vial	10	gold	1000	0	none	0	1
+book_normal_knight	Normal-Buch (Ritter)	Skillbuch Grad Normal für Ritter.	books	book_class	knight	1	gold	30000	30	daily	0	1
+book_normal_warrior	Normal-Buch (Krieger)	Skillbuch Grad Normal für Krieger.	books	book_class	warrior	1	gold	30000	30	daily	0	1
+book_normal_wizard	Normal-Buch (Magier)	Skillbuch Grad Normal für Magier.	books	book_class	wizard	1	gold	30000	30	daily	0	1
+book_normal_archer	Normal-Buch (Bogenschütze)	Skillbuch Grad Normal für Bogenschütze.	books	book_class	archer	1	gold	30000	30	daily	0	1
+book_normal_assassin	Normal-Buch (Assassine)	Skillbuch Grad Normal für Assassine.	books	book_class	assassin	1	gold	30000	30	daily	0	1
+book_normal_shaman	Normal-Buch (Schamane)	Skillbuch Grad Normal für Schamane.	books	book_class	shaman	1	gold	30000	30	daily	0	1
+book_normal_priest	Normal-Buch (Priester)	Skillbuch Grad Normal für Priester.	books	book_class	priest	1	gold	30000	30	daily	0	1
+book_random_rare	Zufälliges Seltenes Buch	Wöchentlich bis zu 20.	books	random_book		1	gold	5000000	20	weekly	0	20
+book_random_unique	Zufälliges Einzigartiges Buch	Wöchentlich bis zu 5.	books	random_book		1	gold	100000000	5	weekly	0	40
+book_unique_knight	Einzigartiges Buch (Ritter)	Gewähltes Einzigartig-Buch, wöchentlich bis zu 3.	books	book_class	knight	1	gold	500000000	3	weekly	0	40
+book_unique_warrior	Einzigartiges Buch (Krieger)	Gewähltes Einzigartig-Buch, wöchentlich bis zu 3.	books	book_class	warrior	1	gold	500000000	3	weekly	0	40
+book_unique_wizard	Einzigartiges Buch (Magier)	Gewähltes Einzigartig-Buch, wöchentlich bis zu 3.	books	book_class	wizard	1	gold	500000000	3	weekly	0	40
+book_unique_archer	Einzigartiges Buch (Bogenschütze)	Gewähltes Einzigartig-Buch, wöchentlich bis zu 3.	books	book_class	archer	1	gold	500000000	3	weekly	0	40
+book_unique_assassin	Einzigartiges Buch (Assassine)	Gewähltes Einzigartig-Buch, wöchentlich bis zu 3.	books	book_class	assassin	1	gold	500000000	3	weekly	0	40
+book_unique_shaman	Einzigartiges Buch (Schamane)	Gewähltes Einzigartig-Buch, wöchentlich bis zu 3.	books	book_class	shaman	1	gold	500000000	3	weekly	0	40
+book_unique_priest	Einzigartiges Buch (Priester)	Gewähltes Einzigartig-Buch, wöchentlich bis zu 3.	books	book_class	priest	1	gold	500000000	3	weekly	0	40
+raven_bag_unique	Drachenleder-Rucksack	Tragetasche mit +19 Kistenplätzen.	raven	item	bag_unique	1	raven_coins	500	0	none	0	15
+raven_bag_boss	Rucksack des Plünderers	Tragetasche mit +25 Kistenplätzen.	raven	item	bag_boss	1	raven_coins	2500	0	none	0	30
+raven_platinum	Platinbarren x10	Material für Selten-Ausrüstung.	raven	item	mat_metal_rare	10	raven_coins	100	10	daily	0	15
+raven_mithril	Mithrilbarren x10	Material für Einzigartig-Ausrüstung.	raven	item	mat_metal_unique	10	raven_coins	400	5	daily	0	30
+raven_boss_jewel	Boss-Schmuckstein x3	Boss-Schmuck-Verbesserungssteine.	raven	item	stone_enh_jewel_boss	3	raven_coins	1500	3	weekly	0	40
+raven_unique_armor	Einzigartig-Rüstungssteine x10	Rüstungs-Verbesserungssteine.	raven	item	stone_enh_armor_unique	10	raven_coins	300	5	weekly	0	30
+raven_book	Zufallsbuch	Ein zufälliges Skillbuch.	raven	random_book		1	raven_coins	800	3	weekly	0	20
+raven_chest_unique	Einzigartig-Kiste	Eine Kiste mit Einzigartig-Inhalt.	raven	chest	unique	1	raven_coins	2500	3	weekly	0	30
+raven_chest_boss	Boss-Kiste	Eine Kiste mit Boss-Inhalt.	raven	chest	boss	1	raven_coins	25000	1	weekly	0	50
+raven_gold	Goldpaket (5 Mio.)	5 Millionen Gold.	raven	currency	gold	5000000	raven_coins	5000	1	weekly	0	30

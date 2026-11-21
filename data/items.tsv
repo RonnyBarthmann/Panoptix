@@ -1,0 +1,438 @@
+# Panoptix items.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+# value: Waffe=Schaden, Sub=Hauptwert, Ruestung=Ruestung, Trank=Wirkung in %, Magiestein=Akt.
+id	name	kind	tier	level	slot	class	value	mods	duration	potion_type	charges	material_line	stone_kind	family	set	craftable	enchantable	legendary	index
+knight_weapon_01	Rostiges Kurzschwert	weapon	normal	0	weapon	knight	8		0		0			0	0	1	0		1
+knight_weapon_02	Übungsschwert	weapon	normal	1	weapon	knight	14		0		0			0	0	1	0		2
+knight_weapon_03	Kupferschwert	weapon	normal	5	weapon	knight	53		0		0			0	0	1	0		3
+knight_weapon_04	Eisenschwert	weapon	normal	10	weapon	knight	118		0		0			0	0	1	0		4
+knight_weapon_05	Langschwert	weapon	normal	15	weapon	knight	194		0		0			0	0	1	0		5
+knight_weapon_06	Schuppenklinge	weapon	normal	20	weapon	knight	278		0		0			0	0	1	0		6
+knight_weapon_07	Haubergklinge	weapon	normal	25	weapon	knight	369		0		0			0	0	1	0		7
+knight_weapon_08	Silberschwert	weapon	magic	20	weapon	knight	312	crit=5	0		0			0	0	1	0		8
+knight_weapon_09	Runenklinge	weapon	magic	25	weapon	knight	413	crit=5.2	0		0			0	0	1	0		9
+knight_weapon_10	Sturmklinge	weapon	magic	30	weapon	knight	522	crit=5.5	0		0			0	0	1	0		10
+knight_weapon_11	Wächterschwert	weapon	magic	35	weapon	knight	635	crit=5.8	0		0			0	0	1	0		11
+knight_weapon_12	Paladinklinge	weapon	magic	45	weapon	knight	877	crit=6	0		0			0	0	1	0		12
+knight_weapon_13	Platinklinge	weapon	rare	27	weapon	knight	509	crit=6.5;crit_dmg=40	0		0			0	0	1	1		13
+knight_weapon_14	Zweihänder des Hauptmanns	weapon	rare	37	weapon	knight	762	crit=6.8;crit_dmg=43	0		0			0	0	1	1		14
+knight_weapon_15	Löwenherz-Schwert	weapon	rare	46	weapon	knight	1007	crit=7.2;crit_dmg=47	0		0			0	0	1	1		15
+knight_weapon_16	Weltenwächter	weapon	rare	55	weapon	knight	1268	crit=7.5;crit_dmg=50	0		0			0	0	1	1		16
+knight_weapon_17	Mithril-Bastard	weapon	unique	44	weapon	knight	1081	crit=8.5;crit_dmg=65	0		0			0	0	1	1		17
+knight_weapon_18	Drachenklinge	weapon	unique	52	weapon	knight	1340	crit=9;crit_dmg=72	0		0			0	0	1	1		18
+knight_weapon_19	Klinge der Alten Wache	weapon	unique	58	weapon	knight	1543	crit=9.5;crit_dmg=80	0		0			0	0	1	1		19
+knight_weapon_20	Sideros, Klinge des Ältesten	weapon	boss	60	weapon	knight	1816	crit=10;crit_dmg=100;cast_speed=10;atk_speed=10	0		0			0	0	1	1		20
+knight_weapon_21	Velkarons Hoffnung	weapon	legendary	80	weapon	knight	3046	crit=12;crit_dmg=130	0		0			0	0	1	1		21
+warrior_weapon_01	Holzfälleraxt	weapon	normal	0	weapon	warrior	8		0		0			0	0	1	0		1
+warrior_weapon_02	Handbeil	weapon	normal	1	weapon	warrior	14		0		0			0	0	1	0		2
+warrior_weapon_03	Kupferaxt	weapon	normal	5	weapon	warrior	53		0		0			0	0	1	0		3
+warrior_weapon_04	Eisenaxt	weapon	normal	10	weapon	warrior	118		0		0			0	0	1	0		4
+warrior_weapon_05	Streitaxt	weapon	normal	15	weapon	warrior	194		0		0			0	0	1	0		5
+warrior_weapon_06	Schuppenspalter	weapon	normal	20	weapon	warrior	278		0		0			0	0	1	0		6
+warrior_weapon_07	Kettenbrecher	weapon	normal	25	weapon	warrior	369		0		0			0	0	1	0		7
+warrior_weapon_08	Silberaxt	weapon	magic	20	weapon	warrior	312	crit=5	0		0			0	0	1	0		8
+warrior_weapon_09	Runenaxt	weapon	magic	25	weapon	warrior	413	crit=5.2	0		0			0	0	1	0		9
+warrior_weapon_10	Sturmbeil	weapon	magic	30	weapon	warrior	522	crit=5.5	0		0			0	0	1	0		10
+warrior_weapon_11	Blutrausch-Axt	weapon	magic	35	weapon	warrior	635	crit=5.8	0		0			0	0	1	0		11
+warrior_weapon_12	Orkspalter	weapon	magic	45	weapon	warrior	877	crit=6	0		0			0	0	1	0		12
+warrior_weapon_13	Platin-Henkeraxt	weapon	rare	27	weapon	warrior	509	crit=6.5;crit_dmg=40	0		0			0	0	1	1		13
+warrior_weapon_14	Doppelschneide	weapon	rare	37	weapon	warrior	762	crit=6.8;crit_dmg=43	0		0			0	0	1	1		14
+warrior_weapon_15	Titanenaxt	weapon	rare	46	weapon	warrior	1007	crit=7.2;crit_dmg=47	0		0			0	0	1	1		15
+warrior_weapon_16	Weltenspalter	weapon	rare	55	weapon	warrior	1268	crit=7.5;crit_dmg=50	0		0			0	0	1	1		16
+warrior_weapon_17	Mithril-Berserkeraxt	weapon	unique	44	weapon	warrior	1081	crit=8.5;crit_dmg=65	0		0			0	0	1	1		17
+warrior_weapon_18	Drachenzahn-Axt	weapon	unique	52	weapon	warrior	1340	crit=9;crit_dmg=72	0		0			0	0	1	1		18
+warrior_weapon_19	Vergessener Schlächter	weapon	unique	58	weapon	warrior	1543	crit=9.5;crit_dmg=80	0		0			0	0	1	1		19
+warrior_weapon_20	Axt des Vergessenen Kriegers	weapon	boss	60	weapon	warrior	1816	crit=10;crit_dmg=100;cast_speed=10;atk_speed=10	0		0			0	0	1	1		20
+warrior_weapon_21	Velkarons Zorn	weapon	legendary	80	weapon	warrior	3046	crit=12;crit_dmg=130	0		0			0	0	1	1		21
+wizard_weapon_01	Knorriger Ast	weapon	normal	0	weapon	wizard	8		0		0			0	0	1	0		1
+wizard_weapon_02	Lehrlingsstab	weapon	normal	1	weapon	wizard	14		0		0			0	0	1	0		2
+wizard_weapon_03	Kupferspule	weapon	normal	5	weapon	wizard	53		0		0			0	0	1	0		3
+wizard_weapon_04	Eisenstab	weapon	normal	10	weapon	wizard	118		0		0			0	0	1	0		4
+wizard_weapon_05	Funkenstab	weapon	normal	15	weapon	wizard	194		0		0			0	0	1	0		5
+wizard_weapon_06	Kristallsplitter-Stab	weapon	normal	20	weapon	wizard	278		0		0			0	0	1	0		6
+wizard_weapon_07	Glutstab	weapon	normal	25	weapon	wizard	369		0		0			0	0	1	0		7
+wizard_weapon_08	Silberstab	weapon	magic	20	weapon	wizard	312	crit=5	0		0			0	0	1	0		8
+wizard_weapon_09	Runenstab	weapon	magic	25	weapon	wizard	413	crit=5.2	0		0			0	0	1	0		9
+wizard_weapon_10	Froststab	weapon	magic	30	weapon	wizard	522	crit=5.5	0		0			0	0	1	0		10
+wizard_weapon_11	Sturmrufer	weapon	magic	35	weapon	wizard	635	crit=5.8	0		0			0	0	1	0		11
+wizard_weapon_12	Erzmagier-Stab	weapon	magic	45	weapon	wizard	877	crit=6	0		0			0	0	1	0		12
+wizard_weapon_13	Platinstab	weapon	rare	27	weapon	wizard	509	crit=6.5;crit_dmg=40	0		0			0	0	1	1		13
+wizard_weapon_14	Sternenstab	weapon	rare	37	weapon	wizard	762	crit=6.8;crit_dmg=43	0		0			0	0	1	1		14
+wizard_weapon_15	Mondstab	weapon	rare	46	weapon	wizard	1007	crit=7.2;crit_dmg=47	0		0			0	0	1	1		15
+wizard_weapon_16	Weltenbrand-Stab	weapon	rare	55	weapon	wizard	1268	crit=7.5;crit_dmg=50	0		0			0	0	1	1		16
+wizard_weapon_17	Mithril-Zauberstab	weapon	unique	44	weapon	wizard	1081	crit=8.5;crit_dmg=65	0		0			0	0	1	1		17
+wizard_weapon_18	Drachenfeuerstab	weapon	unique	52	weapon	wizard	1340	crit=9;crit_dmg=72	0		0			0	0	1	1		18
+wizard_weapon_19	Stab des Sternenfalls	weapon	unique	58	weapon	wizard	1543	crit=9.5;crit_dmg=80	0		0			0	0	1	1		19
+wizard_weapon_20	Stab der Singularität	weapon	boss	60	weapon	wizard	1816	crit=10;crit_dmg=100;cast_speed=10;atk_speed=10	0		0			0	0	1	1		20
+wizard_weapon_21	Astraler Weltenstab	weapon	legendary	80	weapon	wizard	3046	crit=12;crit_dmg=130	0		0			0	0	1	1		21
+archer_weapon_01	Weidenzweig-Bogen	weapon	normal	0	weapon	archer	8		0		0			0	0	1	0		1
+archer_weapon_02	Kurzbogen	weapon	normal	1	weapon	archer	14		0		0			0	0	1	0		2
+archer_weapon_03	Jagdbogen	weapon	normal	5	weapon	archer	53		0		0			0	0	1	0		3
+archer_weapon_04	Langbogen	weapon	normal	10	weapon	archer	118		0		0			0	0	1	0		4
+archer_weapon_05	Verbundbogen	weapon	normal	15	weapon	archer	194		0		0			0	0	1	0		5
+archer_weapon_06	Schuppenbogen	weapon	normal	20	weapon	archer	278		0		0			0	0	1	0		6
+archer_weapon_07	Reflexbogen	weapon	normal	25	weapon	archer	369		0		0			0	0	1	0		7
+archer_weapon_08	Silberbogen	weapon	magic	20	weapon	archer	312	crit=5	0		0			0	0	1	0		8
+archer_weapon_09	Runenbogen	weapon	magic	25	weapon	archer	413	crit=5.2	0		0			0	0	1	0		9
+archer_weapon_10	Sturmbogen	weapon	magic	30	weapon	archer	522	crit=5.5	0		0			0	0	1	0		10
+archer_weapon_11	Falkenbogen	weapon	magic	35	weapon	archer	635	crit=5.8	0		0			0	0	1	0		11
+archer_weapon_12	Waldläuferbogen	weapon	magic	45	weapon	archer	877	crit=6	0		0			0	0	1	0		12
+archer_weapon_13	Platinbogen	weapon	rare	27	weapon	archer	509	crit=6.5;crit_dmg=40	0		0			0	0	1	1		13
+archer_weapon_14	Phoenixbogen	weapon	rare	37	weapon	archer	762	crit=6.8;crit_dmg=43	0		0			0	0	1	1		14
+archer_weapon_15	Windreiter-Bogen	weapon	rare	46	weapon	archer	1007	crit=7.2;crit_dmg=47	0		0			0	0	1	1		15
+archer_weapon_16	Sternenpfeil-Bogen	weapon	rare	55	weapon	archer	1268	crit=7.5;crit_dmg=50	0		0			0	0	1	1		16
+archer_weapon_17	Mithril-Elfenbogen	weapon	unique	44	weapon	archer	1081	crit=8.5;crit_dmg=65	0		0			0	0	1	1		17
+archer_weapon_18	Drachensehnenbogen	weapon	unique	52	weapon	archer	1340	crit=9;crit_dmg=72	0		0			0	0	1	1		18
+archer_weapon_19	Schattenjäger	weapon	unique	58	weapon	archer	1543	crit=9.5;crit_dmg=80	0		0			0	0	1	1		19
+archer_weapon_20	Bogen des Letzten Adlers	weapon	boss	60	weapon	archer	1816	crit=10;crit_dmg=100;cast_speed=10;atk_speed=10	0		0			0	0	1	1		20
+archer_weapon_21	Astraler Sternenbogen	weapon	legendary	80	weapon	archer	3046	crit=12;crit_dmg=130	0		0			0	0	1	1		21
+assassin_weapon_01	Rostiger Dolch	weapon	normal	0	weapon	assassin	8		0		0			0	0	1	0		1
+assassin_weapon_02	Küchenmesser	weapon	normal	1	weapon	assassin	14		0		0			0	0	1	0		2
+assassin_weapon_03	Kupferdolch	weapon	normal	5	weapon	assassin	53		0		0			0	0	1	0		3
+assassin_weapon_04	Eisendolch	weapon	normal	10	weapon	assassin	118		0		0			0	0	1	0		4
+assassin_weapon_05	Stilett	weapon	normal	15	weapon	assassin	194		0		0			0	0	1	0		5
+assassin_weapon_06	Schuppendolch	weapon	normal	20	weapon	assassin	278		0		0			0	0	1	0		6
+assassin_weapon_07	Hakendolch	weapon	normal	25	weapon	assassin	369		0		0			0	0	1	0		7
+assassin_weapon_08	Silberdolch	weapon	magic	20	weapon	assassin	312	crit=5	0		0			0	0	1	0		8
+assassin_weapon_09	Runendolch	weapon	magic	25	weapon	assassin	413	crit=5.2	0		0			0	0	1	0		9
+assassin_weapon_10	Giftzahn	weapon	magic	30	weapon	assassin	522	crit=5.5	0		0			0	0	1	0		10
+assassin_weapon_11	Schattenklinge	weapon	magic	35	weapon	assassin	635	crit=5.8	0		0			0	0	1	0		11
+assassin_weapon_12	Nachtschnitter	weapon	magic	45	weapon	assassin	877	crit=6	0		0			0	0	1	0		12
+assassin_weapon_13	Platindolch	weapon	rare	27	weapon	assassin	509	crit=6.5;crit_dmg=40	0		0			0	0	1	1		13
+assassin_weapon_14	Viperndolch	weapon	rare	37	weapon	assassin	762	crit=6.8;crit_dmg=43	0		0			0	0	1	1		14
+assassin_weapon_15	Geisterklinge	weapon	rare	46	weapon	assassin	1007	crit=7.2;crit_dmg=47	0		0			0	0	1	1		15
+assassin_weapon_16	Seelenschneider	weapon	rare	55	weapon	assassin	1268	crit=7.5;crit_dmg=50	0		0			0	0	1	1		16
+assassin_weapon_17	Mithril-Meuchler	weapon	unique	44	weapon	assassin	1081	crit=8.5;crit_dmg=65	0		0			0	0	1	1		17
+assassin_weapon_18	Drachenkralle	weapon	unique	52	weapon	assassin	1340	crit=9;crit_dmg=72	0		0			0	0	1	1		18
+assassin_weapon_19	Dolch der Nachtgilde	weapon	unique	58	weapon	assassin	1543	crit=9.5;crit_dmg=80	0		0			0	0	1	1		19
+assassin_weapon_20	Klinge des Schattenschleiers	weapon	boss	60	weapon	assassin	1816	crit=10;crit_dmg=100;cast_speed=10;atk_speed=10	0		0			0	0	1	1		20
+assassin_weapon_21	Astrale Zwillingsklingen	weapon	legendary	80	weapon	assassin	3046	crit=12;crit_dmg=130	0		0			0	0	1	1		21
+shaman_weapon_01	Knochenrassel	weapon	normal	0	weapon	shaman	8		0		0			0	0	1	0		1
+shaman_weapon_02	Federstab	weapon	normal	1	weapon	shaman	14		0		0			0	0	1	0		2
+shaman_weapon_03	Kupfertotem-Stab	weapon	normal	5	weapon	shaman	53		0		0			0	0	1	0		3
+shaman_weapon_04	Eisenrasselstab	weapon	normal	10	weapon	shaman	118		0		0			0	0	1	0		4
+shaman_weapon_05	Fetischstab	weapon	normal	15	weapon	shaman	194		0		0			0	0	1	0		5
+shaman_weapon_06	Schuppenrasselstab	weapon	normal	20	weapon	shaman	278		0		0			0	0	1	0		6
+shaman_weapon_07	Geisterpfeife	weapon	normal	25	weapon	shaman	369		0		0			0	0	1	0		7
+shaman_weapon_08	Silbertotem	weapon	magic	20	weapon	shaman	312	crit=5	0		0			0	0	1	0		8
+shaman_weapon_09	Runentotem	weapon	magic	25	weapon	shaman	413	crit=5.2	0		0			0	0	1	0		9
+shaman_weapon_10	Sturmtotemstab	weapon	magic	30	weapon	shaman	522	crit=5.5	0		0			0	0	1	0		10
+shaman_weapon_11	Ahnenstab	weapon	magic	35	weapon	shaman	635	crit=5.8	0		0			0	0	1	0		11
+shaman_weapon_12	Geisterrufer	weapon	magic	45	weapon	shaman	877	crit=6	0		0			0	0	1	0		12
+shaman_weapon_13	Platin-Totemstab	weapon	rare	27	weapon	shaman	509	crit=6.5;crit_dmg=40	0		0			0	0	1	1		13
+shaman_weapon_14	Schildkrötenstab	weapon	rare	37	weapon	shaman	762	crit=6.8;crit_dmg=43	0		0			0	0	1	1		14
+shaman_weapon_15	Windfalkenstab	weapon	rare	46	weapon	shaman	1007	crit=7.2;crit_dmg=47	0		0			0	0	1	1		15
+shaman_weapon_16	Rotdrachenstab	weapon	rare	55	weapon	shaman	1268	crit=7.5;crit_dmg=50	0		0			0	0	1	1		16
+shaman_weapon_17	Mithril-Ahnenstab	weapon	unique	44	weapon	shaman	1081	crit=8.5;crit_dmg=65	0		0			0	0	1	1		17
+shaman_weapon_18	Sturmdrachenstab	weapon	unique	52	weapon	shaman	1340	crit=9;crit_dmg=72	0		0			0	0	1	1		18
+shaman_weapon_19	Stab der Verlorenen Seelen	weapon	unique	58	weapon	shaman	1543	crit=9.5;crit_dmg=80	0		0			0	0	1	1		19
+shaman_weapon_20	Stab des Sturmgeborenen	weapon	boss	60	weapon	shaman	1816	crit=10;crit_dmg=100;cast_speed=10;atk_speed=10	0		0			0	0	1	1		20
+shaman_weapon_21	Astraler Weltgeisterstab	weapon	legendary	80	weapon	shaman	3046	crit=12;crit_dmg=130	0		0			0	0	1	1		21
+priest_weapon_01	Holzstab des Novizen	weapon	normal	0	weapon	priest	8		0		0			0	0	1	0		1
+priest_weapon_02	Betzepter	weapon	normal	1	weapon	priest	14		0		0			0	0	1	0		2
+priest_weapon_03	Kupferzepter	weapon	normal	5	weapon	priest	53		0		0			0	0	1	0		3
+priest_weapon_04	Eisenzepter	weapon	normal	10	weapon	priest	118		0		0			0	0	1	0		4
+priest_weapon_05	Segensstab	weapon	normal	15	weapon	priest	194		0		0			0	0	1	0		5
+priest_weapon_06	Lichtbringer	weapon	normal	20	weapon	priest	278		0		0			0	0	1	0		6
+priest_weapon_07	Gnadenstab	weapon	normal	25	weapon	priest	369		0		0			0	0	1	0		7
+priest_weapon_08	Silberzepter	weapon	magic	20	weapon	priest	312	crit=5	0		0			0	0	1	0		8
+priest_weapon_09	Runenzepter	weapon	magic	25	weapon	priest	413	crit=5.2	0		0			0	0	1	0		9
+priest_weapon_10	Gebetsstab	weapon	magic	30	weapon	priest	522	crit=5.5	0		0			0	0	1	0		10
+priest_weapon_11	Heiligenstab	weapon	magic	35	weapon	priest	635	crit=5.8	0		0			0	0	1	0		11
+priest_weapon_12	Hohepriester-Zepter	weapon	magic	45	weapon	priest	877	crit=6	0		0			0	0	1	0		12
+priest_weapon_13	Platinzepter	weapon	rare	27	weapon	priest	509	crit=6.5;crit_dmg=40	0		0			0	0	1	1		13
+priest_weapon_14	Sonnenzepter	weapon	rare	37	weapon	priest	762	crit=6.8;crit_dmg=43	0		0			0	0	1	1		14
+priest_weapon_15	Engelsstab	weapon	rare	46	weapon	priest	1007	crit=7.2;crit_dmg=47	0		0			0	0	1	1		15
+priest_weapon_16	Strahlenkranz-Zepter	weapon	rare	55	weapon	priest	1268	crit=7.5;crit_dmg=50	0		0			0	0	1	1		16
+priest_weapon_17	Mithril-Gnadenzepter	weapon	unique	44	weapon	priest	1081	crit=8.5;crit_dmg=65	0		0			0	0	1	1		17
+priest_weapon_18	Drachenlicht-Zepter	weapon	unique	52	weapon	priest	1340	crit=9;crit_dmg=72	0		0			0	0	1	1		18
+priest_weapon_19	Zepter der Reinen Flamme	weapon	unique	58	weapon	priest	1543	crit=9.5;crit_dmg=80	0		0			0	0	1	1		19
+priest_weapon_20	Zepter des Gottesstrahls	weapon	boss	60	weapon	priest	1816	crit=10;crit_dmg=100;cast_speed=10;atk_speed=10	0		0			0	0	1	1		20
+priest_weapon_21	Astrales Heilszepter	weapon	legendary	80	weapon	priest	3046	crit=12;crit_dmg=130	0		0			0	0	1	1		21
+knight_sub_1	Holzschild	sub	normal	1	sub	knight	5	armor_pct=2;hp_pct=1	0		0			0	0	1	0		1
+knight_sub_2	Wappenschild	sub	magic	36	sub	knight	152	armor_pct=4;hp_pct=2	0		0			0	0	1	0		2
+knight_sub_3	Turmschild	sub	rare	46	sub	knight	226	armor_pct=6;hp_pct=3	0		0			0	0	1	1		3
+knight_sub_4	Drachenschuppenschild	sub	unique	52	sub	knight	297	armor_pct=8;hp_pct=4	0		0			0	0	1	1		4
+knight_sub_5	Schild des Wächters	sub	boss	60	sub	knight	397	armor_pct=10;hp_pct=6	0		0			0	0	1	1		5
+knight_sub_6	Astraler Ägis	sub	legendary	80	sub	knight	646	armor_pct=14;hp_pct=8	0		0			0	0	1	1		6
+warrior_sub_1	Stofffetzen-Banner	sub	normal	1	sub	warrior	5	attack_pct=2	0		0			0	0	1	0		1
+warrior_sub_2	Wappenbanner	sub	magic	36	sub	warrior	152	attack_pct=4	0		0			0	0	1	0		2
+warrior_sub_3	Kriegsbanner	sub	rare	46	sub	warrior	226	attack_pct=6	0		0			0	0	1	1		3
+warrior_sub_4	Drachenbanner	sub	unique	52	sub	warrior	297	attack_pct=8	0		0			0	0	1	1		4
+warrior_sub_5	Banner der Vergessenen	sub	boss	60	sub	warrior	397	attack_pct=10	0		0			0	0	1	1		5
+warrior_sub_6	Astrales Banner	sub	legendary	80	sub	warrior	646	attack_pct=14	0		0			0	0	1	1		6
+wizard_sub_1	Glasorb	sub	normal	1	sub	wizard	5	spell_pct=2;mana_regen=0.2	0		0			0	0	1	0		1
+wizard_sub_2	Fokuskristall	sub	magic	36	sub	wizard	152	spell_pct=4;mana_regen=0.4	0		0			0	0	1	0		2
+wizard_sub_3	Arkanorb	sub	rare	46	sub	wizard	226	spell_pct=6;mana_regen=0.6	0		0			0	0	1	1		3
+wizard_sub_4	Sternenorb	sub	unique	52	sub	wizard	297	spell_pct=8;mana_regen=0.8	0		0			0	0	1	1		4
+wizard_sub_5	Orb der Singularität	sub	boss	60	sub	wizard	397	spell_pct=10;mana_regen=1.2	0		0			0	0	1	1		5
+wizard_sub_6	Astraler Urorb	sub	legendary	80	sub	wizard	646	spell_pct=14;mana_regen=1.6	0		0			0	0	1	1		6
+archer_sub_1	Lederköcher	sub	normal	1	sub	archer	5	atk_speed=1	0		0			0	0	1	0		1
+archer_sub_2	Jagdköcher	sub	magic	36	sub	archer	152	atk_speed=2	0		0			0	0	1	0		2
+archer_sub_3	Waldläuferköcher	sub	rare	46	sub	archer	226	atk_speed=3	0		0			0	0	1	1		3
+archer_sub_4	Drachenhautköcher	sub	unique	52	sub	archer	297	atk_speed=4	0		0			0	0	1	1		4
+archer_sub_5	Köcher des Adlers	sub	boss	60	sub	archer	397	atk_speed=6	0		0			0	0	1	1		5
+archer_sub_6	Astraler Köcher	sub	legendary	80	sub	archer	646	atk_speed=8;projectiles=1	0		0			0	0	1	1		6
+assassin_sub_1	Lederner Wurfmessergurt	sub	normal	1	sub	assassin	5	crit=1;crit_dmg=4	0		0			0	0	1	0		1
+assassin_sub_2	Stahlmessergurt	sub	magic	36	sub	assassin	152	crit=2;crit_dmg=8	0		0			0	0	1	0		2
+assassin_sub_3	Giftmessergurt	sub	rare	46	sub	assassin	226	crit=3;crit_dmg=12	0		0			0	0	1	1		3
+assassin_sub_4	Schattenmessergurt	sub	unique	52	sub	assassin	297	crit=4;crit_dmg=16	0		0			0	0	1	1		4
+assassin_sub_5	Gurt der Hundert Klingen	sub	boss	60	sub	assassin	397	crit=6;crit_dmg=24	0		0			0	0	1	1		5
+assassin_sub_6	Astraler Klingengurt	sub	legendary	80	sub	assassin	646	crit=8;crit_dmg=32	0		0			0	0	1	1		6
+shaman_sub_1	Kleines Holztotem	sub	normal	1	sub	shaman	5	cast_speed=1;spell_pct=1	0		0			0	0	1	0		1
+shaman_sub_2	Knochentotem	sub	magic	36	sub	shaman	152	cast_speed=2;spell_pct=2	0		0			0	0	1	0		2
+shaman_sub_3	Ahnentotem	sub	rare	46	sub	shaman	226	cast_speed=3;spell_pct=3	0		0			0	0	1	1		3
+shaman_sub_4	Geistertotem	sub	unique	52	sub	shaman	297	cast_speed=4;spell_pct=4	0		0			0	0	1	1		4
+shaman_sub_5	Totem der Sturmgeborenen	sub	boss	60	sub	shaman	397	cast_speed=6;spell_pct=5	0		0			0	0	1	1		5
+shaman_sub_6	Astrales Urtotem	sub	legendary	80	sub	shaman	646	cast_speed=8;spell_pct=7	0		0			0	0	1	1		6
+priest_sub_1	Zerlesenes Gebetbuch	sub	normal	1	sub	priest	5	heal_pct=2;mana_regen=0.2	0		0			0	0	1	0		1
+priest_sub_2	Psalter	sub	magic	36	sub	priest	152	heal_pct=4;mana_regen=0.4	0		0			0	0	1	0		2
+priest_sub_3	Brevier	sub	rare	46	sub	priest	226	heal_pct=6;mana_regen=0.6	0		0			0	0	1	1		3
+priest_sub_4	Heiliges Kompendium	sub	unique	52	sub	priest	297	heal_pct=8;mana_regen=0.8	0		0			0	0	1	1		4
+priest_sub_5	Buch der Letzten Gnade	sub	boss	60	sub	priest	397	heal_pct=10;mana_regen=1.2	0		0			0	0	1	1		5
+priest_sub_6	Astrales Lichtbuch	sub	legendary	80	sub	priest	646	heal_pct=14;mana_regen=1.6	0		0			0	0	1	1		6
+armor_helm_01	Lumpen-Helm	armor	normal	0	helm	any	4	crit=1	0		0			0	0	1	0		1
+armor_helm_02	Leinen-Helm	armor	normal	1	helm	any	6	crit=1.1	0		0			0	0	1	0		2
+armor_helm_03	Leder-Helm	armor	normal	5	helm	any	20	crit=1.4	0		0			0	0	1	0		3
+armor_helm_04	Kupfer-Helm	armor	normal	10	helm	any	43	crit=1.7	0		0			0	0	1	0		4
+armor_helm_05	Eisen-Helm	armor	normal	15	helm	any	69	crit=2.1	0		0			0	0	1	0		5
+armor_helm_06	Schuppen-Helm	armor	normal	20	helm	any	97	crit=2.4	0		0			0	0	1	0		6
+armor_helm_07	Ketten-Helm	armor	normal	25	helm	any	127	crit=2.8	0		0			0	0	1	0		7
+armor_helm_08	Silber-Helm	armor	magic	20	helm	any	109	crit=2.7	0		0			0	0	1	0		8
+armor_helm_09	Runen-Helm	armor	magic	25	helm	any	142	crit=3.1	0		0			0	0	1	0		9
+armor_helm_10	Sturm-Helm	armor	magic	30	helm	any	177	crit=3.5	0		0			0	0	1	0		10
+armor_helm_11	Mana-Helm	armor	magic	35	helm	any	214	crit=3.9;mana_regen=5	0		0			0	0	1	0		11
+armor_helm_12	Wächter-Helm	armor	magic	45	helm	any	292	crit=4.6	0		0			0	0	1	0		12
+armor_helm_13	Platin-Helm	armor	rare	27	helm	any	174	crit=3.6;cdr=4	0		0			0	0	1	1		13
+armor_helm_14	Sternen-Helm	armor	rare	37	helm	any	256	crit=4.5;cdr=4	0		0			0	0	1	1		14
+armor_helm_15	Phoenix-Helm	armor	rare	46	helm	any	334	crit=5.3;cdr=4	0		0			0	0	1	1		15
+armor_helm_16	Titanen-Helm	armor	rare	55	helm	any	417	crit=6.1;cdr=4	0		0			0	0	1	1		16
+armor_helm_17	Mithril-Helm	armor	unique	44	helm	any	360	crit=5.8;cdr=7;atk_speed=5	0		0			0	0	1	1		17
+armor_helm_18	Drachen-Helm	armor	unique	52	helm	any	442	crit=6.6;cdr=7;atk_speed=5	0		0			0	0	1	1		18
+armor_helm_19	Nachthimmel-Helm	armor	unique	58	helm	any	506	crit=7.2;cdr=7;atk_speed=5	0		0			0	0	1	1		19
+armor_helm_20	Aschekönig-Helm	armor	boss	60	helm	any	594	crit=8.3;cdr=8;cast_speed=5	0		0			0	1	1	1		20
+armor_helm_21	Astral-Helm	armor	legendary	80	helm	any	981	crit=12.2;cdr=10;spellres_pct=20	0		0			0	2	1	1	knight:1;warrior:5;wizard:9;archer:13;assassin:17;shaman:21;priest:25	21
+armor_chest_01	Lumpen-Brustpanzer	armor	normal	0	chest	any	6	chest_cap=2	0		0			0	0	1	0		1
+armor_chest_02	Leinen-Brustpanzer	armor	normal	1	chest	any	10	chest_cap=3	0		0			0	0	1	0		2
+armor_chest_03	Leder-Brustpanzer	armor	normal	5	chest	any	33	chest_cap=5	0		0			0	0	1	0		3
+armor_chest_04	Kupfer-Brustpanzer	armor	normal	10	chest	any	69	chest_cap=6	0		0			0	0	1	0		4
+armor_chest_05	Eisen-Brustpanzer	armor	normal	15	chest	any	110	chest_cap=8	0		0			0	0	1	0		5
+armor_chest_06	Schuppen-Brustpanzer	armor	normal	20	chest	any	155	chest_cap=9	0		0			0	0	1	0		6
+armor_chest_07	Ketten-Brustpanzer	armor	normal	25	chest	any	203	chest_cap=10	0		0			0	0	1	0		7
+armor_chest_08	Silber-Brustpanzer	armor	magic	20	chest	any	174	chest_cap=12;dr_attack=5	0		0			0	0	1	0		8
+armor_chest_09	Runen-Brustpanzer	armor	magic	25	chest	any	228	chest_cap=13;dr_attack=5	0		0			0	0	1	0		9
+armor_chest_10	Sturm-Brustpanzer	armor	magic	30	chest	any	284	chest_cap=15;dr_attack=5	0		0			0	0	1	0		10
+armor_chest_11	Mana-Brustpanzer	armor	magic	35	chest	any	343	chest_cap=16;dr_attack=5;mana_regen=8	0		0			0	0	1	0		11
+armor_chest_12	Wächter-Brustpanzer	armor	magic	45	chest	any	467	chest_cap=17;dr_attack=5	0		0			0	0	1	0		12
+armor_chest_13	Platin-Brustpanzer	armor	rare	27	chest	any	279	chest_cap=19;dr_attack=10;dr_spell=5	0		0			0	0	1	1		13
+armor_chest_14	Sternen-Brustpanzer	armor	rare	37	chest	any	410	chest_cap=20;dr_attack=10;dr_spell=5	0		0			0	0	1	1		14
+armor_chest_15	Phoenix-Brustpanzer	armor	rare	46	chest	any	535	chest_cap=22;dr_attack=10;dr_spell=5	0		0			0	0	1	1		15
+armor_chest_16	Titanen-Brustpanzer	armor	rare	55	chest	any	667	chest_cap=23;dr_attack=10;dr_spell=5	0		0			0	0	1	1		16
+armor_chest_17	Mithril-Brustpanzer	armor	unique	44	chest	any	576	chest_cap=24;dr_attack=15;dr_spell=7;hp_pct=5	0		0			0	0	1	1		17
+armor_chest_18	Drachen-Brustpanzer	armor	unique	52	chest	any	707	chest_cap=26;dr_attack=15;dr_spell=7;hp_pct=5	0		0			0	0	1	1		18
+armor_chest_19	Nachthimmel-Brustpanzer	armor	unique	58	chest	any	809	chest_cap=27;dr_attack=15;dr_spell=8;hp_pct=5	0		0			0	0	1	1		19
+armor_chest_20	Aschekönig-Brustpanzer	armor	boss	60	chest	any	951	chest_cap=29;dr_attack=20;dr_spell=10;hp_pct=8	0		0			0	1	1	1		20
+armor_chest_21	Astral-Brustpanzer	armor	legendary	80	chest	any	1570	chest_cap=30;dr_attack=25;dr_spell=12;hp_pct=10;spellres_pct=30	0		0			0	2	1	1	knight:2;warrior:6;wizard:10;archer:14;assassin:18;shaman:22;priest:26	21
+armor_gloves_01	Lumpen-Handschuhe	armor	normal	0	gloves	any	3	atk_speed=1	0		0			0	0	1	0		1
+armor_gloves_02	Leinen-Handschuhe	armor	normal	1	gloves	any	4	atk_speed=1	0		0			0	0	1	0		2
+armor_gloves_03	Leder-Handschuhe	armor	normal	5	gloves	any	14	atk_speed=2	0		0			0	0	1	0		3
+armor_gloves_04	Kupfer-Handschuhe	armor	normal	10	gloves	any	30	atk_speed=2	0		0			0	0	1	0		4
+armor_gloves_05	Eisen-Handschuhe	armor	normal	15	gloves	any	48	atk_speed=3	0		0			0	0	1	0		5
+armor_gloves_06	Schuppen-Handschuhe	armor	normal	20	gloves	any	68	atk_speed=3	0		0			0	0	1	0		6
+armor_gloves_07	Ketten-Handschuhe	armor	normal	25	gloves	any	89	atk_speed=4	0		0			0	0	1	0		7
+armor_gloves_08	Silber-Handschuhe	armor	magic	20	gloves	any	76	atk_speed=4;crit=3	0		0			0	0	1	0		8
+armor_gloves_09	Runen-Handschuhe	armor	magic	25	gloves	any	100	atk_speed=5;crit=3	0		0			0	0	1	0		9
+armor_gloves_10	Sturm-Handschuhe	armor	magic	30	gloves	any	124	atk_speed=5;crit=3	0		0			0	0	1	0		10
+armor_gloves_11	Mana-Handschuhe	armor	magic	35	gloves	any	150	atk_speed=5;crit=3	0		0			0	0	1	0		11
+armor_gloves_12	Wächter-Handschuhe	armor	magic	45	gloves	any	204	atk_speed=6;crit=3	0		0			0	0	1	0		12
+armor_gloves_13	Platin-Handschuhe	armor	rare	27	gloves	any	122	atk_speed=6;crit=5;crit_dmg=10	0		0			0	0	1	1		13
+armor_gloves_14	Sternen-Handschuhe	armor	rare	37	gloves	any	179	atk_speed=7;crit=5;crit_dmg=10	0		0			0	0	1	1		14
+armor_gloves_15	Phoenix-Handschuhe	armor	rare	46	gloves	any	234	atk_speed=7;crit=5;crit_dmg=10	0		0			0	0	1	1		15
+armor_gloves_16	Titanen-Handschuhe	armor	rare	55	gloves	any	292	atk_speed=8;crit=5;crit_dmg=10	0		0			0	0	1	1		16
+armor_gloves_17	Mithril-Handschuhe	armor	unique	44	gloves	any	252	atk_speed=8;crit=5;crit_dmg=25	0		0			0	0	1	1		17
+armor_gloves_18	Drachen-Handschuhe	armor	unique	52	gloves	any	309	atk_speed=9;crit=5;crit_dmg=25	0		0			0	0	1	1		18
+armor_gloves_19	Nachthimmel-Handschuhe	armor	unique	58	gloves	any	354	atk_speed=9;crit=5;crit_dmg=25	0		0			0	0	1	1		19
+armor_gloves_20	Aschekönig-Handschuhe	armor	boss	60	gloves	any	416	atk_speed=10;crit=6;crit_dmg=30;cast_speed=5	0		0			0	1	1	1		20
+armor_gloves_21	Astral-Handschuhe	armor	legendary	80	gloves	any	687	atk_speed=10;crit=8;crit_dmg=40;cast_speed=8;spellres_pct=10	0		0			0	2	1	1	knight:3;warrior:7;wizard:11;archer:15;assassin:19;shaman:23;priest:27	21
+armor_boots_01	Lumpen-Stiefel	armor	normal	0	boots	any	3	move_speed=2	0		0			0	0	1	0		1
+armor_boots_02	Leinen-Stiefel	armor	normal	1	boots	any	4	move_speed=2	0		0			0	0	1	0		2
+armor_boots_03	Leder-Stiefel	armor	normal	5	boots	any	14	move_speed=3	0		0			0	0	1	0		3
+armor_boots_04	Kupfer-Stiefel	armor	normal	10	boots	any	30	move_speed=4	0		0			0	0	1	0		4
+armor_boots_05	Eisen-Stiefel	armor	normal	15	boots	any	48	move_speed=4	0		0			0	0	1	0		5
+armor_boots_06	Schuppen-Stiefel	armor	normal	20	boots	any	68	move_speed=4	0		0			0	0	1	0		6
+armor_boots_07	Ketten-Stiefel	armor	normal	25	boots	any	89	move_speed=5	0		0			0	0	1	0		7
+armor_boots_08	Silber-Stiefel	armor	magic	20	boots	any	76	move_speed=6;crit_dmg=10	0		0			0	0	1	0		8
+armor_boots_09	Runen-Stiefel	armor	magic	25	boots	any	100	move_speed=6;crit_dmg=10	0		0			0	0	1	0		9
+armor_boots_10	Sturm-Stiefel	armor	magic	30	boots	any	124	move_speed=6;crit_dmg=10	0		0			0	0	1	0		10
+armor_boots_11	Mana-Stiefel	armor	magic	35	boots	any	150	move_speed=7;crit_dmg=10	0		0			0	0	1	0		11
+armor_boots_12	Wächter-Stiefel	armor	magic	45	boots	any	204	move_speed=8;crit_dmg=10	0		0			0	0	1	0		12
+armor_boots_13	Platin-Stiefel	armor	rare	27	boots	any	122	move_speed=8;crit_dmg=25	0		0			0	0	1	1		13
+armor_boots_14	Sternen-Stiefel	armor	rare	37	boots	any	179	move_speed=8;crit_dmg=25	0		0			0	0	1	1		14
+armor_boots_15	Phoenix-Stiefel	armor	rare	46	boots	any	234	move_speed=9;crit_dmg=25	0		0			0	0	1	1		15
+armor_boots_16	Titanen-Stiefel	armor	rare	55	boots	any	292	move_speed=10;crit_dmg=25	0		0			0	0	1	1		16
+armor_boots_17	Mithril-Stiefel	armor	unique	44	boots	any	252	move_speed=10;crit_dmg=35	0		0			0	0	1	1		17
+armor_boots_18	Drachen-Stiefel	armor	unique	52	boots	any	309	move_speed=10;crit_dmg=35	0		0			0	0	1	1		18
+armor_boots_19	Nachthimmel-Stiefel	armor	unique	58	boots	any	354	move_speed=11;crit_dmg=35	0		0			0	0	1	1		19
+armor_boots_20	Aschekönig-Stiefel	armor	boss	60	boots	any	416	move_speed=12;crit_dmg=45;cast_speed=5	0		0			0	1	1	1		20
+armor_boots_21	Astral-Stiefel	armor	legendary	80	boots	any	687	move_speed=12;crit_dmg=60;cast_speed=8;spellres_pct=10	0		0			0	2	1	1	knight:4;warrior:8;wizard:12;archer:16;assassin:20;shaman:24;priest:28	21
+ring_warrior_normal	Kupferner Kriegerring	ring	normal	1	ring	any	0	dmg_flat=6;crit=1	0		0			0	0	0	0		0
+neck_warrior_normal	Schlichte Kriegerhalskette	necklace	normal	1	necklace	any	0	dmg_flat=12;crit=2	0		0			0	0	0	0		0
+ring_warrior_magic	Silberner Kriegerring	ring	magic	1	ring	any	0	dmg_flat=14;crit=2	0		0			0	0	0	0		0
+neck_warrior_magic	Silberne Kriegerhalskette	necklace	magic	1	necklace	any	0	dmg_flat=28;crit=4	0		0			0	0	0	0		0
+ring_warrior_rare	Platin-Kriegerring	ring	rare	1	ring	any	0	dmg_flat=28;crit=3	0		0			0	0	0	0		0
+neck_warrior_rare	Platin-Kriegerhalskette	necklace	rare	1	necklace	any	0	dmg_flat=56;crit=6	0		0			0	0	0	0		0
+ring_warrior_unique	Mithril-Kriegerring	ring	unique	1	ring	any	0	dmg_flat=50;crit=4.5	0		0			0	0	0	0		0
+neck_warrior_unique	Mithril-Kriegerhalskette	necklace	unique	1	necklace	any	0	dmg_flat=100;crit=9	0		0			0	0	0	0		0
+ring_warrior_boss	Blutroter Kriegerring	ring	boss	1	ring	any	0	dmg_flat=85;crit=6.5	0		0			0	0	0	0		0
+neck_warrior_boss	Blutrote Kriegerhalskette	necklace	boss	1	necklace	any	0	dmg_flat=170;crit=13	0		0			0	0	0	0		0
+ring_warrior_legendary	Astraler Kriegerring	ring	legendary	1	ring	any	0	dmg_flat=140;crit=9	0		0			0	0	0	0		0
+neck_warrior_legendary	Astrale Kriegerhalskette	necklace	legendary	1	necklace	any	0	dmg_flat=280;crit=18	0		0			0	0	0	0		0
+ring_assassin_normal	Schlichter Assassinenring	ring	normal	1	ring	any	0	crit=1;atk_speed=2	0		0			1	0	0	0		0
+neck_assassin_normal	Schlichte Assassinenhalskette	necklace	normal	1	necklace	any	0	crit=2;atk_speed=4	0		0			1	0	0	0		0
+ring_assassin_magic	Silberner Assassinenring	ring	magic	1	ring	any	0	crit=2;atk_speed=4	0		0			1	0	0	0		0
+neck_assassin_magic	Silberne Assassinenhalskette	necklace	magic	1	necklace	any	0	crit=4;atk_speed=8	0		0			1	0	0	0		0
+ring_assassin_rare	Platin-Assassinenring	ring	rare	1	ring	any	0	crit=3;atk_speed=6	0		0			1	0	0	0		0
+neck_assassin_rare	Platin-Assassinenhalskette	necklace	rare	1	necklace	any	0	crit=6;atk_speed=12	0		0			1	0	0	0		0
+ring_assassin_unique	Mithril-Assassinenring	ring	unique	1	ring	any	0	crit=4.5;atk_speed=9	0		0			1	0	0	0		0
+neck_assassin_unique	Mithril-Assassinenhalskette	necklace	unique	1	necklace	any	0	crit=9;atk_speed=18	0		0			1	0	0	0		0
+ring_assassin_boss	Schattenring	ring	boss	1	ring	any	0	crit=6.5;atk_speed=13	0		0			1	0	0	0		0
+neck_assassin_boss	Blutrote Assassinenhalskette	necklace	boss	1	necklace	any	0	crit=13;atk_speed=26	0		0			1	0	0	0		0
+ring_assassin_legendary	Astraler Assassinenring	ring	legendary	1	ring	any	0	crit=9;atk_speed=18	0		0			1	0	0	0		0
+neck_assassin_legendary	Astrale Assassinenhalskette	necklace	legendary	1	necklace	any	0	crit=18;atk_speed=36	0		0			1	0	0	0		0
+ring_elemental_normal	Ring des Funkens	ring	normal	1	ring	any	0	mana=20;mana_regen=0.5	0		0			2	0	0	0		0
+neck_elemental_normal	Schlichte Elementarhalskette	necklace	normal	1	necklace	any	0	mana=40;mana_regen=1	0		0			2	0	0	0		0
+ring_elemental_magic	Ring der Elemente	ring	magic	1	ring	any	0	mana=50;mana_regen=1	0		0			2	0	0	0		0
+neck_elemental_magic	Silberne Elementarhalskette	necklace	magic	1	necklace	any	0	mana=100;mana_regen=2	0		0			2	0	0	0		0
+ring_elemental_rare	Platin-Elementarring	ring	rare	1	ring	any	0	mana=100;mana_regen=2	0		0			2	0	0	0		0
+neck_elemental_rare	Platin-Elementarhalskette	necklace	rare	1	necklace	any	0	mana=200;mana_regen=4	0		0			2	0	0	0		0
+ring_elemental_unique	Mithril-Elementarring	ring	unique	1	ring	any	0	mana=180;mana_regen=3.5	0		0			2	0	0	0		0
+neck_elemental_unique	Mithril-Elementarhalskette	necklace	unique	1	necklace	any	0	mana=360;mana_regen=7	0		0			2	0	0	0		0
+ring_elemental_boss	Ring des Sternenlichts	ring	boss	1	ring	any	0	mana=300;mana_regen=5.5	0		0			2	0	0	0		0
+neck_elemental_boss	Blutrote Elementarhalskette	necklace	boss	1	necklace	any	0	mana=600;mana_regen=11	0		0			2	0	0	0		0
+ring_elemental_legendary	Astraler Elementarring	ring	legendary	1	ring	any	0	mana=500;mana_regen=8	0		0			2	0	0	0		0
+neck_elemental_legendary	Astrale Elementarhalskette	necklace	legendary	1	necklace	any	0	mana=1000;mana_regen=16	0		0			2	0	0	0		0
+ring_life_normal	Ring des Lebens	ring	normal	1	ring	any	0	hp=50;hp_regen=0.5	0		0			3	0	0	0		0
+neck_life_normal	Schlichte Lebenshalskette	necklace	normal	1	necklace	any	0	hp=100;hp_regen=1	0		0			3	0	0	0		0
+ring_life_magic	Silberner Lebensring	ring	magic	1	ring	any	0	hp=130;hp_regen=1.2	0		0			3	0	0	0		0
+neck_life_magic	Silberne Lebenshalskette	necklace	magic	1	necklace	any	0	hp=260;hp_regen=2.4	0		0			3	0	0	0		0
+ring_life_rare	Platin-Lebensring	ring	rare	1	ring	any	0	hp=280;hp_regen=2.5	0		0			3	0	0	0		0
+neck_life_rare	Platin-Lebenshalskette	necklace	rare	1	necklace	any	0	hp=560;hp_regen=5	0		0			3	0	0	0		0
+ring_life_unique	Mithril-Lebensring	ring	unique	1	ring	any	0	hp=520;hp_regen=4.5	0		0			3	0	0	0		0
+neck_life_unique	Mithril-Lebenshalskette	necklace	unique	1	necklace	any	0	hp=1040;hp_regen=9	0		0			3	0	0	0		0
+ring_life_boss	Phönixring	ring	boss	1	ring	any	0	hp=900;hp_regen=7	0		0			3	0	0	0		0
+neck_life_boss	Blutrote Lebenshalskette	necklace	boss	1	necklace	any	0	hp=1800;hp_regen=14	0		0			3	0	0	0		0
+ring_life_legendary	Astraler Lebensring	ring	legendary	1	ring	any	0	hp=1500;hp_regen=10	0		0			3	0	0	0		0
+neck_life_legendary	Astrale Lebenshalskette	necklace	legendary	1	necklace	any	0	hp=3000;hp_regen=20	0		0			3	0	0	0		0
+potion_heal_normal	Kleiner Heiltrank	potion	normal	1	potion	any	15		0	heal	2			0	0	1	0		0
+potion_heal_magic	Mittlerer Heiltrank	potion	magic	1	potion	any	22		0	heal	3			0	0	1	0		0
+potion_heal_rare	Großer Heiltrank	potion	rare	1	potion	any	30		0	heal	4			0	0	1	0		0
+potion_heal_unique	Elixier der Genesung	potion	unique	1	potion	any	38		0	heal	5			0	0	1	0		0
+potion_heal_boss	Phönixblut	potion	boss	1	potion	any	48		0	heal	6			0	0	1	0		0
+potion_heal_legendary	Astrales Lebenselixier	potion	legendary	1	potion	any	60		0	heal	8			0	0	1	0		0
+potion_mana_normal	Kleiner Manatrank	potion	normal	1	potion	any	15		0	mana	2			0	0	1	0		0
+potion_mana_magic	Mittlerer Manatrank	potion	magic	1	potion	any	22		0	mana	3			0	0	1	0		0
+potion_mana_rare	Großer Manatrank	potion	rare	1	potion	any	30		0	mana	4			0	0	1	0		0
+potion_mana_unique	Elixier des Geistes	potion	unique	1	potion	any	38		0	mana	5			0	0	1	0		0
+potion_mana_boss	Sternentau	potion	boss	1	potion	any	48		0	mana	6			0	0	1	0		0
+potion_mana_legendary	Astrales Manaelixier	potion	legendary	1	potion	any	60		0	mana	8			0	0	1	0		0
+potion_haste_normal	Läuferphiole	potion	normal	1	potion	any	10		8	haste	2			0	0	1	0		0
+potion_haste_magic	Windtrank	potion	magic	1	potion	any	20		10	haste	3			0	0	1	0		0
+potion_haste_rare	Falkentrank	potion	rare	1	potion	any	30		14	haste	4			0	0	1	0		0
+potion_haste_unique	Geisterelixier	potion	unique	1	potion	any	40		18	haste	5			0	0	1	0		0
+potion_haste_boss	Sturmelixier	potion	boss	1	potion	any	50		24	haste	6			0	0	1	0		0
+potion_haste_legendary	Astrales Eilelixier	potion	legendary	1	potion	any	60		30	haste	8			0	0	1	0		0
+potion_iron_normal	Rindentrunk	potion	normal	1	potion	any	10		8	iron	2			0	0	1	0		0
+potion_iron_magic	Eisenhauttrank	potion	magic	1	potion	any	20		10	iron	3			0	0	1	0		0
+potion_iron_rare	Solid-Trank	potion	rare	1	potion	any	35		14	iron	4			0	0	1	0		0
+potion_iron_unique	Bollwerkselixier	potion	unique	1	potion	any	50		18	iron	5			0	0	1	0		0
+potion_iron_boss	Titanenhaut	potion	boss	1	potion	any	75		24	iron	6			0	0	1	0		0
+potion_iron_legendary	Astrale Ägis-Essenz	potion	legendary	1	potion	any	100		30	iron	8			0	0	1	0		0
+potion_frenzy_normal	Funkentrank	potion	normal	1	potion	any	10		8	frenzy	2			0	0	1	0		0
+potion_frenzy_magic	Brenntrank	potion	magic	1	potion	any	20		10	frenzy	3			0	0	1	0		0
+potion_frenzy_rare	Raserei-Elixier	potion	rare	1	potion	any	30		14	frenzy	4			0	0	1	0		0
+potion_frenzy_unique	Rabenwut	potion	unique	1	potion	any	40		18	frenzy	5			0	0	1	0		0
+potion_frenzy_boss	Blutrausch-Elixier	potion	boss	1	potion	any	50		24	frenzy	6			0	0	1	0		0
+potion_frenzy_legendary	Astrale Raserei	potion	legendary	1	potion	any	60		30	frenzy	8			0	0	1	0		0
+wings_normal	Federflügel	wings	normal	1	wings	any	0	move_speed=10	0		0			0	0	0	0		0
+wings_magic	Windflügel	wings	magic	1	wings	any	0	move_speed=25	0		0			0	0	0	0		0
+wings_rare	Falkenflügel	wings	rare	1	wings	any	0	move_speed=50	0		0			0	0	0	0		0
+wings_unique	Drachenflügel	wings	unique	1	wings	any	0	move_speed=100	0		0			0	0	0	0		0
+wings_boss	Schwingen des Abgrunds	wings	boss	1	wings	any	0	move_speed=180	0		0			0	0	0	0		0
+wings_legendary	Astrale Himmelsschwingen	wings	legendary	1	wings	any	0	move_speed=300	0		0			0	0	0	0		0
+bag_normal	Lederbeutel	bag	normal	1	bag	any	0	chest_cap=5	0		0			0	0	1	0		0
+bag_magic	Reisetasche	bag	magic	1	bag	any	0	chest_cap=9	0		0			0	0	1	0		0
+bag_rare	Verstärkter Rucksack	bag	rare	1	bag	any	0	chest_cap=14	0		0			0	0	1	0		0
+bag_unique	Drachenleder-Rucksack	bag	unique	1	bag	any	0	chest_cap=19	0		0			0	0	1	0		0
+bag_boss	Rucksack des Plünderers	bag	boss	1	bag	any	0	chest_cap=25	0		0			0	0	1	0		0
+bag_legendary	Astraler Raumrucksack	bag	legendary	1	bag	any	0	chest_cap=30	0		0			0	0	1	0		0
+mat_metal_normal	Kupferbarren	material	normal	0		any	0		0		0	metal		0	0	0	0		0
+mat_metal_magic	Silberbarren	material	magic	0		any	0		0		0	metal		0	0	0	0		0
+mat_metal_rare	Platinbarren	material	rare	0		any	0		0		0	metal		0	0	0	0		0
+mat_metal_unique	Mithrilbarren	material	unique	0		any	0		0		0	metal		0	0	0	0		0
+mat_metal_boss	Adamantbarren	material	boss	0		any	0		0		0	metal		0	0	0	0		0
+mat_metal_legendary	Astralmetall	material	legendary	0		any	0		0		0	metal		0	0	0	0		0
+mat_wood_normal	Eichenholz	material	normal	0		any	0		0		0	wood		0	0	0	0		0
+mat_wood_magic	Eschenholz	material	magic	0		any	0		0		0	wood		0	0	0	0		0
+mat_wood_rare	Eibenholz	material	rare	0		any	0		0		0	wood		0	0	0	0		0
+mat_wood_unique	Ebenholz	material	unique	0		any	0		0		0	wood		0	0	0	0		0
+mat_wood_boss	Weltenbaumholz	material	boss	0		any	0		0		0	wood		0	0	0	0		0
+mat_wood_legendary	Himmelsholz	material	legendary	0		any	0		0		0	wood		0	0	0	0		0
+mat_cloth_normal	Leinen	material	normal	0		any	0		0		0	cloth		0	0	0	0		0
+mat_cloth_magic	Seide	material	magic	0		any	0		0		0	cloth		0	0	0	0		0
+mat_cloth_rare	Spinnenseide	material	rare	0		any	0		0		0	cloth		0	0	0	0		0
+mat_cloth_unique	Schattenleder	material	unique	0		any	0		0		0	cloth		0	0	0	0		0
+mat_cloth_boss	Abgrundgewebe	material	boss	0		any	0		0		0	cloth		0	0	0	0		0
+mat_cloth_legendary	Astralgewebe	material	legendary	0		any	0		0		0	cloth		0	0	0	0		0
+mat_crystal_normal	Quarz	material	normal	0		any	0		0		0	crystal		0	0	0	0		0
+mat_crystal_magic	Saphir	material	magic	0		any	0		0		0	crystal		0	0	0	0		0
+mat_crystal_rare	Rubin	material	rare	0		any	0		0		0	crystal		0	0	0	0		0
+mat_crystal_unique	Smaragd	material	unique	0		any	0		0		0	crystal		0	0	0	0		0
+mat_crystal_boss	Blutstein	material	boss	0		any	0		0		0	crystal		0	0	0	0		0
+mat_crystal_legendary	Astralkristall	material	legendary	0		any	0		0		0	crystal		0	0	0	0		0
+mat_essence_normal	Schwache Essenz	material	normal	0		any	0		0		0	essence		0	0	0	0		0
+mat_essence_magic	Gute Essenz	material	magic	0		any	0		0		0	essence		0	0	0	0		0
+mat_essence_rare	Reine Essenz	material	rare	0		any	0		0		0	essence		0	0	0	0		0
+mat_essence_unique	Mächtige Essenz	material	unique	0		any	0		0		0	essence		0	0	0	0		0
+mat_essence_boss	Boss-Essenz	material	boss	0		any	0		0		0	essence		0	0	0	0		0
+mat_essence_legendary	Astrale Essenz	material	legendary	0		any	0		0		0	essence		0	0	0	0		0
+stone_enh_weapon_normal	Waffen-Verbesserungsstein (Normal)	stone	normal	0		any	0		0		0		enh_weapon	0	0	0	0		0
+stone_enh_weapon_magic	Waffen-Verbesserungsstein (Magisch)	stone	magic	0		any	0		0		0		enh_weapon	0	0	0	0		0
+stone_enh_weapon_rare	Waffen-Verbesserungsstein (Selten)	stone	rare	0		any	0		0		0		enh_weapon	0	0	0	0		0
+stone_enh_weapon_unique	Waffen-Verbesserungsstein (Einzigartig)	stone	unique	0		any	0		0		0		enh_weapon	0	0	0	0		0
+stone_enh_weapon_boss	Waffen-Verbesserungsstein (Boss)	stone	boss	0		any	0		0		0		enh_weapon	0	0	0	0		0
+stone_enh_weapon_legendary	Waffen-Verbesserungsstein (Legendär)	stone	legendary	0		any	0		0		0		enh_weapon	0	0	0	0		0
+stone_enh_armor_normal	Rüstungs-Verbesserungsstein (Normal)	stone	normal	0		any	0		0		0		enh_armor	0	0	0	0		0
+stone_enh_armor_magic	Rüstungs-Verbesserungsstein (Magisch)	stone	magic	0		any	0		0		0		enh_armor	0	0	0	0		0
+stone_enh_armor_rare	Rüstungs-Verbesserungsstein (Selten)	stone	rare	0		any	0		0		0		enh_armor	0	0	0	0		0
+stone_enh_armor_unique	Rüstungs-Verbesserungsstein (Einzigartig)	stone	unique	0		any	0		0		0		enh_armor	0	0	0	0		0
+stone_enh_armor_boss	Rüstungs-Verbesserungsstein (Boss)	stone	boss	0		any	0		0		0		enh_armor	0	0	0	0		0
+stone_enh_armor_legendary	Rüstungs-Verbesserungsstein (Legendär)	stone	legendary	0		any	0		0		0		enh_armor	0	0	0	0		0
+stone_enh_jewel_normal	Schmuck-Verbesserungsstein (Normal)	stone	normal	0		any	0		0		0		enh_jewel	0	0	0	0		0
+stone_enh_jewel_magic	Schmuck-Verbesserungsstein (Magisch)	stone	magic	0		any	0		0		0		enh_jewel	0	0	0	0		0
+stone_enh_jewel_rare	Schmuck-Verbesserungsstein (Selten)	stone	rare	0		any	0		0		0		enh_jewel	0	0	0	0		0
+stone_enh_jewel_unique	Schmuck-Verbesserungsstein (Einzigartig)	stone	unique	0		any	0		0		0		enh_jewel	0	0	0	0		0
+stone_enh_jewel_boss	Schmuck-Verbesserungsstein (Boss)	stone	boss	0		any	0		0		0		enh_jewel	0	0	0	0		0
+stone_enh_jewel_legendary	Schmuck-Verbesserungsstein (Legendär)	stone	legendary	0		any	0		0		0		enh_jewel	0	0	0	0		0
+stone_enchant_rare	Schwacher Manastein	stone	rare	0		any	0		0		0		enchant	0	0	0	0		0
+stone_enchant_unique	Manastein	stone	unique	0		any	0		0		0		enchant	0	0	0	0		0
+stone_enchant_boss	Manakern	stone	boss	0		any	0		0		0		enchant	0	0	0	0		0
+stone_enchant_legendary	Orpheon	stone	legendary	0		any	0		0		0		enchant	0	0	0	0		0
+stone_magic_act1	Magiestein I	stone	magic	0		any	1		0		0		magic	0	0	0	0		0
+stone_magic_act2	Magiestein II	stone	magic	0		any	2		0		0		magic	0	0	0	0		0
+stone_magic_act3	Magiestein III	stone	magic	0		any	3		0		0		magic	0	0	0	0		0
+stone_magic_act4	Magiestein IV	stone	rare	0		any	4		0		0		magic	0	0	0	0		0
+stone_magic_act5	Magiestein V	stone	rare	0		any	5		0		0		magic	0	0	0	0		0
+stone_magic_act6	Magiestein VI	stone	rare	0		any	6		0		0		magic	0	0	0	0		0
+stone_magic_act7	Magiestein VII	stone	unique	0		any	7		0		0		magic	0	0	0	0		0
+stone_magic_act8	Magiestein VIII	stone	unique	0		any	8		0		0		magic	0	0	0	0		0
+stone_magic_act9	Magiestein IX	stone	unique	0		any	9		0		0		magic	0	0	0	0		0
+stone_magic_act10	Ahel-Magiestein	stone	boss	0		any	10		0		0		magic	0	0	0	0		0
+stone_magic_act11	Orpheon-Magiestein	stone	legendary	0		any	11		0		0		magic	0	0	0	0		0
+special_relic	Reliktteil	special	boss	0		any	0		0		0			0	0	0	0		0
+special_timeless_stone	Zeitloser Stein	special	unique	0		any	0		0		0			0	0	0	0		0
+special_raven_feather	Rabenfeder	special	rare	0		any	0		0		0			0	0	0	0		0
+special_dark_essence	Essenz der Dunkelheit	special	unique	0		any	0		0		0			0	0	0	0		0
+special_mystic_ash	Mystische Asche	special	boss	0		any	0		0		0			0	0	0	0		0
+special_glass_vial	Glasphiole	special	normal	0		any	0		0		0			0	0	0	0		0
+special_herbs	Kräuterbündel	special	normal	0		any	0		0		0			0	0	0	0		0
+special_sub_blueprint	Sekundärwaffen-Bauplan	special	rare	0		any	0		0		0			0	0	0	0		0
+special_temple_ticket	Tempel-Ticket	special	normal	0		any	0		0		0			0	0	0	0		0

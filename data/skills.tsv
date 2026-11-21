@@ -1,0 +1,105 @@
+# Panoptix skills.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+# Skill-Parameter: siehe SkillDef in src/data/data.h. dmg_pct = Schaden Lv1 in % (Heilung/Mana: Anteil).
+id	name	class	grade	tags	kind	flags	cooldown	mana	range	radius	cast_time	dmg_pct	count	angle	pierce	max_hits	speed	dur	delay	stat	stat_pct	stat2	stat2_pct	totem	ai_priority	ai_tier_mask	ai_min_targets	ai_max_dist	ai_self_hp_below	ai_ally_hp_below	ai_only_in_combat	ai_allow_stack	desc
+knight_double_strike	Doppelhieb	knight	0	single	strike		3	10	110	0	0.4	300	2	0	0	0	0	0	0		0		0	none	3	63	1	0	0	0	1	0	Zwei schnelle Schwerthiebe auf ein Ziel.
+knight_vital_strike	Vitalstoß	knight	1	single,dot	strike	dot	4	14	110	0	0.4	220	1	0	0	0	0	4	0		0		0	none	3	63	1	0	0	0	1	0	Verwundet das Ziel: Schaden über 4 s (stapelt nicht).
+knight_spin_slash	Wirbelhieb	knight	0	aoe	circle		5	16	0	130	0.4	380	1	0	0	0	0	0	0		0		0	none	4	63	1	0	0	0	1	0	Rundumschlag um den Ritter.
+knight_soul_slash	Seelenschlag	knight	1	aoe	circle		6	20	0	160	0.4	450	1	0	0	0	0	0	0		0		0	none	4	63	1	0	0	0	1	0	Größerer Rundumschlag.
+knight_hurricane_strike	Hurrikanhieb	knight	2	aoe,multi	projectile		6	22	500	0	0.4	520	5	60	2	0	600	0	0		0		0	none	3	63	1	0	0	0	1	0	Schleudert Klingenwellen im Fächer.
+knight_full_moon_slash	Vollmondschnitt	knight	2	aoe,heal	circle	heal_self	7	26	0	190	0.4	641	1	0	0	0	0	0	0		0		0	none	4	63	1	0	0	0	1	0	Mächtiger Rundumschlag, heilt den Ritter.
+knight_reckless_charge	Rücksichtsloser Ansturm	knight	1	utility	dash	dash_fwd,taunt	9	12	450	90	0.4	0	1	0	0	0	0	3	0		0		0	none	2	63	1	450	0	0	1	0	Stürmt auf den Gegner zu und spottet kurz.
+knight_step_strike	Schrittstoß	knight	2	utility,aoe	dash	dash_fwd	5	14	500	120	0.4	737	1	0	0	0	0	0	0		0		0	none	2	63	2	500	0	0	1	0	Dash zum Ziel mit Flächenschlag.
+knight_moment_enlightenment	Moment der Erleuchtung	knight	3	buff	buff_self		40	30	0	0	0.4	0	1	0	0	0	0	40	0	cdr	20	cdr_cap	5	none	1	63	1	0	0	0	0	0	Senkt Abklingzeiten (und erhöht die CDR-Grenze) für 40 s.
+knight_firm_stance	Standhaftigkeit	knight	1	buff	buff_self		40	20	0	0	0.4	0	1	0	0	0	0	40	0	armor_pct	30		0	none	1	63	1	0	0	0	1	0	Mehr Rüstung für 40 s.
+knight_iron_will	Eiserner Wille	knight	2	buff	buff_self		45	24	0	0	0.4	0	1	0	0	0	0	40	0	dmg_reduce	20		0	none	1	63	1	0	0	0	1	0	Erlittener Schaden sinkt um 20 % für 40 s.
+warrior_slash	Hieb	warrior	0	single	strike		3	8	120	0	0.4	320	1	0	0	0	0	0	0		0		0	none	3	63	1	0	0	0	1	0	Schneller Axthieb auf ein Ziel.
+warrior_berserk_crush	Berserker-Zermalmung	warrior	2	single	strike		6	18	120	0	0.4	560	1	0	0	0	0	0	0		0		0	none	3	63	1	0	0	0	1	0	Wuchtiger Einzelschlag.
+warrior_power_slash	Kraftschlag	warrior	1	aoe	cone		5	14	150	0	0.4	400	1	120	0	0	0	0	0		0		0	none	4	63	1	0	0	0	1	0	Breiter Hieb im Bogen.
+warrior_whirlwind	Wirbelwind	warrior	2	aoe	circle	move_while_cast	6	28	0	150	0.8	450	3	0	0	0	0	0	0		0		0	none	4	63	1	0	0	0	1	0	Dreht sich mit der Axt (3 Treffer), Bewegung möglich.
+warrior_earth_crusher	Erdzerstörer	warrior	3	aoe	ground		9	30	300	220	0.4	700	1	0	0	0	0	0	0.5		0		0	none	4	63	1	0	0	0	1	0	Schlägt die Erde: verheerender Flächenschaden.
+warrior_swipe	Seitenhieb	warrior	0	utility	dash	dash_fwd	4	8	300	80	0.4	150	1	0	0	0	0	0	0		0		0	none	2	63	1	300	0	0	1	0	Dash mit leichtem Treffer.
+warrior_heavy_hook	Schwerer Haken	warrior	1	utility	pull		7	12	500	0	0.4	100	1	0	0	0	0	0	0		0		0	none	2	63	1	500	0	0	1	0	Zieht ein Ziel heran.
+warrior_small_quake	Kleines Beben	warrior	1	aoe	ground	slow	9	16	250	200	0.4	480	1	0	0	0	0	2	0.3		0		0	none	4	63	1	0	0	0	1	0	Beben mit Verlangsamung.
+warrior_leap_attack	Sprungangriff	warrior	1	utility,aoe	dash	dash_fwd	6	14	450	140	0.4	430	1	0	0	0	0	0	0		0		0	none	2	63	1	450	0	0	1	0	Springt zum Ziel und schlägt zu.
+warrior_battle_cry	Schlachtruf	warrior	2	buff	buff_party		40	24	0	0	0.4	0	1	0	0	0	0	30	0	more_attack	25		0	none	1	63	1	0	0	0	0	0	Gruppe: +25 % mehr Angriffsschaden.
+warrior_berserk_cry	Berserkerruf	warrior	2	buff	buff_party		40	24	0	0	0.4	0	1	0	0	0	0	30	0	atk_speed	20		0	none	1	63	1	0	0	0	0	0	Gruppe: +20 % Angriffstempo.
+warrior_last_bastion	Letzte Bastion	warrior	3	buff	buff_self		60	30	0	0	0.4	0	1	0	0	0	0	15	0	dmg_reduce	50	armor_pct	50	none	1	63	1	0	0	0	1	0	Halbiert erlittenen Schaden, aber der Krieger bleibt stehen (nicht empfohlen).
+warrior_intimidating_cry	Einschüchternder Schrei	warrior	2	debuff	debuff		35	22	0	400	0.4	0	1	0	0	0	0	20	0	enemy_atk_down	25		0	none	2	63	2	0	0	0	1	0	Gegner verursachen 25 % weniger Angriffsschaden.
+wizard_fireball	Feuerball	wizard	0	aoe	projectile	spell	4	14	800	100	0.4	380	1	0	0	0	650	0	0		0		0	none	3	63	1	0	0	0	1	0	Explodierender Feuerball.
+wizard_magic_missile	Magisches Geschoss	wizard	0	multi	projectile	spell,homing	3	12	800	0	0.4	120	5	40	0	3	550	0	0		0		0	none	3	63	1	0	0	0	1	0	Fünf zielsuchende Geschosse (max. 3 auf dasselbe Ziel).
+wizard_inferno	Inferno	wizard	1	aoe	ground	spell	6	24	700	180	0.4	500	1	0	0	0	0	0	0.4		0		0	none	4	63	1	0	0	0	1	0	Flammensäule am Ziel.
+wizard_fireburst	Feuerbrunst	wizard	1	aoe	ground	spell	5	22	700	150	0.4	470	1	0	0	0	0	0	0.3		0		0	none	4	63	1	0	0	0	1	0	Feuerexplosion am Ziel.
+wizard_aqua_ball	Wasserball	wizard	1	aoe	projectile	spell,slow	5	22	800	110	0.4	460	1	0	0	0	600	2	0		0		0	none	3	63	1	0	0	0	1	0	Wasserkugel, verlangsamt Gegner.
+wizard_disintegrate	Desintegration	wizard	2	single	strike	spell	6	30	800	0	0.4	900	1	0	0	0	0	0	0		0		0	none	3	63	1	0	0	0	1	0	Vernichtet ein einzelnes Ziel.
+wizard_meteor_strike	Meteoreinschlag	wizard	2	aoe	ground	spell	8	36	800	220	0.6	1100	1	0	0	0	0	0	1		0		0	none	4	63	1	0	0	0	1	0	Meteor schlägt verzögert ein.
+wizard_nuclear_ball	Nuklearball	wizard	3	aoe	projectile	spell	7	40	800	300	0.6	1000	1	0	0	0	400	0	0		0		0	none	3	63	1	0	0	0	1	0	Riesige Energiekugel mit großem Radius.
+wizard_teleport	Teleport	wizard	1	utility	dash	dash_fwd,teleport	6	14	350	0	0.4	0	1	0	0	0	0	0	0		0		0	none	2	63	0	0	0	0	0	0	Kurzer Sprung nach vorn.
+wizard_focus	Fokus	wizard	1	buff	buff_self		40	20	0	0	0.4	0	1	0	0	0	0	40	0	cdr	15		0	none	1	63	1	0	0	0	0	0	+15 % Abklingzeitreduktion für 40 s.
+wizard_ancient_one	Der Uralte	wizard	3	buff	buff_self		60	40	0	0	0.4	0	1	0	0	0	0	30	0	spell_pct	30	armor_pct	30	none	1	63	1	0	0	0	1	0	+30 % Zauberschaden und +30 % Rüstung für 30 s.
+wizard_curse_weakness	Fluch der Schwäche	wizard	1	debuff	debuff		20	20	700	350	0.4	0	1	0	0	0	0	15	0	enemy_atk_down	25		0	none	2	63	2	0	0	0	1	0	Gegner verursachen 25 % weniger Angriffsschaden.
+wizard_curse_frailty	Fluch der Gebrechlichkeit	wizard	2	debuff	debuff		20	20	700	350	0.4	0	1	0	0	0	0	15	0	enemy_spell_down	25		0	none	2	63	2	0	0	0	1	0	Gegner verursachen 25 % weniger Zauberschaden.
+archer_bleeding_arrow	Blutender Pfeil	archer	1	single,dot	projectile	dot	5	12	1200	0	0.4	200	1	0	0	0	1100	4	0		0		0	none	3	63	1	0	0	0	1	0	Pfeil, der 4 s lang blutet (Abklingzeit ≥ 3 s einstellen).
+archer_rapid_fire	Schnellfeuer	archer	2	single	projectile		4	20	1200	0	0.6	250	8	6	2	0	1200	0	0		0		0	none	3	63	1	0	0	0	1	0	Salve aus vielen Pfeilen in einer Linie.
+archer_split_arrow	Spaltpfeil	archer	1	aoe	projectile		5	16	1200	0	0.4	300	3	30	0	0	1100	0	0		0		0	none	3	63	1	0	0	0	1	0	Pfeil teilt sich in drei.
+archer_explosion_arrow	Explosionspfeil	archer	2	aoe	projectile		6	22	1200	140	0.4	520	1	0	1	0	1000	0	0		0		0	none	3	63	1	0	0	0	1	0	Pfeil explodiert beim Treffer (mit Durchdringung: Schrotflinte).
+archer_piercing_arrow	Durchschlagender Pfeil	archer	1	aoe	projectile		3	14	1300	0	0.4	350	1	0	99	0	1300	0	0		0		0	none	3	63	1	0	0	0	1	0	Durchbohrt ganze Reihen.
+archer_multi_shot	Mehrfachschuss	archer	1	multi	projectile		4	18	1200	0	0.4	250	5	50	0	0	1100	0	0		0		0	none	3	63	1	0	0	0	1	0	Fünf Pfeile im Fächer (Winkel einstellbar).
+archer_stun_arrow	Betäubungspfeil	archer	1	utility,single	projectile	stun,slow	8	18	1200	0	0.4	200	1	0	0	0	1100	1.5	0		0		0	none	3	63	1	0	0	0	1	0	Betäubt und verlangsamt das Ziel.
+archer_step_shot	Schrittschuss	archer	1	utility	projectile	dash_fwd	6	14	1000	0	0.4	300	1	0	0	0	1100	0	0		0		0	none	3	63	1	0	0	0	1	0	Schuss mit Sprung nach vorn.
+archer_backstep_shot	Rückschuss	archer	1	utility	projectile	dash_back	6	14	1000	0	0.4	300	1	0	0	0	1100	0	0		0		0	none	3	63	1	0	0	0	1	0	Schuss mit Sprung zurück.
+archer_eagle_eye	Adlerauge	archer	2	buff	buff_self		40	24	0	0	0.4	0	1	0	0	0	0	39	0	crit	15	crit_dmg	30	none	1	63	1	0	0	0	0	0	+15 % Krit-Chance, +30 % Krit-Schaden für 39 s.
+archer_legendary_archer	Legendärer Bogenschütze	archer	3	buff	buff_self		60	30	0	0	0.4	0	1	0	0	0	0	30	0	projectiles	2		0	none	1	63	1	0	0	0	0	0	+2 Projektile für 30 s.
+archer_firm_grip	Fester Griff	archer	2	buff	buff_self		40	24	0	0	0.4	0	1	0	0	0	0	39	0	pierce	2	crit_dmg	25	none	1	63	1	0	0	0	0	0	+2 Durchdringung, +25 % Krit-Schaden für 39 s.
+priest_divine_strike	Göttlicher Schlag	priest	1	aoe	ground	spell	2	10	700	120	0.4	330	1	0	0	0	0	0	0		0		0	none	4	63	1	0	0	0	1	0	Lichtstrahl am Ziel.
+priest_purifying_flame	Reinigende Flamme	priest	2	aoe,heal	ground	spell,party_heal	7	26	700	170	0.4	480	1	0	0	0	0	0	0.3		0		0	none	4	63	1	0	0	0	1	0	Flammen am Ziel, heilen die Gruppe.
+priest_cure	Heilung	priest	0	heal	cleanse		8	14	0	0	0.4	150	1	0	0	0	0	0	0		0		0	none	0	63	1	0	0	90	0	0	Entfernt Debuffs und heilt etwas.
+priest_mind_cure	Geistheilung	priest	1	utility	mana		10	0	0	0	0.4	30	1	0	0	0	0	0	0		0		0	none	1	63	1	0	0	0	0	0	Stellt 30 % Mana des Priesters wieder her.
+priest_heal	Heilen	priest	1	heal	heal		5	16	0	0	0.4	350	1	0	0	0	0	0	0		0		0	none	0	63	1	0	0	75	0	0	Heilt den Verbündeten mit den niedrigsten HP.
+priest_mind_heal	Geist-Heilen	priest	2	utility	mana	party_heal	8	12	0	0	0.4	25	1	0	0	0	0	0	0		0		0	none	1	63	1	0	0	0	0	0	Überträgt Mana auf Verbündete (Mana-Batterie).
+priest_divine_bless	Göttlicher Segen	priest	2	heal	hot		10	22	0	0	0.4	600	1	0	0	0	0	10	0		0		0	none	0	63	1	0	0	100	0	0	Heilung über 10 s auf ein Ziel.
+priest_recovery	Genesung	priest	1	heal	heal_party		6	24	0	0	0.4	250	1	0	0	0	0	0	0		0		0	none	0	63	1	0	0	75	0	0	Heilt die ganze Gruppe.
+priest_divine_grace	Göttliche Gnade	priest	2	buff	buff_party		40	24	0	0	0.4	0	1	0	0	0	0	30	0	dmg_reduce	15		0	none	1	63	1	0	0	0	0	0	Gruppe: 15 % weniger erlittener Schaden.
+priest_enchant_vision	Verzauberte Sicht	priest	2	buff	buff_self		40	22	0	0	0.4	0	1	0	0	0	0	30	0	projectiles	1		0	none	1	63	1	0	0	0	0	0	+1 Projektil für 30 s.
+priest_exaltation_fury	Erhebung der Wut	priest	3	buff	buff_party		60	36	0	0	0.4	0	1	0	0	0	0	30	0	more_attack	20	more_spell	20	none	1	63	1	0	0	0	0	0	Gruppe: +20 % Angriffs- und Zauberschaden.
+priest_exaltation_swift	Erhebung der Eile	priest	3	buff	buff_party		60	36	0	0	0.4	0	1	0	0	0	0	30	0	atk_speed	15	move_speed	15	none	1	63	1	0	0	0	0	0	Gruppe: +15 % Angriffs- und Lauftempo.
+assassin_vital_thrust	Vitalstich	assassin	2	single	strike		5	20	100	0	0.4	1200	1	0	0	0	0	0	0		0		0	none	3	63	1	0	0	0	1	0	Einzelziel-Burst.
+assassin_dagger_throw	Dolchwurf	assassin	0	aoe	projectile		2	8	700	0	0.4	250	3	20	0	1	1000	0	0		0		0	none	3	63	1	0	0	0	1	0	Drei Dolche (max. 1 Treffer je Ziel).
+assassin_knife_trace	Messerspur	assassin	1	aoe	cone		4	12	150	0	0.4	400	1	90	0	0	0	0	0		0		0	none	4	63	1	0	0	0	1	0	Kurzer Klingenfächer.
+assassin_emergency_evasion	Notausweichen	assassin	1	aoe,utility	dash	dash_back	3	10	250	200	0.4	200	5	0	0	2	0	0	0		0		0	none	2	63	1	0	0	0	1	0	Dash zurück, wirft 5 Dolche (max. 2 Treffer je Ziel).
+assassin_poison_attack	Giftangriff	assassin	1	single,dot	strike	dot,spell	6	14	100	0	0.4	600	1	0	0	0	0	6	0		0		0	none	3	63	1	0	0	0	1	0	Gift über 6 s (Zauberschaden).
+assassin_venom_fang	Giftzahn	assassin	1	aoe,dot	cone	dot,spell	6	14	140	0	0.4	550	1	80	0	0	0	6	0		0		0	none	4	63	1	0	0	0	1	0	Giftiger Kegel, wirkt über Zeit.
+assassin_poison_mist	Giftnebel	assassin	1	aoe,dot	ground	dot,spell	6	16	200	125	0.4	500	1	0	0	0	0	6	0		0		0	none	4	63	1	0	0	0	1	0	Giftwolke (Radius 125) für 6 s.
+assassin_poison_master	Giftmeister	assassin	2	buff	buff_self		40	22	0	0	0.4	0	1	0	0	0	0	30	0	more_spell	25		0	none	1	63	1	0	0	0	0	0	+25 % mehr Zauberschaden.
+assassin_danger_sense	Gefahrensinn	assassin	1	buff	buff_self		40	20	0	0	0.4	0	1	0	0	0	0	30	0	dmg_reduce	15		0	none	1	63	1	0	0	0	1	0	15 % weniger erlittener Schaden.
+assassin_vital_sense	Vitalsinn	assassin	1	buff	buff_self		40	20	0	0	0.4	0	1	0	0	0	0	30	0	crit	15		0	none	1	63	1	0	0	0	0	0	+15 % Krit-Chance.
+assassin_one_sure_strike	Sicherer Streich	assassin	2	buff	buff_self		40	22	0	0	0.4	0	1	0	0	0	0	30	0	crit_dmg	40		0	none	1	63	1	0	0	0	0	0	+40 % Krit-Schaden.
+assassin_time_assassination	Zeit der Ermordung	assassin	2	buff	buff_self		40	22	0	0	0.4	0	1	0	0	0	0	30	0	atk_speed	25		0	none	1	63	1	0	0	0	0	0	+25 % Angriffstempo.
+assassin_disruption	Störtaktik	assassin	2	debuff	debuff		25	20	0	350	0.4	0	1	0	0	0	0	15	0	enemy_atk_down	25		0	none	2	63	2	0	0	0	1	0	Gegner verursachen 25 % weniger Angriffsschaden.
+assassin_step	Assassinenschritt	assassin	1	buff	buff_self		30	16	0	0	0.4	0	1	0	0	0	0	15	0	move_speed	30		0	none	1	63	1	0	0	0	0	0	+30 % Lauftempo für 15 s.
+shaman_soul_spike	Seelenstachel	shaman	2	single,debuff	strike	spell	6	20	650	0	0.4	500	1	0	0	0	0	10	0	enemy_taken	15		0	none	3	63	1	0	0	0	1	0	Gegner erleidet 15 % mehr Schaden.
+shaman_lightning_arrow	Blitzpfeil	shaman	1	aoe	projectile	spell	5	16	700	0	0.4	400	1	0	2	0	1100	0	0		0		0	none	3	63	1	0	0	0	1	0	Blitz durchdringt zwei Gegner.
+shaman_earthpulse	Erdpuls-Eruption	shaman	1	aoe	ground	spell	6	20	600	180	0.4	420	1	0	0	0	0	0	0.3		0		0	none	4	63	1	0	0	0	1	0	Eruption am Ziel.
+shaman_corrupted_mist	Verderbter Nebel	shaman	1	aoe,dot	ground	dot,spell	7	20	550	160	0.4	500	1	0	0	0	0	6	0		0		0	none	4	63	1	0	0	0	1	0	Giftiger Nebel (6 s).
+shaman_nature_harmony	Naturharmonie	shaman	2	buff	buff_self		40	24	0	0	0.4	0	1	0	0	0	0	30	0	spell_pct	20	cast_speed	15	none	1	63	1	0	0	0	0	0	+20 % Zauberschaden, +15 % Zaubertempo.
+shaman_wicked_sorcery	Böser Zauber	shaman	2	debuff	debuff		20	20	650	350	0.4	0	1	0	0	0	0	15	0	enemy_atk_down	20	enemy_spell_down	20	none	2	63	2	0	0	0	1	0	Gegner: 20 % weniger Angriffs- und Zauberschaden.
+shaman_nightmare_ward	Albtraumschutz	shaman	2	debuff	debuff		20	20	650	350	0.4	0	1	0	0	0	0	15	0	enemy_taken	20		0	none	2	63	2	0	0	0	1	0	Gegner erleiden 20 % mehr Schaden.
+shaman_totem_sea_turtle	Totem: Seeschildkröte	shaman	2	totem,buff	totem	taunt	15	26	300	300	0.4	0	1	0	0	0	0	20	0	armor_pct	80		0	turtle	1	63	1	0	0	0	1	0	Spott (5 s) und stark erhöhte Rüstung im Radius.
+shaman_totem_storm_dragon	Totem: Sturmdrache	shaman	2	totem,aoe	totem	spell	12	26	500	350	0.4	250	1	0	0	0	0	20	0		0		0	storm_dragon	1	63	1	0	0	0	1	0	Ruft periodisch Blitze auf Gegner.
+shaman_totem_red_dragon	Totem: Rotdrache	shaman	3	totem,aoe,buff	totem	spell	15	34	500	300	0.4	350	1	0	0	0	0	25	0	more_attack	15	more_spell	15	red_dragon	1	63	1	0	0	0	1	0	Kegelschaden und +15 % Angriffs-/Zauberschaden.
+shaman_totem_war_drum	Totem: Kriegstrommel	shaman	1	totem,aoe	totem	spell	12	20	450	250	0.4	200	1	0	0	0	0	15	0		0		0	war_drum	1	63	1	0	0	0	1	0	Periodischer Flächenschaden.
+shaman_totem_clairvoyance	Totem: Hellsicht	shaman	2	totem,buff	totem		20	24	300	300	0.4	0	1	0	0	0	0	20	0	crit_dmg	30		0	clairvoyance	1	63	0	0	0	0	0	0	+30 % Krit-Schaden für Verbündete im Radius.
+shaman_totem_gale_hawk	Totem: Windfalke	shaman	2	totem,buff	totem		20	24	300	300	0.4	0	1	0	0	0	0	20	0	atk_speed	15	move_speed	15	gale_hawk	1	63	0	0	0	0	0	0	+15 % Angriffs-/Zaubertempo und Lauftempo im Radius.
+common_footwork	Fußarbeit	common	1	buff	buff_self		30	14	0	0	0.4	0	1	0	0	0	0	20	0	move_speed	40		0	none	1	63	1	0	0	0	0	0	Stark erhöhtes Lauftempo (+40 %) für 20 s.
+common_rapid_movements	Schnelle Bewegung	common	0	buff	buff_self		30	10	0	0	0.4	0	1	0	0	0	0	20	0	move_speed	20		0	none	1	63	1	0	0	0	0	0	+20 % Lauftempo für 20 s.
+common_bless_might	Segen der Macht	common	1	buff	buff_self		40	18	0	0	0.4	0	1	0	0	0	0	30	0	more_attack	20		0	none	1	63	1	0	0	0	0	0	+20 % mehr Angriffsschaden für 30 s.
+common_bless_magic	Segen der Magie	common	1	buff	buff_self		40	18	0	0	0.4	0	1	0	0	0	0	30	0	more_spell	20		0	none	1	63	1	0	0	0	0	0	+20 % mehr Zauberschaden für 30 s.
+common_frenzy	Raserei	common	1	buff	buff_self		40	18	0	0	0.4	0	1	0	0	0	0	30	0	atk_speed	20		0	none	1	63	1	0	0	0	0	0	+20 % Angriffstempo für 30 s.
+common_call_healing	Ruf der Heilung	common	1	utility,heal	warp	dash_back,heal_self,no_combat_req	25	20	400	0	0.4	300	1	0	0	0	0	0	0		0		0	none	0	63	0	0	35	0	1	0	Warp nach hinten und Heilung bei niedrigen HP.
+common_backstep	Rückschritt	common	0	utility	dash	dash_back	6	8	200	0	0.4	0	1	0	0	0	0	0	0		0		0	none	2	63	0	0	0	0	1	0	Kurzer Schritt zurück.
+common_step_left	Seitschritt links	common	0	utility	dash	dash_side	6	8	200	0	0.4	0	1	0	0	0	0	0	0		0		0	none	2	63	0	0	0	0	1	0	Ausweichschritt zur Seite.
+common_step_right	Seitschritt rechts	common	0	utility	dash	dash_side	6	8	200	0	0.4	0	1	0	0	0	0	0	0		0		0	none	2	63	0	0	0	0	1	0	Ausweichschritt zur Seite.
+common_swift_exaltation	Hast	common	1	buff	buff_self		40	20	0	0	0.4	0	1	0	0	0	0	30	0	move_speed	15	atk_speed	15	none	1	63	1	0	0	0	0	0	+15 % Lauf- und Angriffstempo.
+common_stone_skin	Steinhaut	common	0	buff	buff_self		40	16	0	0	0.4	0	1	0	0	0	0	30	0	armor	40		0	none	1	63	1	0	0	0	1	0	+40 flache Rüstung (nur früh nützlich).
+common_mana_surge	Manaschub	common	1	utility	mana		90	0	0	0	0.4	40	1	0	0	0	0	0	0		0		0	none	1	63	0	0	0	0	0	0	Stellt 40 % Mana wieder her.
+common_battle_focus	Kampffokus	common	1	buff	buff_self		40	16	0	0	0.4	0	1	0	0	0	0	30	0	crit	10		0	none	1	63	1	0	0	0	0	0	+10 % Krit-Chance für 30 s.
+common_vigor	Lebenskraft	common	0	buff	buff_self		40	16	0	0	0.4	0	1	0	0	0	0	30	0	hp_pct	15		0	none	1	63	1	0	0	0	0	0	+15 % Max-Leben für 30 s.

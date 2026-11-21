@@ -1,0 +1,30 @@
+# Panoptix legendary.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+id	name	class	slot	mods	behavior	desc
+1	Eiserne Entschlossenheit	knight	helm	armor_pct=15	none	Ritter: +15 % Rüstung.
+2	Wallender Stahl	knight	chest	hp_pct=10	rolling_steel	Ritter: 15 % der erlittenen Treffer werden als Flächenschaden zurückgegeben.
+3	Schildhand	knight	gloves	atk_speed=8;armor_pct=10	none	Ritter: +8 % Angriffstempo, +10 % Rüstung.
+4	Bollwerkschritt	knight	boots	move_speed=10;dmg_reduce=5	none	Ritter: +10 % Lauftempo, 5 % weniger Schaden.
+5	Blutrausch	warrior	helm		bloodrage	Krieger: Unter 50 % HP +30 % Angriffstempo.
+6	Berserkerpanzer	warrior	chest	hp_pct=12;attack_pct=10	none	Krieger: +12 % Max-Leben, +10 % Angriffsschaden.
+7	Axtmeister	warrior	gloves	atk_speed=10;crit=5	none	Krieger: +10 % Angriffstempo, +5 % Krit-Chance.
+8	Kriegspfad	warrior	boots	move_speed=12;attack_pct=8	none	Krieger: +12 % Lauftempo, +8 % Angriffsschaden.
+9	Krone der Sterne	wizard	helm	spell_pct=12;mana_pct=10	none	Magier: +12 % Zauberschaden, +10 % Max-Mana.
+10	Arkanes Gewand	wizard	chest	mana_pct=15;dmg_reduce=5	none	Magier: +15 % Max-Mana, 5 % weniger Schaden.
+11	Arkane Emission	wizard	gloves		arcane_emission	Magier: Feuert periodisch Magieprojektile auf nahe Gegner.
+12	Schritt der Leere	wizard	boots	cdr=6;cast_speed=8	none	Magier: +6 % Abklingzeitreduktion, +8 % Zaubertempo.
+13	Adlerblick	archer	helm	crit=8;crit_dmg=20	none	Bogenschütze: +8 % Krit-Chance, +20 % Krit-Schaden.
+14	Jägerpanzer	archer	chest	projectiles=1;hp_pct=8	none	Bogenschütze: +1 Projektil, +8 % Max-Leben.
+15	Sehnenhandschuhe	archer	gloves	atk_speed=12;pierce=1	none	Bogenschütze: +12 % Angriffstempo, +1 Durchdringung.
+16	Explosive Spur	archer	boots		explosive_trail	Bogenschütze: Alle Projektile lösen Explosionen aus.
+17	Henkersmaske	assassin	helm		executioner	Assassine: 50 % Splash-Schaden bei Treffer.
+18	Schattenpanzer	assassin	chest	crit_dmg=30;dmg_reduce=5	none	Assassine: +30 % Krit-Schaden, 5 % weniger Schaden.
+19	Giftgriff	assassin	gloves	spell_pct=12;atk_speed=8	none	Assassine: +12 % Zauberschaden, +8 % Angriffstempo.
+20	Schattenschritt	assassin	boots	move_speed=15;cdr=5	none	Assassine: +15 % Lauftempo, +5 % Abklingzeitreduktion.
+21	Ahnenmaske	shaman	helm	cast_speed=10;spell_pct=10	none	Schamane: +10 % Zaubertempo, +10 % Zauberschaden.
+22	Totem-Echo	shaman	chest		totem_echo	Schamane: Beschworene Totems explodieren beim Verschwinden.
+23	Geisterhände	shaman	gloves	more_spell=8;cdr=4	none	Schamane: +8 % mehr Zauberschaden, +4 % Abklingzeitreduktion.
+24	Windwandler	shaman	boots	move_speed=12;cast_speed=6	none	Schamane: +12 % Lauftempo, +6 % Zaubertempo.
+25	Heiligenschein	priest	helm	heal_pct=15;mana_regen=3	none	Priester: +15 % Heilkraft, +3 Manaregeneration.
+26	Gewand der Gnade	priest	chest	heal_pct=10;hp_pct=10	none	Priester: +10 % Heilkraft, +10 % Max-Leben.
+27	Segenshände	priest	gloves	heal_pct=12;cast_speed=8	none	Priester: +12 % Heilkraft, +8 % Zaubertempo.
+28	Marsch des Lichts	priest	boots	heal_pct=8	march_of_light	Priester: +Projektile, höheres Trefferlimit, Homing sucht neues Ziel.

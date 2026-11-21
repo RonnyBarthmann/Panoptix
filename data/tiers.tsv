@@ -1,0 +1,8 @@
+# Panoptix tiers.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+id	name	color	drop_one_in	item_mult	exp_mult	hp_mult	dmg_mult	spawn_weight	chest_items	monster_rolls	potion_charges	sell_base	sell_per_level	symbol
+normal	Normal	#9AA0A6	10	1	1	1	1	85	3	1	2	5	1	0
+magic	Magisch	#4A90E2	100	1.12	2.5	3	1.3	11	4	3	3	50	10	1
+rare	Selten	#F2C94C	1000	1.25	6	8	1.7	3	5	10	4	500	100	2
+unique	Einzigartig	#F2994A	10000	1.42	15	20	2.2	0.9	6	30	5	5000	1000	3
+boss	Boss	#E5484D	100000	1.6	40	60	3	0.1	8	100	6	50000	10000	4
+legendary	Legendär	#FF6FB5	1000000	1.85	120	150	4	0.01	10	300	8	500000	100000	5

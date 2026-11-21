@@ -1,0 +1,163 @@
+# Panoptix maps.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+id	name	kind	act	index	chapter	level	w	h	seed	boss	boss_map	max_heroes	min_player_level	density	stone	stone_count	tint
+1-1	Grünland: Eingang	story	1	1	1	1	72	47	1000		0	1	1	1		0	#7FA84F
+1-2	Grünland: Pfad	story	1	2	1	2	72	47	8919		0	1	1	1		0	#7FA84F
+1-3	Grünland: Lichtung	story	1	3	1	3	72	47	16838		0	1	1	1		0	#7FA84F
+1-4	Grünland: Hügel	story	1	4	1	4	72	47	24757		0	1	1	1		0	#7FA84F
+1-5	Revier von Goblinkönig Grukk	story	1	5	1	5	72	47	32676	boss_grukk	1	1	1	0.8	stone_magic_act1	1	#7FA84F
+2-1	Moorlande: Eingang	story	2	1	1	5	84	54	40595		0	1	2	1		0	#4F7F5F
+2-2	Moorlande: Pfad	story	2	2	1	6	84	54	48514		0	1	2	1		0	#4F7F5F
+2-3	Moorlande: Lichtung	story	2	3	1	7	84	54	56433		0	1	2	1		0	#4F7F5F
+2-4	Moorlande: Hügel	story	2	4	1	8	84	54	64352		0	1	3	1		0	#4F7F5F
+2-5	Revier: Riesenfrosch	story	2	5	1	9	84	54	72271	boss_giant_frog	1	1	3	0.8	stone_magic_act2	1	#4F7F5F
+2-6	Moorlande: Ruinen	story	2	6	1	11	84	54	80190		0	1	4	1		0	#4F7F5F
+2-7	Moorlande: Grenzland	story	2	7	1	12	84	54	88109		0	1	4	1		0	#4F7F5F
+2-8	Moorlande: Tiefe	story	2	8	1	13	84	54	96028		0	1	5	1		0	#4F7F5F
+2-9	Moorlande: Hain	story	2	9	1	14	84	54	103947		0	1	5	1		0	#4F7F5F
+2-10	Revier: Sumpfhexe Morga	story	2	10	1	15	84	54	111866	boss_morga	1	1	6	0.8	stone_magic_act2	2	#4F7F5F
+3-1	Heiße Dünen: Eingang	story	3	1	1	15	96	61	119785		0	1	6	1		0	#D2AE6B
+3-2	Heiße Dünen: Pfad	story	3	2	1	16	96	61	127704		0	1	6	1		0	#D2AE6B
+3-3	Heiße Dünen: Lichtung	story	3	3	1	17	96	61	135623		0	1	6	1		0	#D2AE6B
+3-4	Heiße Dünen: Hügel	story	3	4	1	18	96	61	143542		0	1	7	1		0	#D2AE6B
+3-5	Revier: Skorpionkönigin	story	3	5	1	19	96	61	151461	boss_scorpion_queen	1	1	7	0.8	stone_magic_act3	1	#D2AE6B
+3-6	Heiße Dünen: Ruinen	story	3	6	1	21	96	61	159380		0	1	8	1		0	#D2AE6B
+3-7	Heiße Dünen: Grenzland	story	3	7	1	22	96	61	167299		0	1	8	1		0	#D2AE6B
+3-8	Heiße Dünen: Tiefe	story	3	8	1	23	96	61	175218		0	1	9	1		0	#D2AE6B
+3-9	Heiße Dünen: Hain	story	3	9	1	24	96	61	183137		0	1	9	1		0	#D2AE6B
+3-10	Revier: Pharao Ahmet-Ra	story	3	10	1	25	96	61	191056	boss_ahmet_ra	1	1	10	0.8	stone_magic_act3	2	#D2AE6B
+4-1	Eisgebirge: Eingang	story	4	1	2	25	108	68	198975		0	1	10	1		0	#9FC8E8
+4-2	Eisgebirge: Pfad	story	4	2	2	26	108	68	206894		0	1	10	1		0	#9FC8E8
+4-3	Eisgebirge: Lichtung	story	4	3	2	27	108	68	214813		0	1	10	1		0	#9FC8E8
+4-4	Eisgebirge: Hügel	story	4	4	2	28	108	68	222732		0	1	11	1		0	#9FC8E8
+4-5	Revier: Eisriese	story	4	5	2	29	108	68	230651	boss_ice_giant	1	1	11	0.8	stone_magic_act4	1	#9FC8E8
+4-6	Eisgebirge: Ruinen	story	4	6	2	31	108	68	238570		0	1	12	1		0	#9FC8E8
+4-7	Eisgebirge: Grenzland	story	4	7	2	32	108	68	246489		0	1	12	1		0	#9FC8E8
+4-8	Eisgebirge: Tiefe	story	4	8	2	33	108	68	254408		0	1	13	1		0	#9FC8E8
+4-9	Eisgebirge: Hain	story	4	9	2	34	108	68	262327		0	1	13	1		0	#9FC8E8
+4-10	Revier: Frostdrache Kryos	story	4	10	2	35	108	68	270246	boss_kryos	1	1	14	0.8	stone_magic_act4	2	#9FC8E8
+5-1	Glutkrater: Eingang	story	5	1	2	35	120	75	278165		0	1	14	1		0	#C8502A
+5-2	Glutkrater: Pfad	story	5	2	2	36	120	75	286084		0	1	14	1		0	#C8502A
+5-3	Glutkrater: Lichtung	story	5	3	2	37	120	75	294003		0	1	14	1		0	#C8502A
+5-4	Glutkrater: Hügel	story	5	4	2	38	120	75	301922		0	1	15	1		0	#C8502A
+5-5	Revier: Lavakoloss	story	5	5	2	39	120	75	309841	boss_lava_colossus	1	1	15	0.8	stone_magic_act5	1	#C8502A
+5-6	Glutkrater: Ruinen	story	5	6	2	41	120	75	317760		0	1	16	1		0	#C8502A
+5-7	Glutkrater: Grenzland	story	5	7	2	42	120	75	325679		0	1	16	1		0	#C8502A
+5-8	Glutkrater: Tiefe	story	5	8	2	43	120	75	333598		0	1	17	1		0	#C8502A
+5-9	Glutkrater: Hain	story	5	9	2	44	120	75	341517		0	1	17	1		0	#C8502A
+5-10	Revier: Glutfürst Pyron	story	5	10	2	45	120	75	349436	boss_pyron	1	1	18	0.8	stone_magic_act5	2	#C8502A
+6-1	Fluchwald: Eingang	story	6	1	2	45	132	82	357355		0	1	18	1		0	#4A6B3A
+6-2	Fluchwald: Pfad	story	6	2	2	46	132	82	365274		0	1	18	1		0	#4A6B3A
+6-3	Fluchwald: Lichtung	story	6	3	2	47	132	82	373193		0	1	18	1		0	#4A6B3A
+6-4	Fluchwald: Hügel	story	6	4	2	48	132	82	381112		0	1	19	1		0	#4A6B3A
+6-5	Revier: Uralter Ent	story	6	5	2	49	132	82	389031	boss_ancient_ent	1	1	19	0.8	stone_magic_act6	1	#4A6B3A
+6-6	Fluchwald: Ruinen	story	6	6	2	51	132	82	396950		0	1	20	1		0	#4A6B3A
+6-7	Fluchwald: Grenzland	story	6	7	2	52	132	82	404869		0	1	20	1		0	#4A6B3A
+6-8	Fluchwald: Tiefe	story	6	8	2	53	132	82	412788		0	1	21	1		0	#4A6B3A
+6-9	Fluchwald: Hain	story	6	9	2	54	132	82	420707		0	1	21	1		0	#4A6B3A
+6-10	Revier: Waldgeist Vexara	story	6	10	2	55	132	82	428626	boss_vexara	1	1	22	0.8	stone_magic_act6	2	#4A6B3A
+7-1	Sturmküste: Eingang	story	7	1	3	55	144	89	436545		0	1	22	1		0	#4F7F9F
+7-2	Sturmküste: Pfad	story	7	2	3	56	144	89	444464		0	1	22	1		0	#4F7F9F
+7-3	Sturmküste: Lichtung	story	7	3	3	57	144	89	452383		0	1	22	1		0	#4F7F9F
+7-4	Sturmküste: Hügel	story	7	4	3	58	144	89	460302		0	1	23	1		0	#4F7F9F
+7-5	Revier: Kraken	story	7	5	3	59	144	89	468221	boss_kraken	1	1	23	0.8	stone_magic_act7	1	#4F7F9F
+7-6	Sturmküste: Ruinen	story	7	6	3	61	144	89	476140		0	1	24	1		0	#4F7F9F
+7-7	Sturmküste: Grenzland	story	7	7	3	62	144	89	484059		0	1	24	1		0	#4F7F9F
+7-8	Sturmküste: Tiefe	story	7	8	3	63	144	89	491978		0	1	25	1		0	#4F7F9F
+7-9	Sturmküste: Hain	story	7	9	3	64	144	89	499897		0	1	25	1		0	#4F7F9F
+7-10	Revier: Geisterkapitän Dreadmar	story	7	10	3	65	144	89	507816	boss_dreadmar	1	1	26	0.8	stone_magic_act7	2	#4F7F9F
+8-1	Katakomben: Eingang	story	8	1	3	65	156	96	515735		0	1	26	1		0	#8A8A7A
+8-2	Katakomben: Pfad	story	8	2	3	66	156	96	523654		0	1	26	1		0	#8A8A7A
+8-3	Katakomben: Lichtung	story	8	3	3	67	156	96	531573		0	1	26	1		0	#8A8A7A
+8-4	Katakomben: Hügel	story	8	4	3	68	156	96	539492		0	1	27	1		0	#8A8A7A
+8-5	Revier: Knochenfürst	story	8	5	3	69	156	96	547411	boss_bone_lord	1	1	27	0.8	stone_magic_act8	1	#8A8A7A
+8-6	Katakomben: Ruinen	story	8	6	3	71	156	96	555330		0	1	28	1		0	#8A8A7A
+8-7	Katakomben: Grenzland	story	8	7	3	72	156	96	563249		0	1	28	1		0	#8A8A7A
+8-8	Katakomben: Tiefe	story	8	8	3	73	156	96	571168		0	1	29	1		0	#8A8A7A
+8-9	Katakomben: Hain	story	8	9	3	74	156	96	579087		0	1	29	1		0	#8A8A7A
+8-10	Revier: Lich Mortheus	story	8	10	3	75	156	96	587006	boss_mortheus	1	1	30	0.8	stone_magic_act8	2	#8A8A7A
+9-1	Himmelsruinen: Eingang	story	9	1	3	75	168	103	594925		0	1	30	1		0	#C8D4E8
+9-2	Himmelsruinen: Pfad	story	9	2	3	76	168	103	602844		0	1	30	1		0	#C8D4E8
+9-3	Himmelsruinen: Lichtung	story	9	3	3	77	168	103	610763		0	1	30	1		0	#C8D4E8
+9-4	Himmelsruinen: Hügel	story	9	4	3	78	168	103	618682		0	1	31	1		0	#C8D4E8
+9-5	Revier: Schildwächter	story	9	5	3	79	168	103	626601	boss_shield_guard	1	1	31	0.8	stone_magic_act9	1	#C8D4E8
+9-6	Himmelsruinen: Ruinen	story	9	6	3	81	168	103	634520		0	1	32	1		0	#C8D4E8
+9-7	Himmelsruinen: Grenzland	story	9	7	3	82	168	103	642439		0	1	32	1		0	#C8D4E8
+9-8	Himmelsruinen: Tiefe	story	9	8	3	83	168	103	650358		0	1	33	1		0	#C8D4E8
+9-9	Himmelsruinen: Hain	story	9	9	3	84	168	103	658277		0	1	33	1		0	#C8D4E8
+9-10	Revier: Himmelsrichter Auriel	story	9	10	3	85	168	103	666196	boss_auriel	1	1	34	0.8	stone_magic_act9	2	#C8D4E8
+10A-1	Panoptyca-Tor A: Eingang	story	10	1	4	85	180	110	674115		0	1	34	1		0	#8A2F3F
+10A-2	Panoptyca-Tor A: Pfad	story	10	2	4	86	180	110	682034		0	1	34	1		0	#8A2F3F
+10A-3	Panoptyca-Tor A: Boss	story	10	3	4	86	180	110	689953	boss_gate_a	1	1	34	0.8	stone_magic_act10	1	#8A2F3F
+10A-4	Panoptyca-Tor A: Hügel	story	10	4	4	87	180	110	697872		0	1	34	1		0	#8A2F3F
+10A-5	Panoptyca-Tor A: Senke	story	10	5	4	87	180	110	705791		0	1	34	1		0	#8A2F3F
+10A-6	Panoptyca-Tor A: Boss	story	10	6	4	88	180	110	713710	boss_gate_a	1	1	35	0.8	stone_magic_act10	1	#8A2F3F
+10A-7	Panoptyca-Tor A: Grenzland	story	10	7	4	88	180	110	721629		0	1	35	1		0	#8A2F3F
+10A-8	Panoptyca-Tor A: Tiefe	story	10	8	4	89	180	110	729548		0	1	35	1		0	#8A2F3F
+10A-9	Panoptyca-Tor A: Hain	story	10	9	4	89	180	110	737467		0	1	35	1		0	#8A2F3F
+10A-10	Panoptyca-Tor A: Boss	story	10	10	4	90	180	110	745386	boss_gate_a	1	1	36	0.8	stone_magic_act10	1	#8A2F3F
+10B-1	Panoptyca-Tor B: Eingang	story	10	11	4	90	180	110	753305		0	1	36	1		0	#8A2F3F
+10B-2	Panoptyca-Tor B: Pfad	story	10	12	4	91	180	110	761224		0	1	36	1		0	#8A2F3F
+10B-3	Panoptyca-Tor B: Boss	story	10	13	4	91	180	110	769143	boss_gate_b	1	1	36	0.8	stone_magic_act10	2	#8A2F3F
+10B-4	Panoptyca-Tor B: Hügel	story	10	14	4	92	180	110	777062		0	1	36	1		0	#8A2F3F
+10B-5	Panoptyca-Tor B: Senke	story	10	15	4	92	180	110	784981		0	1	36	1		0	#8A2F3F
+10B-6	Panoptyca-Tor B: Boss	story	10	16	4	93	180	110	792900	boss_gate_b	1	1	37	0.8	stone_magic_act10	2	#8A2F3F
+10B-7	Panoptyca-Tor B: Grenzland	story	10	17	4	93	180	110	800819		0	1	37	1		0	#8A2F3F
+10B-8	Panoptyca-Tor B: Tiefe	story	10	18	4	94	180	110	808738		0	1	37	1		0	#8A2F3F
+10B-9	Panoptyca-Tor B: Hain	story	10	19	4	94	180	110	816657		0	1	37	1		0	#8A2F3F
+10B-10	Panoptyca-Tor B: Boss	story	10	20	4	95	180	110	824576	boss_gate_b	1	1	38	0.8	stone_magic_act10	2	#8A2F3F
+10C-1	Panoptyca-Tor C: Eingang	story	10	21	4	95	180	110	832495		0	1	38	1		0	#8A2F3F
+10C-2	Panoptyca-Tor C: Pfad	story	10	22	4	96	180	110	840414		0	1	38	1		0	#8A2F3F
+10C-3	Panoptyca-Tor C: Boss	story	10	23	4	96	180	110	848333	boss_gate_c	1	1	38	0.8	stone_magic_act10	3	#8A2F3F
+10C-4	Panoptyca-Tor C: Hügel	story	10	24	4	97	180	110	856252		0	1	38	1		0	#8A2F3F
+10C-5	Panoptyca-Tor C: Senke	story	10	25	4	97	180	110	864171		0	1	38	1		0	#8A2F3F
+10C-6	Panoptyca-Tor C: Boss	story	10	26	4	98	180	110	872090	boss_gate_c	1	1	39	0.8	stone_magic_act10	3	#8A2F3F
+10C-7	Panoptyca-Tor C: Grenzland	story	10	27	4	98	180	110	880009		0	1	39	1		0	#8A2F3F
+10C-8	Panoptyca-Tor C: Tiefe	story	10	28	4	99	180	110	887928		0	1	39	1		0	#8A2F3F
+10C-9	Panoptyca-Tor C: Hain	story	10	29	4	99	180	110	895847		0	1	39	1		0	#8A2F3F
+10C-10	Panoptyca-Tor C: Boss	story	10	30	4	100	180	110	903766	boss_gate_warden	1	1	40	0.8	stone_magic_act10	3	#8A2F3F
+11-1	Velkaron: Eingang	story	11	1	5	100	240	140	911685		0	2	40	1		0	#5A6F3A
+11-2	Velkaron: Pfad	story	11	2	5	101	240	140	919604		0	2	40	1		0	#5A6F3A
+11-3	Velkaron: Lichtung	story	11	3	5	101	240	140	927523		0	2	40	1		0	#5A6F3A
+11-4	Velkaron: Hügel	story	11	4	5	102	240	140	935442		0	2	40	1		0	#5A6F3A
+11-5	Velkaron: Boss	story	11	5	5	103	240	140	943361	boss_grol_dar	1	2	41	0.8	stone_magic_act11	1	#5A6F3A
+11-6	Velkaron: Ruinen	story	11	6	5	104	240	140	951280		0	2	41	1		0	#5A6F3A
+11-7	Velkaron: Grenzland	story	11	7	5	104	240	140	959199		0	2	41	1		0	#5A6F3A
+11-8	Velkaron: Tiefe	story	11	8	5	105	240	140	967118		0	2	42	1		0	#5A6F3A
+11-9	Velkaron: Hain	story	11	9	5	106	240	140	975037		0	2	42	1		0	#5A6F3A
+11-10	Velkaron: Boss	story	11	10	5	106	240	140	982956	boss_velkaron	1	2	42	0.8	stone_magic_act11	2	#5A6F3A
+11-11	Velkaron: Eingang	story	11	11	5	107	240	140	990875		0	2	42	1		0	#5A6F3A
+11-12	Velkaron: Pfad	story	11	12	5	108	240	140	998794		0	2	43	1		0	#5A6F3A
+11-13	Velkaron: Lichtung	story	11	13	5	109	240	140	1006713		0	2	43	1		0	#5A6F3A
+11-14	Velkaron: Hügel	story	11	14	5	109	240	140	1014632		0	2	43	1		0	#5A6F3A
+11-15	Velkaron: Boss	story	11	15	5	110	240	140	1022551	boss_velkaron	1	2	44	0.8	stone_magic_act11	2	#5A6F3A
+T-1	Schattentempel Stufe 1	temple	0	1	0	25	80	60	1030470		0	2	15	1.2		0	#3A3A4A
+T-2	Schattentempel Stufe 2	temple	0	2	0	30	80	60	1038389		0	2	15	1.2		0	#3A3A4A
+T-3	Schattentempel Stufe 3	temple	0	3	0	35	80	60	1046308		0	2	15	1.2		0	#3A3A4A
+T-4	Schattentempel Stufe 4	temple	0	4	0	40	80	60	1054227		0	2	15	1.2		0	#3A3A4A
+T-5	Schattentempel Stufe 5	temple	0	5	0	45	80	60	1062146		0	2	15	1.2		0	#3A3A4A
+T-6	Schattentempel Stufe 6	temple	0	6	0	50	80	60	1070065		0	2	15	1.2		0	#3A3A4A
+T-7	Schattentempel Stufe 7	temple	0	7	0	55	80	60	1077984		0	2	15	1.2		0	#3A3A4A
+T-8	Schattentempel Stufe 8	temple	0	8	0	60	80	60	1085903		0	2	15	1.2		0	#3A3A4A
+T-9	Schattentempel Stufe 9	temple	0	9	0	65	80	60	1093822		0	2	15	1.2		0	#3A3A4A
+T-10	Schattentempel Stufe 10	temple	0	10	0	70	80	60	1101741	boss_raven_lord	1	2	15	1.2		0	#3A3A4A
+T-11	Schattentempel Stufe 11	temple	0	11	0	75	80	60	1109660		0	2	15	1.2		0	#3A3A4A
+T-12	Schattentempel Stufe 12	temple	0	12	0	80	80	60	1117579		0	2	15	1.2		0	#3A3A4A
+T-13	Schattentempel Stufe 13	temple	0	13	0	85	80	60	1125498		0	2	15	1.2		0	#3A3A4A
+T-14	Schattentempel Stufe 14	temple	0	14	0	90	80	60	1133417		0	2	15	1.2		0	#3A3A4A
+T-15	Schattentempel Stufe 15	temple	0	15	0	95	80	60	1141336		0	2	15	1.2		0	#3A3A4A
+R-1	Ruinen Stufe 1	ruins	0	1	0	34	100	70	1149255		0	2	25	1		0	#A89860
+R-2	Ruinen Stufe 2	ruins	0	2	0	38	100	70	1157174		0	2	25	1		0	#A89860
+R-3	Ruinen Stufe 3	ruins	0	3	0	42	100	70	1165093		0	2	25	1		0	#A89860
+R-4	Ruinen Stufe 4	ruins	0	4	0	46	100	70	1173012		0	2	25	1		0	#A89860
+R-5	Ruinen Stufe 5	ruins	0	5	0	50	100	70	1180931		0	2	25	1		0	#A89860
+R-6	Ruinen Stufe 6	ruins	0	6	0	54	100	70	1188850		0	2	25	1		0	#A89860
+R-7	Ruinen Stufe 7	ruins	0	7	0	58	100	70	1196769		0	2	25	1		0	#A89860
+R-8	Ruinen Stufe 8	ruins	0	8	0	62	100	70	1204688	boss_relic_guardian	1	2	25	1		0	#A89860
+R-9	Overdrive-Ruinen Stufe 1	ruins	0	9	0	66	100	70	1212607		0	2	25	1		0	#A89860
+R-10	Overdrive-Ruinen Stufe 2	ruins	0	10	0	70	100	70	1220526		0	2	25	1		0	#A89860
+R-11	Overdrive-Ruinen Stufe 3	ruins	0	11	0	74	100	70	1228445		0	2	25	1		0	#A89860
+R-12	Overdrive-Ruinen Stufe 4	ruins	0	12	0	78	100	70	1236364		0	2	25	1		0	#A89860
+R-13	Overdrive-Ruinen Stufe 5	ruins	0	13	0	82	100	70	1244283		0	2	25	1		0	#A89860
+R-14	Overdrive-Ruinen Stufe 6	ruins	0	14	0	86	100	70	1252202		0	2	25	1		0	#A89860
+R-15	Overdrive-Ruinen Stufe 7	ruins	0	15	0	90	100	70	1260121		0	2	25	1		0	#A89860
+R-16	Overdrive-Ruinen Stufe 8	ruins	0	16	0	94	100	70	1268040	boss_relic_guardian	1	2	25	1		0	#A89860

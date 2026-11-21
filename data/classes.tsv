@@ -1,0 +1,9 @@
+# Panoptix classes.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+id	name	role	race	desc	weapon_name	sub_name	basic_attack	color	atk_style	dmg_type	ranged	main_stat	base_speed	base_range	proj_speed	move_factor	base_armor	auto_str	auto_dex	auto_int	basic_dmg_pct
+knight	Ritter	Tank / physischer DPS	Mensch	Sehr robuster Frontkämpfer mit hoher Basisrüstung. Zieht Gegner an sich.	Schwert	Schild	Schwerthieb	#5E8CA8	melee	phys	0	str	1	90	0	0.95	2	60	20	20	100
+warrior	Krieger	Frontkämpfer, Support/DPS	Ork	Mehr Schaden, weniger Haltbarkeit. Gruppen-Buffs und Flächenhiebe.	Axt	Kampfbanner	Axthieb	#9E2B25	melee	phys	0	str	0.9	100	0	1	1	60	20	20	100
+wizard	Magier	Flächenmagie / Burst	Mensch	Verheerende Flächenzauber und Flüche. Zerbrechlich.	Stab	Orb	Magiegeschoss	#7D5BBE	projectile	spell	1	int	0.8	850	700	1	1	15	10	75	100
+archer	Bogenschütze	Einzelziel-DPS, hohes Tempo	Elf	Höchstes Tempo, aber zerbrechlich. Pfeile fliegen weit.	Bogen	Köcher	Pfeil	#5C7A3A	projectile	phys	1	dex	1.3	1500	1100	1.1	1	25	60	15	90
+assassin	Assassine	Burst, Mobilität, Gift	Dunkelelf	Dash-Angriffe, Krit und Gift. Zwei Builds: Angriff oder Gift.	Dolch	Wurfmessergurt	Dolchstich	#4A3A5A	dash_stab	hybrid	0	dex	1.6	70	0	1.1	1	35	55	10	70
+shaman	Schamane	Totems, Debuffs, Support	Ork	Beschwört Totems, schwächt Gegner, unterstützt das Team.	Totemstab	Totem	Geisterblitz	#2F8F8A	projectile	spell	1	int	0.9	650	650	0.95	1	15	10	75	100
+priest	Priester	Heiler, Buffer, leichter DPS	Mensch	Heilt und stärkt Verbündete. Allein schwach, im Team stark.	Zepter	Gebetbuch	Lichtgeschoss	#F4ECD6	homing	spell	1	int	1	700	500	1	1	30	20	50	100

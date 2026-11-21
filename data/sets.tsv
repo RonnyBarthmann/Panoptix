@@ -1,0 +1,4 @@
+# Panoptix sets.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+id	name	mods2	mods4	behavior4	desc2	desc4
+1	Aschekönig	attack_pct=10		chain_lightning	+10 % Angriffsschaden	Der Basisangriff löst einen Kettenblitz aus.
+2	Astral	spellres_pct=10	cdr_cap=5	none	+10 % Zauberwiderstand	+5 % maximale Abklingzeitreduktion (Obergrenze 85 %).

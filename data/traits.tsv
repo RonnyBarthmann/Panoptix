@@ -1,0 +1,24 @@
+# Panoptix traits.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+# effect = Feldname in CommanderMods (src/rules/rules.h).
+id	name	desc	tree	max_points	effect	per_point	row	requires
+exp_quantity	Kistenmenge	Mehr Kistenwürfe pro Kill (+2 % je Punkt).	0	10	drop_qty_pct	2	0	
+exp_quality	Kistenqualität	Höhere Kisten-Raritäten (+1,5 % je Punkt).	0	10	drop_quality_pct	1.5	1	exp_quantity
+exp_density	Schlachtfeld	Mehr Monster je Map (+4 % je Punkt, bis +56 %).	0	14	density_pct	4	1	
+exp_dupe	Doppelkisten	Chance auf Doppelkisten (+0,2 % je Punkt, bis 1 %).	0	5	dupe_chest_pct	0.2	2	exp_quality
+exp_unique	Einzigartigen-Jäger	Chance auf 2 statt 1 Einzigartigen (+5 % je Punkt).	0	4	unique_double_pct	5	2	exp_density
+exp_magic_stone	Steinsucher	Mehr Magiesteine (+5 % je Punkt).	0	4	magic_stone_pct	5	3	exp_unique
+eco_craft	Handwerkskunst	Herstellung wird günstiger (-2 % je Punkt).	1	10	craft_cost_pct	-2	0	
+eco_shop	Verhandlungsgeschick	Shop-Rabatt (+1 % je Punkt).	1	10	shop_discount_pct	1	1	eco_craft
+eco_gold	Goldnase	Mehr Gold (+3 % je Punkt).	1	10	gold_pct	3	1	
+eco_exp	Lehrmeister	Mehr Erfahrung (+3 % je Punkt).	1	10	exp_pct	3	2	eco_gold
+eco_bounty	Auftragsbrett	Zusätzlicher Kopfgeld-Slot je Punkt.	1	5	bounty_slots	1	3	eco_exp
+faith_death	Rasche Wiederkehr	Kürzere Todeszeit (-6 % je Punkt).	2	10	death_time_pct	-6	0	
+faith_retry	Schneller Neustart	Kürzere Wartezeit vor dem Retry (-4 % je Punkt).	2	6	retry_time_pct	-4	1	faith_death
+faith_cap	Große Taschen	Mehr Kistenkapazität (+1 je Punkt).	2	10	chest_cap_flat	1	1	
+faith_storage	Kistenlager	Mehr freies Lager für Normal-/Magisch-Kisten (+100 je Punkt).	2	9	storage_limit_bonus	100	2	faith_cap
+lead_move	Antreiber	Mehr Lauftempo (+0,6 % je Punkt).	3	10	move_speed_pct	0.6	0	
+lead_attack	Schlachtruf	Flacher Schaden (+6 je Punkt).	3	11	flat_attack	6	1	lead_move
+lead_armor	Eiserne Disziplin	Mehr Rüstung (+0,7 % je Punkt).	3	10	armor_pct	0.7	1	
+lead_spellres	Geistige Stärke	Mehr Zauberwiderstand (+0,7 % je Punkt).	3	10	spellres_pct	0.7	2	lead_armor
+lead_cdr	Taktische Planung	Kürzere Abklingzeiten (+0,7 % je Punkt).	3	10	cdr_pct	0.7	2	lead_attack
+lead_potion	Trankvorrat	Tränke füllen sich passiv (+0,1 % pro Sekunde je Punkt).	3	10	potion_regen	0.1	3	lead_cdr

@@ -1,0 +1,379 @@
+# Panoptix lang/en.tsv - erzeugt von tools/gen_data.py (Format: docs/DATA_FORMAT.md)
+# Spalten: deutscher Quelltext -> englische Uebersetzung.
+de	en
+Normal	Normal
+Magisch	Magic
+Selten	Rare
+Einzigartig	Unique
+Boss	Boss
+Legendär	Legendary
+Legendaer	Legendary
+Ritter	Knight
+Krieger	Warrior
+Magier	Wizard
+Bogenschütze	Archer
+Bogenschuetze	Archer
+Assassine	Assassin
+Schamane	Shaman
+Priester	Priest
+Allgemein	General
+Alle Klassen	All classes
+Klasse	Class
+Tank / physischer DPS	Tank / physical DPS
+Frontkämpfer, Support/DPS	Frontliner, support/DPS
+Frontkaempfer, Support/DPS	Frontliner, support/DPS
+Flächenmagie / Burst	Area magic / burst
+Flaechenmagie / Burst	Area magic / burst
+Einzelziel-DPS, hohes Tempo	Single-target DPS, high speed
+Burst, Mobilität, Gift	Burst, mobility, poison
+Burst, Mobilitaet, Gift	Burst, mobility, poison
+Totems, Debuffs, Support	Totems, debuffs, support
+Heiler, Buffer, leichter DPS	Healer, buffer, light DPS
+Mensch	Human
+Ork	Orc
+Elf	Elf
+Dunkelelf	Dark elf
+Schwert	Sword
+Axt	Axe
+Stab	Staff
+Bogen	Bow
+Dolch	Dagger
+Totemstab	Totem staff
+Zepter	Scepter
+Schild	Shield
+Kampfbanner	War banner
+Orb	Orb
+Köcher	Quiver
+Koecher	Quiver
+Wurfmessergurt	Throwing-knife belt
+Totem	Totem
+Gebetbuch	Prayer book
+Waffe	Weapon
+Sekundärwaffe	Secondary weapon
+Sekundaerwaffe	Secondary weapon
+Helm	Helmet
+Brustpanzer	Chestplate
+Handschuhe	Gloves
+Stiefel	Boots
+Tragetasche	Carry bag
+Halskette	Necklace
+Ring	Ring
+Ring 1	Ring 1
+Ring 2	Ring 2
+Trank 1	Potion 1
+Trank 2	Potion 2
+Trank 3	Potion 3
+Flügel	Wings
+Fluegel	Wings
+Rüstung	Armor
+Ruestung	Armor
+Trank	Potion
+Material	Material
+Stein	Stone
+Spezial	Special
+Heiltrank	Healing potion
+Manatrank	Mana potion
+Eile	Haste
+Eisenhaut	Iron skin
+Raserei	Frenzy
+Gold	Gold
+Diamanten	Diamonds
+Kommando-Credits	Command credits
+Raben-Münzen	Raven coins
+Raben-Muenzen	Raven coins
+Rabenfedern	Raven feathers
+Angriff & Zauber (flach)	Attack & spell (flat)
+Angriffsschaden (flach)	Attack damage (flat)
+Zauberschaden (flach)	Spell damage (flat)
+Angriffsschaden	Attack damage
+Zauberschaden	Spell damage
+Mehr Angriffsschaden	More attack damage
+Mehr Zauberschaden	More spell damage
+Krit-Chance	Crit chance
+Krit-Schaden	Crit damage
+Angriffstempo	Attack speed
+Zaubertempo	Cast speed
+Lauftempo	Movement speed
+Abklingzeit-Red.	Cooldown red.
+Zauberwiderstand	Spell resistance
+Max-Leben	Max life
+Max-Mana	Max mana
+Lebensregeneration	Life regeneration
+Manaregeneration	Mana regeneration
+Kistenkapazität	Chest capacity
+Kistenkapazitaet	Chest capacity
+Angriffs-Abzug	Attack reduction
+Zauber-Abzug	Spell reduction
+Schadensminderung	Damage reduction
+Projektile	Projectiles
+Durchdringung	Pierce
+Heilkraft	Healing power
+Gegner erleiden mehr	Enemies take more
+Gegner: weniger Angriff	Enemies: less attack
+Gegner: weniger Zauber	Enemies: less spell
+Manakosten	Mana cost
+Max. CDR	Max. CDR
+Abklingzeit	Cooldown
+Fuellung	Fill
+Füllung	Fill
+Grad	Grade
+Hauptwert	Main value
+Ja	Yes
+Nein	No
+Kein Held vorhanden - in der Heldenliste (F1) erstellen.	No hero available - create one in the hero list (F1).
+Ladungen	Charges
+Level	Level
+Lv	Lv
+Mana	Mana
+Mindestlevel	Minimum level
+Nicht möglich	Not possible
+Nicht moeglich	Not possible
+Reichweite	Range
+Schaden	Damage
+Set	Set
+Slot ist frei	Slot is empty
+Verbessert	Enhanced
+Verkaufswert	Sell value
+Verzauberung	Enchantment
+Wirkung	Effect
+besser als angelegt:	better than equipped:
+schlechter als angelegt:	worse than equipped:
+Heldenliste	Hero list
+Kommandoansicht	Command view
+Weltkarte	World map
+Kisten einsammeln	Collect chests
+Menü	Menu
+Menue	Menu
+Inventar	Inventory
+Herstellung	Crafting
+Skills	Skills
+Auto	Auto
+Manuell	Manual
+Einstellungen	Settings
+Hilfe	Help
+Beenden	Quit
+Fortsetzen	Resume
+Neues Spiel	New game
+Spiel laden	Load game
+Speichern	Save
+Laden	Load
+Zurück	Back
+Zurueck	Back
+Weiter	Continue
+Abbrechen	Cancel
+Bestätigen	Confirm
+Bestaetigen	Confirm
+Schließen	Close
+Schliessen	Close
+Übernehmen	Apply
+Uebernehmen	Apply
+Zurücksetzen	Reset
+Zuruecksetzen	Reset
+Ok	OK
+Held erstellen	Create hero
+Name	Name
+Aussehen	Appearance
+Rolle	Role
+Beschreibung	Description
+Held	Hero
+Helden	Heroes
+Heldenplätze	Hero slots
+Heldenplaetze	Hero slots
+Status	Status
+Tot	Dead
+Lebendig	Alive
+Auf Map	On map
+Im Lager	In camp
+Todes-Timer	Death timer
+Wiederbeleben	Revive
+Stärke	Strength
+Staerke	Strength
+Geschicklichkeit	Dexterity
+Intelligenz	Intelligence
+Punkte verteilen	Assign points
+Verfügbare Punkte	Available points
+Verfuegbare Punkte	Available points
+Leben	Health
+Erfahrung	Experience
+EXP-Rate	EXP rate
+Kisten	Chests
+Materialien	Materials
+Waffen	Weapons
+Sekundärwaffen	Secondary weapons
+Sekundaerwaffen	Secondary weapons
+Tränke	Potions
+Traenke	Potions
+Schmuck	Jewelry
+Flügel/Taschen	Wings/bags
+Fluegel/Taschen	Wings/bags
+Steine/Spezial	Stones/special
+Suche	Search
+Filter	Filter
+Sortierung	Sorting
+Tier	Tier
+Anlegen	Equip
+Ablegen	Unequip
+Zerlegen	Dismantle
+Verkaufen	Sell
+Sperren	Lock
+Entsperren	Unlock
+Verbessern	Enhance
+Verzaubern	Enchant
+Umwandeln	Convert
+Öffnen	Open
+Oeffnen	Open
+Alle Kisten öffnen	Open all chests
+Alle Kisten oeffnen	Open all chests
+Einsammeln	Collect
+Alle einsammeln	Collect all
+Kapazität	Capacity
+Kapazitaet	Capacity
+Lager erweitern	Expand storage
+Herstellen	Craft
+Zutaten	Ingredients
+Kosten	Cost
+Menge	Quantity
+Erfolgschance	Success chance
+Neu würfeln	Reroll
+Neu wuerfeln	Reroll
+Siegel	Seal
+Gesperrt	Locked
+Besser als ausgerüstet	Better than equipped
+Besser als ausgeruestet	Better than equipped
+Schlechter als ausgerüstet	Worse than equipped
+Schlechter als ausgeruestet	Worse than equipped
+Shop	Shop
+Gratis	Free
+Zufallskisten	Random chests
+Skillbücher	Skill books
+Skillbuecher	Skill books
+Rabenhändler	Raven merchant
+Rabenhaendler	Raven merchant
+Kaufen	Buy
+Preis	Price
+Tageslimit	Daily limit
+Wöchentlich	Weekly
+Woechentlich	Weekly
+Täglich	Daily
+Taeglich	Daily
+Monatlich	Monthly
+Gekauft	Purchased
+Nicht genug Gold	Not enough gold
+Nicht genug Diamanten	Not enough diamonds
+Wirklich kaufen?	Really buy?
+Kapitel	Chapter
+Akt	Act
+Map	Map
+Boss-Map	Boss map
+Schattentempel	Shadow temple
+Ruinen	Ruins
+Map-Info	Map info
+Held zuweisen	Assign hero
+Wiederholen	Repeat
+Dichte	Density
+Erstabschluss	First clear
+Map abgeschlossen	Map completed
+Held ist gestorben	Hero has died
+Kisten voll	Chests full
+Eigenschaften	Traits
+Kommandeur	Commander
+Kommandeur-Skills	Commander skills
+Kommandoposten	Command post
+Kopfgeld	Bounty
+Kopfgeldquests	Bounty quests
+Hauptquests	Main quests
+Erfolge	Achievements
+Rangliste	Leaderboard
+Post	Mail
+Mailbox	Mailbox
+Exploration	Exploration
+Wirtschaft	Economy
+Glaube	Faith
+Führung	Leadership
+Fuehrung	Leadership
+Punkte zurücksetzen	Reset points
+Punkte zuruecksetzen	Reset points
+Entdeckersicht	Explorer's sight
+Verborgener Berater	Hidden advisor
+Kommandeurs-Glück	Commander's luck
+Kommandeurs-Glueck	Commander's luck
+Augen der Fülle	Eyes of plenty
+Augen der Fuelle	Eyes of plenty
+Adjutantenbefehl	Adjutant order
+Belohnung	Reward
+Abholen	Claim
+Aktualisieren	Refresh
+Priorität	Priority
+Prioritaet	Priority
+Mindestgegner	Minimum enemies
+Entfernung	Distance
+Schwellenwert	Threshold
+Bewegung	Movement
+Ziele	Targets
+Tränke (KI)	Potions (AI)
+Traenke (KI)	Potions (AI)
+Grafik	Graphics
+Ton	Sound
+Sprache	Language
+Deutsch	German
+Englisch	English
+Farbenblind-Modus	Colorblind mode
+Tastenbelegung	Key bindings
+Autosave	Autosave
+Lautstärke	Volume
+Lautstaerke	Volume
+Vollbild	Fullscreen
+UI-Skalierung	UI scale
+Schriftgröße	Font size
+Schriftgroesse	Font size
+Kein Held ausgewählt	No hero selected
+Kein Held ausgewaehlt	No hero selected
+Nicht genug Platz	Not enough space
+Nicht genug Material	Not enough material
+Nicht genug Mana	Not enough mana
+Abklingzeit läuft	On cooldown
+Abklingzeit laeuft	On cooldown
+Kein Ziel	No target
+Gespeichert	Saved
+Spielstand geladen	Game loaded
+Spielstand nicht gefunden	Save not found
+Fehler beim Speichern	Error while saving
+Daten konnten nicht geladen werden	Data could not be loaded
+Willkommen bei Panoptix	Welcome to Panoptix
+Alle Angebote sind erspielbar - es gibt keine Echtgeld-Käufe.	All offers can be earned in play - there are no real-money purchases.
+Alle Angebote sind erspielbar - es gibt keine Echtgeld-Kaeufe.	All offers can be earned in play - there are no real-money purchases.
+Dieses Spiel ist freie Software (GPL-3.0-or-later).	This game is free software (GPL-3.0-or-later).
+Schaden pro Sekunde	Damage per second
+Kampfkraft	Combat power
+Rüstungsminderung	Armor reduction
+Ruestungsminderung	Armor reduction
+Treffer	Hits
+Heilung	Healing
+Gift	Poison
+Sofort	Instant
+Dauer	Duration
+Radius	Radius
+Winkel	Angle
+Verlangsamung	Slow
+Betäubung	Stun
+Betaeubung	Stun
+Spott	Taunt
+Totem-Dauer	Totem duration
+Skill-Buch	Skill book
+Skill-Level	Skill level
+Skill-Slots	Skill slots
+Aktive Skills	Active skills
+Ausrüstung	Equipment
+Ausruestung	Equipment
+Statistiken	Stats
+Basislager	Base camp
+Quest-Brett	Quest board
+Tempel-Tickets	Temple tickets
+Stufe	Stage
+Rabenmünzen	Raven coins
+Rabenmuenzen	Raven coins
+Nächster Held	Next hero
+Naechster Held	Next hero
+Layout	Layout
+Pause	Pause
+Spielgeschwindigkeit	Game speed
