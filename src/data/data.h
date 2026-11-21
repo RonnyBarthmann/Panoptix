@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later */
-/* Statische Spieldaten (aus data/*.tsv beim Start geladen, danach read-only).
+/* Statische Spieldaten (aus data/<name>.tsv beim Start geladen, danach read-only).
  *
  * Alle Tabellen sind globale Arrays mit Zaehlern. Verweise zwischen Tabellen
  * laufen ueber ARRAY-INDIZES (int), nicht ueber Strings; Strings (id) dienen
@@ -483,7 +483,7 @@ extern const char *const g_currency_names[CUR_COUNT];
 /* ======================================================================== */
 /* API                                                                       */
 /* ======================================================================== */
-/* Laedt alle Tabellen aus <data_dir>/*.tsv und balance.cfg und validiert sie
+/* Laedt alle Tabellen aus <data_dir>/<name>.tsv und balance.cfg und validiert sie
  * (Verweise, Bereiche). Bei Fehlern: false + Logeintrag. Kann mehrfach
  * aufgerufen werden (setzt vorher alles zurueck). */
 bool data_load_all(const char *data_dir);

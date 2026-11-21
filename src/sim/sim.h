@@ -6,7 +6,7 @@
  * - Alle Helden simulieren immer, auch wenn sie nicht gerendert werden.
  *
  * Felder, die mit "[oeffentlich]" markiert sind, duerfen von Render/UI gelesen
- * werden. Der Rest ist Interna der Simulation (sim/*.c) und darf dort
+ * werden. Der Rest ist Interna der Simulation (Dateien in sim/) und darf dort
  * erweitert werden (nur am Strukturende ergaenzen).
  */
 #ifndef PNX_SIM_SIM_H
