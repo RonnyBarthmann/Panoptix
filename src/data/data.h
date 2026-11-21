@@ -388,6 +388,48 @@ typedef struct MapDef {
     u32 tint;                /* Akt-Farbton 0xRRGGBB */
 } MapDef;
 
+
+/* ======================================================================== */
+/* Legendaere Klasseneffekte und Set-Boni (Spec 08)                          */
+/* ======================================================================== */
+/* Verhaltens-Effekte, die die Simulation (sim/) abfragt. Reine Stat-Effekte
+ * stehen als 'mods' in LegendEffect/SetDef und werden von rules/stats.c addiert. */
+typedef enum LegendBehavior {
+    LB_NONE = 0,
+    LB_EXPLOSIVE_TRAIL,   /* Bogenschuetze/Stiefel: alle Projektile loesen Explosionen aus */
+    LB_ARCANE_EMISSION,   /* Magier/Handschuhe: feuert periodisch Magieprojektile auf nahe Gegner */
+    LB_MARCH_OF_LIGHT,    /* Priester/Stiefel: +Projektile, Treffer-Limit, Homing sucht neues Ziel */
+    LB_ROLLING_STEEL,     /* Ritter/Brust: 15 % erlittener Treffer als Flaechenschaden zurueck */
+    LB_BLOODRAGE,         /* Krieger/Helm: unter 50 % HP +30 % Angriffstempo */
+    LB_EXECUTIONER,       /* Assassine/Helm: 50 % Splash-Schaden bei Treffer */
+    LB_TOTEM_ECHO,        /* Schamane/Brust: Totems explodieren beim Verschwinden */
+    LB_CHAIN_LIGHTNING,   /* Set Aschekoenig (4 Teile): Basisangriff loest Kettenblitz aus */
+    LB_COUNT
+} LegendBehavior;
+
+typedef struct LegendEffect {
+    int id;                 /* 1..28, Bit (1u << id) in StatInputs.legendary_mask */
+    char name[MAX_NAME];
+    char desc[MAX_DESC];
+    int cls;                /* ClassId, fuer die der Effekt aktiv ist */
+    EquipSlot slot;         /* SLOT_HELM / SLOT_CHEST / SLOT_GLOVES / SLOT_BOOTS (Astral-Teil) */
+    StatMods mods;          /* reine Stat-Boni */
+    LegendBehavior behavior;
+} LegendEffect;
+
+#define LEGEND_BIT_CHAIN_LIGHTNING 29 /* Bit fuer Set-4-Teile-Effekt Kettenblitz */
+#define LEGEND_BIT_ASTRAL_SET 30      /* Bit fuer Astral-Set 4 Teile (Info) */
+
+typedef struct SetDef {
+    int id;                 /* 1.. (ItemDef.set_id) */
+    char name[MAX_NAME];
+    StatMods mods2;         /* Bonus ab 2 Teilen */
+    StatMods mods4;         /* Bonus ab 4 Teilen */
+    LegendBehavior behavior4; /* Verhaltensbonus ab 4 Teilen oder LB_NONE */
+    char desc2[MAX_DESC];
+    char desc4[MAX_DESC];
+} SetDef;
+
 /* ======================================================================== */
 /* Shop, Kommandeur, Quests                                                  */
 /* ======================================================================== */
@@ -472,6 +514,10 @@ extern TraitDef g_traits[MAX_TRAITS];
 extern int g_trait_count;
 extern QuestDef g_quests[MAX_QUEST_DEFS];
 extern int g_quest_count;
+extern LegendEffect g_legend[32];   /* Index = id (1..28), [0] unbenutzt */
+extern int g_legend_count;
+extern SetDef g_sets[8];            /* Index = id (1..), [0] unbenutzt */
+extern int g_set_count;
 
 extern const char *const g_stat_names[STAT_COUNT];      /* TSV-Namen, siehe types.h */
 extern const char *const g_stat_labels[STAT_COUNT];     /* Anzeige ("Krit-Chance") */

@@ -152,6 +152,7 @@ typedef enum Stat {
     STAT_ENEMY_ATK_DOWN,  /* "enemy_atk_down" (Debuff) % weniger Angriffsschaden der Gegner */
     STAT_ENEMY_SPELL_DOWN,/* "enemy_spell_down" (Debuff) % weniger Zauberschaden der Gegner */
     STAT_MANA_COST,       /* "mana_cost"   % Manakosten (negativ = guenstiger) */
+    STAT_CDR_CAP,         /* "cdr_cap"     Prozentpunkte auf die CDR-Obergrenze (Astral-Set: +5) */
     STAT_COUNT
 } Stat;
 
