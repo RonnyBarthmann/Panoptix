@@ -1,0 +1,279 @@
+==============================================================================
+07_WAFFEN_UND_SEKUNDAERWAFFEN.txt  -  Waffen (147) und Sekundaerwaffen (42)
+==============================================================================
+
+ZWECK
+ Vollstaendige Definition aller klassengebundenen Ausruestung: pro Heldenklasse
+ 21 Hauptwaffen (7 Normal, 5 Magisch, 4 Selten, 3 Einzigartig, 1 Boss, 1 Legendaer)
+ = 147 Waffen, sowie 6 Sekundaerwaffen (1 je Tier) = 42 Sekundaerwaffen.
+ Ruestung, Schmuck, Traenke, Fluegel sind klassenuebergreifend (-> 08..10).
+
+TIER-/LEVELBAENDER (Mindest-Heldenlevel der Waffe; aus Vorgabe des Auftraggebers)
+ Normal      : 0, 1, 5, 10, 15, 20, 25
+ Magisch     : 20, 25, 30, 35, 45
+ Selten      : 27, 37, 46, 55
+ Einzigartig : 44, 52, 58
+ Boss        : 60
+ Legendaer   : 80
+ Hinweis: "Level 0" = keine Anforderung (Startausruestung).
+
+WAFFEN-GRUNDFORMEL (Startwerte, per JSON/Balancing aenderbar)
+ Waffenschaden W = round( (8 + 5.5 * L^1.3) * TierMult )
+ TierMult: Normal 1.00 | Magisch 1.12 | Selten 1.25 | Einzigartig 1.42 | Boss 1.60 | Legendaer 1.85
+ Skill-Schaden wird als Prozentwert des Waffenschadens plus Stat-Bonus berechnet (-> 05).
+ Zusatzeffekte (feste "Additional Effects", werden beim Verbessern NICHT staerker):
+   Magisch      : Krit-Chance +5..6 %
+   Selten       : Krit-Chance +6.5..7.5 %, Krit-Schaden +40..50 %
+   Einzigartig  : Krit-Chance +8.5..9.5 %, Krit-Schaden +65..80 %
+   Boss         : Krit +10 %, Krit-Schaden +100 %, Zauber- und Angriffstempo +10 %
+   Legendaer    : Krit +12 %, Krit-Schaden +130 %, klassenspezifischer legendaerer Effekt
+ (Quelle der Zusatzeffekt-Struktur: Community-Guides; Zahlen im Original teils abweichend.)
+
+WAFFEN-ICON-REGEL: Hintergrund = Tierfarbe (Boss-Waffen: roter Hintergrund; die Waffe selbst
+ darf anders gefaerbt sein). Siehe 02 und 19.
+
+WEAPON-ATTRIBUTE PRO KLASSE
+ Ritter         Waffe=Schwert   Schadensart=Angriff                          Basistempo=1.0/s  Reichweite=Nahkampf 90
+ Krieger        Waffe=Axt       Schadensart=Angriff                          Basistempo=0.9/s  Reichweite=Nahkampf 100
+ Magier         Waffe=Stab      Schadensart=Zauberschaden                    Basistempo=0.8/s  Reichweite=Fernkampf 800
+ Bogenschuetze  Waffe=Bogen     Schadensart=Angriff                          Basistempo=1.3/s  Reichweite=Fernkampf 1500
+ Assassine      Waffe=Dolch     Schadensart=Angriff+Zauberschaden (hybrid)   Basistempo=1.6/s  Reichweite=Nahkampf 70 (Dash)
+ Schamane       Waffe=Totemstab Schadensart=Zauberschaden                    Basistempo=0.9/s  Reichweite=Fernkampf 650
+ Priester       Waffe=Zepter    Schadensart=Zauberschaden + Heilkraft        Basistempo=1.0/s  Reichweite=Fernkampf 700 (Homing)
+
+WAFFENTABELLEN
+
+--- Ritter (Schwert) ---
+  Nr | Name                             | Tier        | Lvl | Schaden | Zusatzeffekt
+  01 | Rostiges Kurzschwert             | Normal      |   0 |       8 | -
+  02 | Uebungsschwert                   | Normal      |   1 |      14 | -
+  03 | Kupferschwert                    | Normal      |   5 |      53 | -
+  04 | Eisenschwert                     | Normal      |  10 |     118 | -
+  05 | Langschwert                      | Normal      |  15 |     194 | -
+  06 | Schuppenklinge                   | Normal      |  20 |     278 | -
+  07 | Haubergklinge                    | Normal      |  25 |     369 | -
+  08 | Silberschwert                    | Magisch     |  20 |     312 | Krit +5.0%
+  09 | Runenklinge                      | Magisch     |  25 |     413 | Krit +5.2%
+  10 | Sturmklinge                      | Magisch     |  30 |     522 | Krit +5.5%
+  11 | Waechterschwert                  | Magisch     |  35 |     635 | Krit +5.8%
+  12 | Paladinklinge                    | Magisch     |  45 |     877 | Krit +6.0%
+  13 | Platinklinge                     | Selten      |  27 |     509 | Krit +6.5%, Krit-Schaden +40%
+  14 | Zweihaender des Hauptmanns       | Selten      |  37 |     762 | Krit +6.8%, Krit-Schaden +43%
+  15 | Loewenherz-Schwert               | Selten      |  46 |    1007 | Krit +7.2%, Krit-Schaden +47%
+  16 | Weltenwaechter                   | Selten      |  55 |    1268 | Krit +7.5%, Krit-Schaden +50%
+  17 | Mithril-Bastard                  | Einzigartig |  44 |    1081 | Krit +8.5%, Krit-Schaden +65%
+  18 | Drachenklinge                    | Einzigartig |  52 |    1340 | Krit +9.0%, Krit-Schaden +72%
+  19 | Klinge der Alten Wache           | Einzigartig |  58 |    1543 | Krit +9.5%, Krit-Schaden +80%
+  20 | Sideros, Klinge des Aeltesten    | Boss        |  60 |    1816 | Krit +10%, Krit-Schaden +100%, Zaubertempo +10%, Angriffstempo +10%
+  21 | Velkarons Hoffnung               | Legendaer   |  80 |    3046 | Krit +12%, Krit-Schaden +130%, Legendaerer Effekt (klassenspezifisch, siehe 08)
+
+--- Krieger (Axt) ---
+  Nr | Name                             | Tier        | Lvl | Schaden | Zusatzeffekt
+  01 | Holzfaelleraxt                   | Normal      |   0 |       8 | -
+  02 | Handbeil                         | Normal      |   1 |      14 | -
+  03 | Kupferaxt                        | Normal      |   5 |      53 | -
+  04 | Eisenaxt                         | Normal      |  10 |     118 | -
+  05 | Streitaxt                        | Normal      |  15 |     194 | -
+  06 | Schuppenspalter                  | Normal      |  20 |     278 | -
+  07 | Kettenbrecher                    | Normal      |  25 |     369 | -
+  08 | Silberaxt                        | Magisch     |  20 |     312 | Krit +5.0%
+  09 | Runenaxt                         | Magisch     |  25 |     413 | Krit +5.2%
+  10 | Sturmbeil                        | Magisch     |  30 |     522 | Krit +5.5%
+  11 | Blutrausch-Axt                   | Magisch     |  35 |     635 | Krit +5.8%
+  12 | Orkspalter                       | Magisch     |  45 |     877 | Krit +6.0%
+  13 | Platin-Henkeraxt                 | Selten      |  27 |     509 | Krit +6.5%, Krit-Schaden +40%
+  14 | Doppelschneide                   | Selten      |  37 |     762 | Krit +6.8%, Krit-Schaden +43%
+  15 | Titanenaxt                       | Selten      |  46 |    1007 | Krit +7.2%, Krit-Schaden +47%
+  16 | Weltenspalter                    | Selten      |  55 |    1268 | Krit +7.5%, Krit-Schaden +50%
+  17 | Mithril-Berserkeraxt             | Einzigartig |  44 |    1081 | Krit +8.5%, Krit-Schaden +65%
+  18 | Drachenzahn-Axt                  | Einzigartig |  52 |    1340 | Krit +9.0%, Krit-Schaden +72%
+  19 | Vergessener Schlaechter          | Einzigartig |  58 |    1543 | Krit +9.5%, Krit-Schaden +80%
+  20 | Axt des Vergessenen Kriegers     | Boss        |  60 |    1816 | Krit +10%, Krit-Schaden +100%, Zaubertempo +10%, Angriffstempo +10%
+  21 | Velkarons Zorn                   | Legendaer   |  80 |    3046 | Krit +12%, Krit-Schaden +130%, Legendaerer Effekt (klassenspezifisch, siehe 08)
+
+--- Magier (Stab) ---
+  Nr | Name                             | Tier        | Lvl | Schaden | Zusatzeffekt
+  01 | Knorriger Ast                    | Normal      |   0 |       8 | -
+  02 | Lehrlingsstab                    | Normal      |   1 |      14 | -
+  03 | Kupferspule                      | Normal      |   5 |      53 | -
+  04 | Eisenstab                        | Normal      |  10 |     118 | -
+  05 | Funkenstab                       | Normal      |  15 |     194 | -
+  06 | Kristallsplitter-Stab            | Normal      |  20 |     278 | -
+  07 | Glutstab                         | Normal      |  25 |     369 | -
+  08 | Silberstab                       | Magisch     |  20 |     312 | Krit +5.0%
+  09 | Runenstab                        | Magisch     |  25 |     413 | Krit +5.2%
+  10 | Froststab                        | Magisch     |  30 |     522 | Krit +5.5%
+  11 | Sturmrufer                       | Magisch     |  35 |     635 | Krit +5.8%
+  12 | Erzmagier-Stab                   | Magisch     |  45 |     877 | Krit +6.0%
+  13 | Platinstab                       | Selten      |  27 |     509 | Krit +6.5%, Krit-Schaden +40%
+  14 | Sternenstab                      | Selten      |  37 |     762 | Krit +6.8%, Krit-Schaden +43%
+  15 | Mondstab                         | Selten      |  46 |    1007 | Krit +7.2%, Krit-Schaden +47%
+  16 | Weltenbrand-Stab                 | Selten      |  55 |    1268 | Krit +7.5%, Krit-Schaden +50%
+  17 | Mithril-Zauberstab               | Einzigartig |  44 |    1081 | Krit +8.5%, Krit-Schaden +65%
+  18 | Drachenfeuerstab                 | Einzigartig |  52 |    1340 | Krit +9.0%, Krit-Schaden +72%
+  19 | Stab des Sternenfalls            | Einzigartig |  58 |    1543 | Krit +9.5%, Krit-Schaden +80%
+  20 | Stab der Singularitaet           | Boss        |  60 |    1816 | Krit +10%, Krit-Schaden +100%, Zaubertempo +10%, Angriffstempo +10%
+  21 | Astraler Weltenstab              | Legendaer   |  80 |    3046 | Krit +12%, Krit-Schaden +130%, Legendaerer Effekt (klassenspezifisch, siehe 08)
+
+--- Bogenschuetze (Bogen) ---
+  Nr | Name                             | Tier        | Lvl | Schaden | Zusatzeffekt
+  01 | Weidenzweig-Bogen                | Normal      |   0 |       8 | -
+  02 | Kurzbogen                        | Normal      |   1 |      14 | -
+  03 | Jagdbogen                        | Normal      |   5 |      53 | -
+  04 | Langbogen                        | Normal      |  10 |     118 | -
+  05 | Verbundbogen                     | Normal      |  15 |     194 | -
+  06 | Schuppenbogen                    | Normal      |  20 |     278 | -
+  07 | Reflexbogen                      | Normal      |  25 |     369 | -
+  08 | Silberbogen                      | Magisch     |  20 |     312 | Krit +5.0%
+  09 | Runenbogen                       | Magisch     |  25 |     413 | Krit +5.2%
+  10 | Sturmbogen                       | Magisch     |  30 |     522 | Krit +5.5%
+  11 | Falkenbogen                      | Magisch     |  35 |     635 | Krit +5.8%
+  12 | Waldlaeuferbogen                 | Magisch     |  45 |     877 | Krit +6.0%
+  13 | Platinbogen                      | Selten      |  27 |     509 | Krit +6.5%, Krit-Schaden +40%
+  14 | Phoenixbogen                     | Selten      |  37 |     762 | Krit +6.8%, Krit-Schaden +43%
+  15 | Windreiter-Bogen                 | Selten      |  46 |    1007 | Krit +7.2%, Krit-Schaden +47%
+  16 | Sternenpfeil-Bogen               | Selten      |  55 |    1268 | Krit +7.5%, Krit-Schaden +50%
+  17 | Mithril-Elfenbogen               | Einzigartig |  44 |    1081 | Krit +8.5%, Krit-Schaden +65%
+  18 | Drachensehnenbogen               | Einzigartig |  52 |    1340 | Krit +9.0%, Krit-Schaden +72%
+  19 | Schattenjaeger                   | Einzigartig |  58 |    1543 | Krit +9.5%, Krit-Schaden +80%
+  20 | Bogen des Letzten Adlers         | Boss        |  60 |    1816 | Krit +10%, Krit-Schaden +100%, Zaubertempo +10%, Angriffstempo +10%
+  21 | Astraler Sternenbogen            | Legendaer   |  80 |    3046 | Krit +12%, Krit-Schaden +130%, Legendaerer Effekt (klassenspezifisch, siehe 08)
+
+--- Assassine (Dolch) ---
+  Nr | Name                             | Tier        | Lvl | Schaden | Zusatzeffekt
+  01 | Rostiger Dolch                   | Normal      |   0 |       8 | -
+  02 | Kuechenmesser                    | Normal      |   1 |      14 | -
+  03 | Kupferdolch                      | Normal      |   5 |      53 | -
+  04 | Eisendolch                       | Normal      |  10 |     118 | -
+  05 | Stilett                          | Normal      |  15 |     194 | -
+  06 | Schuppendolch                    | Normal      |  20 |     278 | -
+  07 | Hakendolch                       | Normal      |  25 |     369 | -
+  08 | Silberdolch                      | Magisch     |  20 |     312 | Krit +5.0%
+  09 | Runendolch                       | Magisch     |  25 |     413 | Krit +5.2%
+  10 | Giftzahn                         | Magisch     |  30 |     522 | Krit +5.5%
+  11 | Schattenklinge                   | Magisch     |  35 |     635 | Krit +5.8%
+  12 | Nachtschnitter                   | Magisch     |  45 |     877 | Krit +6.0%
+  13 | Platindolch                      | Selten      |  27 |     509 | Krit +6.5%, Krit-Schaden +40%
+  14 | Viperndolch                      | Selten      |  37 |     762 | Krit +6.8%, Krit-Schaden +43%
+  15 | Geisterklinge                    | Selten      |  46 |    1007 | Krit +7.2%, Krit-Schaden +47%
+  16 | Seelenschneider                  | Selten      |  55 |    1268 | Krit +7.5%, Krit-Schaden +50%
+  17 | Mithril-Meuchler                 | Einzigartig |  44 |    1081 | Krit +8.5%, Krit-Schaden +65%
+  18 | Drachenkralle                    | Einzigartig |  52 |    1340 | Krit +9.0%, Krit-Schaden +72%
+  19 | Dolch der Nachtgilde             | Einzigartig |  58 |    1543 | Krit +9.5%, Krit-Schaden +80%
+  20 | Klinge des Schattenschleiers     | Boss        |  60 |    1816 | Krit +10%, Krit-Schaden +100%, Zaubertempo +10%, Angriffstempo +10%
+  21 | Astrale Zwillingsklingen         | Legendaer   |  80 |    3046 | Krit +12%, Krit-Schaden +130%, Legendaerer Effekt (klassenspezifisch, siehe 08)
+
+--- Schamane (Totemstab) ---
+  Nr | Name                             | Tier        | Lvl | Schaden | Zusatzeffekt
+  01 | Knochenrassel                    | Normal      |   0 |       8 | -
+  02 | Federstab                        | Normal      |   1 |      14 | -
+  03 | Kupfertotem-Stab                 | Normal      |   5 |      53 | -
+  04 | Eisenrasselstab                  | Normal      |  10 |     118 | -
+  05 | Fetischstab                      | Normal      |  15 |     194 | -
+  06 | Schuppenrasselstab               | Normal      |  20 |     278 | -
+  07 | Geisterpfeife                    | Normal      |  25 |     369 | -
+  08 | Silbertotem                      | Magisch     |  20 |     312 | Krit +5.0%
+  09 | Runentotem                       | Magisch     |  25 |     413 | Krit +5.2%
+  10 | Sturmtotemstab                   | Magisch     |  30 |     522 | Krit +5.5%
+  11 | Ahnenstab                        | Magisch     |  35 |     635 | Krit +5.8%
+  12 | Geisterrufer                     | Magisch     |  45 |     877 | Krit +6.0%
+  13 | Platin-Totemstab                 | Selten      |  27 |     509 | Krit +6.5%, Krit-Schaden +40%
+  14 | Schildkroetenstab                | Selten      |  37 |     762 | Krit +6.8%, Krit-Schaden +43%
+  15 | Windfalkenstab                   | Selten      |  46 |    1007 | Krit +7.2%, Krit-Schaden +47%
+  16 | Rotdrachenstab                   | Selten      |  55 |    1268 | Krit +7.5%, Krit-Schaden +50%
+  17 | Mithril-Ahnenstab                | Einzigartig |  44 |    1081 | Krit +8.5%, Krit-Schaden +65%
+  18 | Sturmdrachenstab                 | Einzigartig |  52 |    1340 | Krit +9.0%, Krit-Schaden +72%
+  19 | Stab der Verlorenen Seelen       | Einzigartig |  58 |    1543 | Krit +9.5%, Krit-Schaden +80%
+  20 | Stab des Sturmgeborenen          | Boss        |  60 |    1816 | Krit +10%, Krit-Schaden +100%, Zaubertempo +10%, Angriffstempo +10%
+  21 | Astraler Weltgeisterstab         | Legendaer   |  80 |    3046 | Krit +12%, Krit-Schaden +130%, Legendaerer Effekt (klassenspezifisch, siehe 08)
+
+--- Priester (Zepter) ---
+  Nr | Name                             | Tier        | Lvl | Schaden | Zusatzeffekt
+  01 | Holzstab des Novizen             | Normal      |   0 |       8 | -
+  02 | Betzepter                        | Normal      |   1 |      14 | -
+  03 | Kupferzepter                     | Normal      |   5 |      53 | -
+  04 | Eisenzepter                      | Normal      |  10 |     118 | -
+  05 | Segensstab                       | Normal      |  15 |     194 | -
+  06 | Lichtbringer                     | Normal      |  20 |     278 | -
+  07 | Gnadenstab                       | Normal      |  25 |     369 | -
+  08 | Silberzepter                     | Magisch     |  20 |     312 | Krit +5.0%
+  09 | Runenzepter                      | Magisch     |  25 |     413 | Krit +5.2%
+  10 | Gebetsstab                       | Magisch     |  30 |     522 | Krit +5.5%
+  11 | Heiligenstab                     | Magisch     |  35 |     635 | Krit +5.8%
+  12 | Hohepriester-Zepter              | Magisch     |  45 |     877 | Krit +6.0%
+  13 | Platinzepter                     | Selten      |  27 |     509 | Krit +6.5%, Krit-Schaden +40%
+  14 | Sonnenzepter                     | Selten      |  37 |     762 | Krit +6.8%, Krit-Schaden +43%
+  15 | Engelsstab                       | Selten      |  46 |    1007 | Krit +7.2%, Krit-Schaden +47%
+  16 | Strahlenkranz-Zepter             | Selten      |  55 |    1268 | Krit +7.5%, Krit-Schaden +50%
+  17 | Mithril-Gnadenzepter             | Einzigartig |  44 |    1081 | Krit +8.5%, Krit-Schaden +65%
+  18 | Drachenlicht-Zepter              | Einzigartig |  52 |    1340 | Krit +9.0%, Krit-Schaden +72%
+  19 | Zepter der Reinen Flamme         | Einzigartig |  58 |    1543 | Krit +9.5%, Krit-Schaden +80%
+  20 | Zepter des Gottesstrahls         | Boss        |  60 |    1816 | Krit +10%, Krit-Schaden +100%, Zaubertempo +10%, Angriffstempo +10%
+  21 | Astrales Heilszepter             | Legendaer   |  80 |    3046 | Krit +12%, Krit-Schaden +130%, Legendaerer Effekt (klassenspezifisch, siehe 08)
+
+
+SEKUNDAERWAFFEN (6 pro Klasse = 42)
+
+ Sekundaerwaffen sind im Original fast nie Drops, sondern werden ueber "Sekundaerwaffen-Bauplaene"
+ hergestellt. Sie erhalten eigene Verzauberungen, die einzelne Skills verstaerken (Details 12).
+ ABWEICHUNG: Original kennt Stufen bei Lv 1/36/52/60; hier 6 Stufen (je Tier), damit das
+ Tiersystem konsistent bleibt: Normal Lv1 | Magisch Lv36 | Selten Lv46 | Einzigartig Lv52 | Boss Lv60 | Legendaer Lv80.
+ Formel: Hauptwert S = round( (3 + 1.8 * L^1.2) * TierMult ).
+ Hinweis aus Guides: Eine Einzigartig-Sekundaerwaffe (+0) ist meist besser als eine Selten (+15),
+ weil hoehere Tiers neue/hoehere Verzauberungsgrade freischalten.
+
+--- Ritter: Schild --- Hauptwirkung: Ruestung + Max-HP, Skill-Verzauberung (z.B. Hurrikanhieb/Vitalstoss)
+  Normal      | Holzschild                 | Lvl  1 | Wert     5
+  Magisch     | Wappenschild               | Lvl 36 | Wert   152
+  Selten      | Turmschild                 | Lvl 46 | Wert   226
+  Einzigartig | Drachenschuppenschild      | Lvl 52 | Wert   297
+  Boss        | Schild des Waechters       | Lvl 60 | Wert   397
+  Legendaer   | Astraler Aegis             | Lvl 80 | Wert   646
+
+--- Krieger: Kampfbanner --- Hauptwirkung: +% Angriff, Party-Buff-Staerke, Skill-Verzauberung (z.B. Hieb/Wirbelwind)
+  Normal      | Stofffetzen-Banner         | Lvl  1 | Wert     5
+  Magisch     | Wappenbanner               | Lvl 36 | Wert   152
+  Selten      | Kriegsbanner               | Lvl 46 | Wert   226
+  Einzigartig | Drachenbanner              | Lvl 52 | Wert   297
+  Boss        | Banner der Vergessenen     | Lvl 60 | Wert   397
+  Legendaer   | Astrales Banner            | Lvl 80 | Wert   646
+
+--- Magier: Orb --- Hauptwirkung: +Zauberschaden, Manaregeneration, Skill-Verzauberung (z.B. Desintegration/Nuklearball)
+  Normal      | Glasorb                    | Lvl  1 | Wert     5
+  Magisch     | Fokuskristall              | Lvl 36 | Wert   152
+  Selten      | Arkanorb                   | Lvl 46 | Wert   226
+  Einzigartig | Sternenorb                 | Lvl 52 | Wert   297
+  Boss        | Orb der Singularitaet      | Lvl 60 | Wert   397
+  Legendaer   | Astraler Urorb             | Lvl 80 | Wert   646
+
+--- Bogenschuetze: Koecher --- Hauptwirkung: Angriffstempo-Multiplikator, Projektil-Boni, Skill-Verzauberung (z.B. Schnellfeuer/Mehrfachschuss)
+  Normal      | Lederkoecher               | Lvl  1 | Wert     5
+  Magisch     | Jagdkoecher                | Lvl 36 | Wert   152
+  Selten      | Waldlaeuferkoecher         | Lvl 46 | Wert   226
+  Einzigartig | Drachenhautkoecher         | Lvl 52 | Wert   297
+  Boss        | Koecher des Adlers         | Lvl 60 | Wert   397
+  Legendaer   | Astraler Koecher           | Lvl 80 | Wert   646
+
+--- Assassine: Wurfmessergurt --- Hauptwirkung: +Krit-Chance/-Schaden, Skill-Verzauberung (z.B. Dolchwurf/Messerspur)
+  Normal      | Lederner Wurfmessergurt    | Lvl  1 | Wert     5
+  Magisch     | Stahlmessergurt            | Lvl 36 | Wert   152
+  Selten      | Giftmessergurt             | Lvl 46 | Wert   226
+  Einzigartig | Schattenmessergurt         | Lvl 52 | Wert   297
+  Boss        | Gurt der Hundert Klingen   | Lvl 60 | Wert   397
+  Legendaer   | Astraler Klingengurt       | Lvl 80 | Wert   646
+
+--- Schamane: Totem --- Hauptwirkung: Totem-Dauer/-Staerke, Zaubertempo, Skill-Verzauberung (z.B. Rotdrache/Totemsturm)
+  Normal      | Kleines Holztotem          | Lvl  1 | Wert     5
+  Magisch     | Knochentotem               | Lvl 36 | Wert   152
+  Selten      | Ahnentotem                 | Lvl 46 | Wert   226
+  Einzigartig | Geistertotem               | Lvl 52 | Wert   297
+  Boss        | Totem der Sturmgeborenen   | Lvl 60 | Wert   397
+  Legendaer   | Astrales Urtotem           | Lvl 80 | Wert   646
+
+--- Priester: Gebetbuch --- Hauptwirkung: +Heilkraft, Manaregeneration, Skill-Verzauberung (z.B. Goettlicher Segen/Reinigende Flamme)
+  Normal      | Zerlesenes Gebetbuch       | Lvl  1 | Wert     5
+  Magisch     | Psalter                    | Lvl 36 | Wert   152
+  Selten      | Brevier                    | Lvl 46 | Wert   226
+  Einzigartig | Heiliges Kompendium        | Lvl 52 | Wert   297
+  Boss        | Buch der Letzten Gnade     | Lvl 60 | Wert   397
+  Legendaer   | Astrales Lichtbuch         | Lvl 80 | Wert   646

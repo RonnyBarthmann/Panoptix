@@ -1,0 +1,137 @@
+==============================================================================
+06_SKILLS_PRO_KLASSE.txt  -  Skills je Klasse (Namen/Wirkungen aus Community-Quellen, Zahlen = Startwerte)
+==============================================================================
+Legende: Typ E=Einzelziel, A=Flaeche, M=Mehrziel, D=DoT, U=Utility, B=Buff, X=Debuff, H=Heilung, T=Totem.
+ Grad = Tier-Grad des Skillbuchs (0 N, 1 M, 2 S, 3 E). CD = Basis-Abklingzeit (s). Dmg% = Skillschaden Lv1 in % (Lv20 ~ x3.85).
+ HINWEIS ZU NAMEN: Namen stammen vom Original (englisch uebersetzt). Fuer die oeffentliche Veroeffentlichung empfiehlt
+ sich eine eigene Umbenennung; Spiel-IDs bleiben stabil (z.B. knight_vital_strike).
+ Zahlen: CD-Werte teils aus Patchnotes (Bogen: Piercing 3, Rapid Fire 4; Magier: Inferno 6, Fireburst 5, Aqua Ball 5,
+ Disintegrate 6, Meteor 8, Nuclear 7; Priester: Divine Strike 2, Purifying Flame 7; Krieger: Heavy Hook 7, Small Quake 9;
+ Assassine: Messerspur 4; Ritter: Step Strike Lv1 737 %, Full Moon Slash Lv1 641 %). Rest = Schaetzwerte.
+
+--- RITTER (10-11 Skills) ---
+ knight_double_strike      Doppelhieb            E  Gr0 CD3  Mana10 Dmg 300  zwei schnelle Treffer
+ knight_vital_strike       Vitalstoss            E,D Gr1 CD4 Mana14 Dmg 220 + DoT 4 s (Treffer allein macht keinen Schaden bei DoT-Version; DoT stapelt nicht)
+ knight_spin_slash         Wirbelhieb            A  Gr0 CD5  Mana16 Dmg 380
+ knight_soul_slash         Seelenschlag          A  Gr1 CD6  Mana20 Dmg 450
+ knight_hurricane_strike   Hurrikanhieb          A  Gr2 CD6  Mana22 Dmg 520 Projektile in Faecher (Wurfwinkel einstellbar)
+ knight_full_moon_slash    Vollmondschnitt       A,H Gr2 CD7 Mana26 Dmg 641 + Selbstheilung
+ knight_reckless_charge    Rücksichtsloser Ansturm U Gr1 CD9 Mana12 Dash, Spott kurz
+ knight_step_strike        Schrittstoss          U,A Gr2 CD5 Mana14 Dmg 737 Dash zum Ziel (Mindestziele 2, Dist 500 empfohlen)
+ knight_moment_enlightenment Moment der Erleuchtung B Gr3 CD40 Mana30 Selbst: +CDR (Dauer 40 s; Cap +5 % max CDR)
+ knight_firm_stance        Standhaftigkeit      B  Gr1 CD40 Mana20 defensiv (+Ruestung %), kein Dash
+ knight_iron_will          Eiserner Wille       B  Gr2 CD45 Mana24 defensiv, Schadensabzug
+ (Boss-Set "Sideros": Basisangriff -> 4-Schlag-Kombo "Mondsichelklinge", stellt Mana wieder her.)
+
+--- KRIEGER (13) ---
+ warrior_slash             Hieb                 E  Gr0 CD3  Dmg 320
+ warrior_berserk_crush     Berserker-Zermalmung E  Gr2 CD6  Dmg 560
+ warrior_power_slash       Kraftschlag          A  Gr1 CD5  Dmg 400
+ warrior_whirlwind         Wirbelwind           A  Gr2 CD6  Mana28 Dmg 450 (Mana-hungrig; Bewegung waehrend Cast)
+ warrior_earth_crusher     Erdzerstoerer        A  Gr3 CD9  Dmg 700
+ warrior_swipe             Seitenhieb           U  Gr0 CD4  Dash + leichter Treffer
+ warrior_heavy_hook        Schwerer Haken       U  Gr1 CD7  zieht Ziel heran
+ warrior_small_quake       Kleines Beben        A,U Gr1 CD9 Dmg 480 + Verlangsamung
+ warrior_leap_attack       Sprungangriff        U,A Gr1 CD6 Dmg 430 Sprung zum Ziel
+ warrior_battle_cry        Schlachtruf          B  Gr2 CD40 Gruppe: %mehr Angriffsschaden
+ warrior_berserk_cry       Berserkerruf         B  Gr2 CD40 Gruppe: %mehr Angriffstempo
+ warrior_last_bastion      Letzte Bastion       B  Gr3 CD60 defensiv, haelt Held an Ort fest (nicht empfohlen)
+ warrior_intimidating_cry  Einschuechternder Schrei X Gr2 CD35 Gegner: %weniger Angriffsschaden
+
+--- MAGIER (13) ---
+ wizard_fireball           Feuerball            A  Gr0 CD4  Mana14 Dmg 380
+ wizard_magic_missile      Magisches Geschoss   M  Gr0 CD3  5 Treffer, max. 3 auf dasselbe Ziel
+ wizard_inferno            Inferno              A  Gr1 CD6  Dmg 500
+ wizard_fireburst          Feuerbrunst          A  Gr1 CD5  Dmg 470
+ wizard_aqua_ball          Wasserball           A  Gr1 CD5  Dmg 460
+ wizard_disintegrate       Desintegration       E  Gr2 CD6  Dmg 900 (einziger echter Einzelziel-Skill)
+ wizard_meteor_strike      Meteoreinschlag      A  Gr2 CD8  Dmg 1100 verzoegert
+ wizard_nuclear_ball       Nuklearball          A  Gr3 CD7  Dmg 1000 grosser Radius
+ wizard_teleport           Teleport             U  Gr1 CD6  kurzer Sprung nach vorn
+ wizard_focus              Fokus                B  Gr1 CD40 Selbst: +CDR
+ wizard_ancient_one        Der Uralte           B  Gr3 CD60 Selbst: +% Zauberschaden und +% Ruestung
+ wizard_curse_weakness     Fluch der Schwaeche  X  Gr1 CD20 Gegner: %weniger Angriffsschaden
+ wizard_curse_frailty      Fluch der Gebrechlichkeit X Gr2 CD20 Gegner: %weniger Zauberschaden
+
+--- BOGENSCHUETZE (12) ---
+ archer_bleeding_arrow     Blutender Pfeil      E,D Gr1 CD5  DoT 4 s (CD >= 3 s einstellen)
+ archer_rapid_fire         Schnellfeuer         E  Gr2 CD4  viele Pfeile, trifft mehrere in Linie
+ archer_split_arrow        Spaltpfeil           A  Gr1 CD5
+ archer_explosion_arrow    Explosionspfeil      A  Gr2 CD6  mit Durchdringung: "Schrotflinte" bei Packs
+ archer_piercing_arrow     Durchschlagender Pfeil A Gr1 CD3 durchbohrt Reihen
+ archer_multi_shot         Mehrfachschuss       M  Gr1 CD4  Faecher (Winkel einstellbar, Standard 50)
+ archer_stun_arrow         Betaeubungspfeil     U,E Gr1 CD8 Verlangsamung/Stun
+ archer_step_shot          Schrittschuss        U  Gr1 CD6  Schuss + Sprung vor
+ archer_backstep_shot      Rueckschuss          U  Gr1 CD6  Schuss + Sprung zurueck
+ archer_eagle_eye          Adlerauge            B  Gr2 CD40 +flache Krit-Chance und Krit-Schaden (Dauer 39 s)
+ archer_legendary_archer   Legendaerer Bogenschuetze B Gr3 CD60 +Projektile (Flaechenabdeckung)
+ archer_firm_grip          Fester Griff         B  Gr2 CD40 +Durchdringung, +Krit-Schaden
+
+--- PRIESTER (12) ---
+ priest_divine_strike      Goettlicher Schlag   A  Gr1 CD2  Dmg 330
+ priest_purifying_flame    Reinigende Flamme    A,H Gr2 CD7 Dmg 480 + Gruppenheilung
+ priest_cure               Heilung (Cure)       H  Gr0 CD8  entfernt Debuffs + kleine Heilung
+ priest_mind_cure          Geistheilung         H  Gr1 CD10 stellt Mana wieder her
+ priest_heal               Heilen               H  Gr1 CD5  Einzelziel-Heilung
+ priest_mind_heal          Geist-Heilen         H  Gr2 CD8  Mana-Transfer an Verbuendete ("Mana-Batterie")
+ priest_divine_bless       Goettlicher Segen    H  Gr2 CD10 HoT 10 s auf ein Ziel (Dauer 10 s; bei 50 % CDR 100 % Uptime)
+ priest_recovery           Genesung             H  Gr1 CD6  Gruppenheilung
+ priest_divine_grace       Goettliche Gnade     B  Gr2 CD40 defensiv
+ priest_enchant_vision     Verzauberte Sicht    B  Gr2 CD40 +Projektil (Selbst/Verbuendeter)
+ priest_exaltation_fury    Erhebung der Wut     B  Gr3 CD60 Gruppe: %mehr Angriffs- und Zauberschaden
+ priest_exaltation_swift   Erhebung der Eile    B  Gr3 CD60 Gruppe: %mehr Angriffstempo und Lauftempo
+
+--- ASSASSINE (14) ---
+ assassin_vital_thrust     Vitalstich           E  Gr2 CD5  Einzelziel-Burst (Ziel: One-Shot ~350k bei Speedrun)
+ assassin_dagger_throw     Dolchwurf            A  Gr0 CD2  3 Dolche, max. 1 Treffer/Ziel
+ assassin_knife_trace      Messerspur           A  Gr1 CD4  kleine Reichweite
+ assassin_emergency_evasion Notausweichen       A,U Gr1 CD3 Dash + 5 Dolche, max. 2 Treffer/Ziel
+ assassin_poison_attack    Giftangriff          E,D Gr1 CD6 DoT 6 s (Zauberschaden)
+ assassin_venom_fang       Giftzahn             A,D Gr1 CD6 DoT
+ assassin_poison_mist      Giftnebel            A,D Gr1 CD6 DoT Radius 125
+ assassin_poison_master    Giftmeister          B  Gr2 CD40 %mehr Zauberschaden
+ assassin_danger_sense     Gefahrensinn         B  Gr1 CD40 defensiv
+ assassin_vital_sense      Vitalsinn            B  Gr1 CD40 +flache Krit-Chance
+ assassin_one_sure_strike  Sicherer Streich     B  Gr2 CD40 %mehr Krit-Schaden
+ assassin_time_assassination Zeit der Ermordung B  Gr2 CD40 %mehr Angriffstempo
+ assassin_disruption       Stoertaktik          X  Gr2 CD25 Gegner: %weniger Angriffsschaden
+ assassin_step             Assassinenschritt    B  Gr1 CD30 %erhoehtes Lauftempo (Klassen-Kit)
+
+--- SCHAMANE (13) ---
+ shaman_soul_spike         Seelenstachel        E,X Gr2 CD6 Debuff: %mehr erlittener Schaden
+ shaman_lightning_arrow    Blitzpfeil           A  Gr1 CD5
+ shaman_earthpulse         Erdpuls-Eruption     A  Gr1 CD6
+ shaman_corrupted_mist     Verderbter Nebel     A,D Gr1 CD7
+ shaman_nature_harmony     Naturharmonie        B  Gr2 CD40 %erhoehter Zauberschaden + Zaubertempo
+ shaman_wicked_sorcery     Boeser Zauber        X  Gr2 CD20 Gegner: %weniger Angriffs- und Zauberschaden
+ shaman_nightmare_ward     Albtraumschutz       X  Gr2 CD20 Gegner: %mehr erlittener Schaden
+ shaman_totem_sea_turtle   Totem: Seeschildkroete T,B Gr2 CD15 Spott (5 s), Ruestung der Verbuendeten im Radius stark erhoeht
+ shaman_totem_storm_dragon Totem: Sturmdrache   T,A Gr2 CD12 ruft periodisch Sturm auf Gegner
+ shaman_totem_red_dragon   Totem: Rotdrache     T,A,B Gr3 CD15 Kegel-Flaechenschaden + %mehr Angriffs-/Zauberschaden
+ shaman_totem_war_drum     Totem: Kriegstrommel T,A Gr1 CD12 Flaechenschaden
+ shaman_totem_clairvoyance Totem: Hellsicht     T,B Gr2 CD20 %Krit-Schaden fuer Verbuendete
+ shaman_totem_gale_hawk    Totem: Windfalke     T,B Gr2 CD20 %mehr Angriffs-/Zaubertempo und Lauftempo im Radius
+ (Totems: Dauer 15-25 s, max. 3 aktiv gleichzeitig; Effekte enden beim Verlassen des Radius.)
+
+--- ALLGEMEIN-SKILLS (14, fuer alle Klassen) ---
+ common_footwork           Fussarbeit           B  %MEHR Lauftempo (stark; sehr empfohlen fuer Boss-Speedruns)
+ common_rapid_movements    Schnelle Bewegung    B  %mehr Lauftempo (schwaecher)
+ common_bless_might        Segen der Macht      B  %mehr Angriffsschaden (Selbst)
+ common_bless_magic        Segen der Magie      B  %mehr Zauberschaden (Selbst)
+ common_frenzy             Raserei              B  %mehr Angriffstempo
+ common_call_healing       Ruf der Heilung      U,H Rueckwaerts-Warp + Heilung bei niedriger HP
+ common_backstep           Rueckschritt         U  kurzer Schritt zurueck
+ common_step_left_right    Seitschritt L/R      U  (2 Skills) Ausweich-Schritt
+ common_swift_exaltation   Hast                 B  Lauf- + Angriffstempo
+ common_stone_skin         Steinhaut            B  +Ruestung (flach, nur frueh nuetzlich)
+ common_mana_surge         Manaschub            U  stellt Mana wieder her, hoher CD
+ common_battle_focus       Kampffokus           B  +Krit-Chance
+ (Letzte vier = [ERGAENZUNG], im Original nicht verifiziert.)
+
+SKILL-GESAMTZAHL: ~83 Klassen-Skills + 14 Allgemein ~ 97; Original nennt 83 + 14 (Wiki-Archiv).
+LEGENDAERE KLASSEN-EFFEKTE: siehe 08 (Design-Slots, 28 Effekte).
+BUILD-VORLAGEN (aus Community, als KI-Presets ausliefern): Ritter "Hurry Cain" (Hurrikan, Vitalstoss, Schrittstoss, Moment der Erleuchtung),
+ Krieger "Spin to Win" (Hieb, Wirbelwind, Segen der Macht, Schlachtruf), Magier "Oppenheimer" (Fokus, Desintegration, Nuklearball, Der Uralte),
+ Bogenschuetze "Minigun" (Adlerauge, Mehrfachschuss, Schnellfeuer, Fester Griff), Priester "Boost-Bot" (Goettlicher Segen, Erhebung Wut/Eile,
+ Reinigende Flamme), Assassine "Hi Venomous" (Giftnebel, Giftzahn, Giftangriff, Giftmeister), Schamane "Breath of the Wild" (Rotdrache, Schildkroete,
+ Sturm, Seelenstachel).

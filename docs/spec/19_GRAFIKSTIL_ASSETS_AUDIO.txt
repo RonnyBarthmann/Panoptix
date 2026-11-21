@@ -1,0 +1,50 @@
+==============================================================================
+19_GRAFIKSTIL_ASSETS_AUDIO.txt  -  Look & Feel, Assets, Audio
+==============================================================================
+
+1. STIL (Original-Selbstbeschreibung: "Mittelalter-Fantasy mit Pergament-Optik, TRPG-Charme wie Wuerfeln am Tisch", Tags: Minimalist, 2D, Top-Down)
+ - Pergament-Papier-Look: warme Beige-Toene, Tinten-Umrisse, leichte Papiertextur, Kantenverschmutzung.
+ - Flaechige Farben, kraeftiger dunkler Umriss (2 px), geringe Schattierung, "Miniatur-Token"-Anmutung.
+ - UI: Papier/Holz/Siegelwachs; Buttons wie Wachssiegel, Rahmen wie Holzleisten; Icon-Hintergruende in Tierfarben (02).
+ - Keine Fotos, keine KI-generierten Fremdwerke ohne Lizenzklaerung; alle Assets selbst erstellt oder CC0/CC-BY.
+
+2. PALETTE (Basis; Tierfarben siehe 02)
+ Pergament #E9DDBF | Pergament dunkel #CDBB92 | Tinte #2B2118 | Holz #6B4A2F | Wachsrot #9E2B25 | Moosgruen #5C7A3A | Himmelsblau #5E8CA8 | Gold #C79B2D
+ Tageszeit-Akt-Toenung: Akt1 gruen, 2 sumpfig, 3 ocker, 4 eisblau, 5 glutrot, 6 dunkelgruen, 7 graublau, 8 violett-grau, 9 weiss-gold, 10 purpur-schwarz, 11 rostbraun.
+
+3. WELT/KAMERA
+ - Top-Down (gerade von oben), 2D. Kachelgroesse 32x32 px, Charaktersprites 64x64 (Boss bis 256), Kamera mittig auf Held, Smooth-Follow, Zoom einstellbar.
+ - Boden: Tilesets pro Akt (Autotiling 47-Tile-Blob), Props (Baeume, Felsen, Ruinen, Kisten, Fackeln) mit Tinten-Schatten.
+ - Beleuchtung: leichtes Vignette; Aura/Glow-Layer fuer Tiers und Skills (additiv).
+ - Hintergrund Weltkarte: Pergamentkarte mit Tintenzeichnung; Knoten als Wachssiegel.
+
+4. HELDEN-SPRITES
+ - Schichtbasiert (Layers): Koerper, Kopf/Helm, Waffe, Sekundaerwaffe, Fluegel, Tasche; Rotation in 8 Richtungen per Sprite-Rotation oder 8 Sheets.
+ - Animationen: Idle (4f), Laufen (6f), Angriff (4-6f), Zaubern (6f), Treffer (2f), Tod (6f). Pro Klasse eigene Waffenhaltung.
+ - Ausruestung sichtbar: Helm (Tier-Variante), Waffe, Fluegel (6 Stufen), Ruecken-Tasche.
+ - Volkskennzeichen (Mensch, Ork, Elf, Dunkelelf) per Kopf-Layer und Hautton.
+
+5. ITEM- UND UI-ICONS
+ - 64x64 px Icons, transparenter Hintergrund + separate Tierhintergrund (Shader-Faerbung) -> eine Icon-Datei, 6 Hintergruende zur Laufzeit.
+ - Icon-Sets: Waffen (7 Typen x 21 Varianten ~ ueber Farbvarianten/Overlay), Ruestung (4 Slots x 21), Schmuck (4 Familien x 6 x 2), Traenke (5 Formen x 6), Fluegel (6), Taschen (6), Materialien (5 Linien x 6), Steine, Kisten (6 Stufen), Skills (97).
+ - Skill-Icons: 48 px mit Grad-Rahmen.
+ - Platzhalter-Prinzip: Vibe-Coding-Stand nutzt Prozedurale Icons (Form + Farbe); austauschbar per Atlas.
+
+6. EFFEKTE (VFX)
+ Partikel: Treffer-Funken, Heilung gruen, Mana tuerkis, Gift violett; Skill-Effekte als Sprite-Animationen (Feuerball, Meteor, Blitz, Totem-Aura...).
+ Tier-Glow: Pulsieren je Tier; Legendaer: rosa Glitzer + Lichtsaeule beim Drop; Bossdrops Sound-Fanfare.
+ Telegraph-Dekale: Kreis/Linie/Kegel in rot-transparent.
+ Schadenszahlen: Bitmap-Font, weiss; Krit gross mit Goldrand; Heilung gruen.
+
+7. SCHRIFTEN (alle frei: OFL)
+ Ueberschriften: "Cinzel" oder "IM Fell English"; Fliesstext: "Alegreya Sans"/"Source Sans 3"; Zahlen: Mono "Source Code Pro". Pixelfont optional fuer Schaden.
+
+8. AUDIO
+ Musik: ruhiger Fantasy-Ambient je Akt (Original: "Fantasy-tauglich, aber oft stummgeschaltet") -> Loops 2-4 min, CC0/CC-BY.
+ SFX: Treffer, Skills, Kisten-Drops (je Tier eigener Klang, Legendaer = Fanfare), UI-Klicks, Level-Up, Boss-Intro.
+ Mixer: Master/Musik/Effekte/UI getrennt, Stummschaltung pro Held-Ansicht (nur Vollbild-Held hoert SFX; 2x2: nur Fokus-Held).
+
+9. ASSET-PIPELINE & KONVENTIONEN
+ assets/sprites/<kategorie>/<id>.png ; Atlanten per einfachem JSON (vom C-Loader lesbar); Namenskonvention snake_case, IDs identisch mit Datenbank-IDs.
+ Format: PNG (Spritesheets), WebP optional, OGG fuer Audio. Maximale Atlasgroesse 4096. Quelle/Lizenz pro Asset in assets/CREDITS.md.
+ LIZENZ (entschieden): Code GPL-3.0-or-later (SPDX-Header in jeder Quelldatei); Assets CC BY-SA 4.0 oder CC0 (GPL-kompatibel); Schriften OFL. Keine Original-Assets aus PANOPTYCA verwenden.

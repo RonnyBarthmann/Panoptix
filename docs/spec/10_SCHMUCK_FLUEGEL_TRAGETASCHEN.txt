@@ -1,0 +1,109 @@
+==============================================================================
+10_SCHMUCK_FLUEGEL_TRAGETASCHEN.txt  -  Ringe, Halsketten, Fluegel, Taschen
+==============================================================================
+
+ALLGEMEIN
+ Alle drei Gruppen sind klassenuebergreifend und haben Mindestlevel 1 (auch ein Lvl-1-Held darf einen
+ Boss-Ring tragen). Tier-Farben wie ueberall (02).
+ Ringe und Halsketten sind NICHT craftbar: nur aus Kisten (Drops) und Spezialkisten.
+ Halsketten sind doppelt so stark wie ein gleichwertiger Ring (1 Halskette = 2 Ringe) und
+ doppelt so selten wie der gleichwertige Ring. Fluegel sind extrem selten und nicht craftbar.
+ Tragetaschen sind craftbar und im Shop kaeuflich.
+ Verbessern +0..+20 ist moeglich (Schmuck nutzt Schmuck-Verbesserungssteine, -> 12).
+
+SCHMUCKFAMILIEN (4) x 6 Tiers x 2 (Ring/Halskette) = 48 Items
+ 1) Kriegerschmuck   : Angriff (flach, wirkt auf Angriffs- UND Zauberschaden) + Kritische Trefferchance
+ 2) Assassinenschmuck: Kritische Trefferchance + Angriffstempo  (trotz Name NICHT Assassinen-exklusiv)
+ 3) Elementarschmuck : maximales Mana + Manaregeneration
+ 4) Lebensschmuck    : maximales Leben + Lebensregeneration  ("Ring des Lebens"/"Halskette des Lebens")
+ [ENTSCHEIDUNG: Vorgabe "erhoeht Angriff" - im Original wirkt der Wert nur physisch. Hier gilt: beide Schadensarten,
+  damit Magier/Priester nicht leer ausgehen. Als Config-Flag 'jewelry.attackAffectsSpells' abschaltbar.]
+
+RING-WERTE (Halskette = exakt das Doppelte)
+
+--- Kriegerschmuck ---
+  Normal      | Ring: Kupferner Kriegerring            Angriff +6, Krit-Chance +1%
+              | Halskette (x2, Drop 2x seltener): Angriff +12, Krit-Chance +2%
+  Magisch     | Ring: Silberner Kriegerring            Angriff +14, Krit-Chance +2%
+              | Halskette (x2, Drop 2x seltener): Angriff +28, Krit-Chance +4%
+  Selten      | Ring: Platin-Kriegerring               Angriff +28, Krit-Chance +3%
+              | Halskette (x2, Drop 2x seltener): Angriff +56, Krit-Chance +6%
+  Einzigartig | Ring: Mithril-Kriegerring              Angriff +50, Krit-Chance +4.5%
+              | Halskette (x2, Drop 2x seltener): Angriff +100, Krit-Chance +9.0%
+  Boss        | Ring: Blutroter Kriegerring (Boss)     Angriff +85, Krit-Chance +6.5%
+              | Halskette (x2, Drop 2x seltener): Angriff +170, Krit-Chance +13.0%
+  Legendaer   | Ring: Astraler Kriegerring             Angriff +140, Krit-Chance +9%
+              | Halskette (x2, Drop 2x seltener): Angriff +280, Krit-Chance +18%
+
+--- Assassinenschmuck ---
+  Normal      | Ring: Schlichter Assassinenring        Krit-Chance +1%, Angriffstempo +2%
+              | Halskette (x2, Drop 2x seltener): Krit-Chance +2%, Angriffstempo +4%
+  Magisch     | Ring: Silberner Assassinenring         Krit-Chance +2%, Angriffstempo +4%
+              | Halskette (x2, Drop 2x seltener): Krit-Chance +4%, Angriffstempo +8%
+  Selten      | Ring: Platin-Assassinenring            Krit-Chance +3%, Angriffstempo +6%
+              | Halskette (x2, Drop 2x seltener): Krit-Chance +6%, Angriffstempo +12%
+  Einzigartig | Ring: Mithril-Assassinenring           Krit-Chance +4.5%, Angriffstempo +9%
+              | Halskette (x2, Drop 2x seltener): Krit-Chance +9.0%, Angriffstempo +18%
+  Boss        | Ring: Schattenring (Boss)              Krit-Chance +6.5%, Angriffstempo +13%
+              | Halskette (x2, Drop 2x seltener): Krit-Chance +13.0%, Angriffstempo +26%
+  Legendaer   | Ring: Astraler Assassinenring          Krit-Chance +9%, Angriffstempo +18%
+              | Halskette (x2, Drop 2x seltener): Krit-Chance +18%, Angriffstempo +36%
+
+--- Elementarschmuck ---
+  Normal      | Ring: Ring des Funkens                 Max-Mana +20, Manaregeneration/s +0.5
+              | Halskette (x2, Drop 2x seltener): Max-Mana +40, Manaregeneration/s +1.0
+  Magisch     | Ring: Ring der Elemente                Max-Mana +50, Manaregeneration/s +1
+              | Halskette (x2, Drop 2x seltener): Max-Mana +100, Manaregeneration/s +2
+  Selten      | Ring: Platin-Elementarring             Max-Mana +100, Manaregeneration/s +2
+              | Halskette (x2, Drop 2x seltener): Max-Mana +200, Manaregeneration/s +4
+  Einzigartig | Ring: Mithril-Elementarring            Max-Mana +180, Manaregeneration/s +3.5
+              | Halskette (x2, Drop 2x seltener): Max-Mana +360, Manaregeneration/s +7.0
+  Boss        | Ring: Ring des Sternenlichts (Boss)    Max-Mana +300, Manaregeneration/s +5.5
+              | Halskette (x2, Drop 2x seltener): Max-Mana +600, Manaregeneration/s +11.0
+  Legendaer   | Ring: Astraler Elementarring           Max-Mana +500, Manaregeneration/s +8
+              | Halskette (x2, Drop 2x seltener): Max-Mana +1000, Manaregeneration/s +16
+
+--- Lebensschmuck ---
+  Normal      | Ring: Ring des Lebens (Normal)         Max-Leben +50, Lebensregeneration/s +0.5
+              | Halskette (x2, Drop 2x seltener): Max-Leben +100, Lebensregeneration/s +1.0
+  Magisch     | Ring: Silberner Lebensring             Max-Leben +130, Lebensregeneration/s +1.2
+              | Halskette (x2, Drop 2x seltener): Max-Leben +260, Lebensregeneration/s +2.4
+  Selten      | Ring: Platin-Lebensring                Max-Leben +280, Lebensregeneration/s +2.5
+              | Halskette (x2, Drop 2x seltener): Max-Leben +560, Lebensregeneration/s +5.0
+  Einzigartig | Ring: Mithril-Lebensring               Max-Leben +520, Lebensregeneration/s +4.5
+              | Halskette (x2, Drop 2x seltener): Max-Leben +1040, Lebensregeneration/s +9.0
+  Boss        | Ring: Phoenixring (Boss)               Max-Leben +900, Lebensregeneration/s +7
+              | Halskette (x2, Drop 2x seltener): Max-Leben +1800, Lebensregeneration/s +14
+  Legendaer   | Ring: Astraler Lebensring              Max-Leben +1500, Lebensregeneration/s +10
+              | Halskette (x2, Drop 2x seltener): Max-Leben +3000, Lebensregeneration/s +20
+
+SCHMUCK-DROPS
+ Pro geoeffneter Kiste des Tiers T: Ring-Chance 1.5 %, Halskette 0.75 % (nur wenn Kiste >= Tier T; Familie zufaellig 25 % je).
+ Garantien: Temple-Stufe 4 und hoeher haben zusaetzlich 2 % auf einen "Raren Ring" (Selten+).
+ Zufallskisten im Shop (Schmuck) liefern Tiers gemaess Shop-Tabelle (-> 13).
+
+FLUEGEL (1 Slot "ein Paar Fluegel") - 6 Stufen, Lvl 1, nur Drops, extrem selten
+ Tier        | Name                  | Lauftempo
+ Normal      | Federfluegel          | +10 %
+ Magisch     | Windfluegel           | +25 %
+ Selten      | Falkenfluegel         | +50 %
+ Einzigartig | Drachenfluegel        | +100 %
+ Boss        | Schwingen des Abgrunds| +180 %
+ Legendaer   | Astrale Himmelsschwingen | +300 %
+ Drop: je geoeffneter Kiste des Tiers T: 1/20.000 fuer Fluegel des Tiers T (nur Kisten >= Magisch; Normal-Fluegel nur
+ aus Temple-/Ruinen-Abschlusskisten). Fluegel aendern die Heldenoptik (sichtbare Fluegel-Sprites).
+ Guide-Tipp aus dem Original: Ritter koennen mit Fluegeln ohne Anpassung losrennen und Aggro ziehen.
+ Lauftempo-Gesamtregel: Gesamt-LT = Basis * (1 + Summe aller % aus Fluegel, Stiefel, Traenke, Traits, Buffs);
+ Obergrenze 450 % Basis (Engine-Stabilitaet).
+
+TRAGETASCHE (1 Slot "Tragetasche") - +Kistenkapazitaet, craftbar, Lvl 1
+ Tier        | Name                     | Kisten +
+ Normal      | Lederbeutel              | +5
+ Magisch     | Reisetasche              | +9
+ Selten      | Verstaerkter Rucksack    | +14
+ Einzigartig | Drachenleder-Rucksack    | +19
+ Boss        | Rucksack des Plünderers (Boss) | +25
+ Legendaer   | Astraler Raumrucksack    | +30
+ Kapazitaet gesamt = 10 (Basis) + Brustpanzer (max +30) + Tragetasche (max +30) = max 70 (Vorgabe).
+ Faith-Traits (20) addieren weitere Kapazitaet bzw. Lagergrenzen fuer Normal/Magisch.
+ Hinweis aus Guides: Ab ca. 50 Kisten merkbar abnehmender Zusatznutzen.

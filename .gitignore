@@ -1,0 +1,11 @@
+build/
+dist/
+*.o
+*.d
+*.exe
+panoptix
+panoptix_sim
+panoptix_tests
+*.sav
+*.bmp
+.vscode/

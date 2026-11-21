@@ -1,0 +1,53 @@
+==============================================================================
+17_KI_GEGNER.txt  -  Gegner-KI
+==============================================================================
+
+1. ZUSTANDSAUTOMAT
+ DORMANT (am Spawn, inaktiv ausserhalb 1500 px Heldenabstand -> Performance) -> IDLE/PATROL -> AGGRO -> CHASE -> ATTACK -> (RECOVER) -> LEASH_RETURN -> IDLE; DEAD.
+ Pack-Aggro: Wird ein Monster eines Packs alarmiert, ziehen Packmitglieder im Radius 400 px mit (Pack-ID).
+ Leash: Monster, die sich weiter als LeashDist (Standard 900 px; "recht kurz" wie Original, keine riesigen Verfolger-Ketten) vom Spawn entfernen,
+   kehren zurueck, heilen ggf. (Boss: voll nach 5 s ausserhalb Kampf). Das gilt auch fuer Bosse -> manuelles Kiten moeglich.
+
+2. AGGRO & ZIELWAHL
+ - Aggro-Radius: Normal 500, Elite 600, Boss: Arenabetreten. Sicht-/Linie nicht noetig (Top-Down, V1).
+ - Ziel: naechster Held; mit Bedrohungstabelle (Threat): Schaden*1.0 + Heilung*0.5 + Spott = Spott-Flag (5 s) -> hoechste Prioritaet.
+ - Bei mehreren Helden: Ziel wechselt, wenn anderes Ziel > 150 % Threat (Ritter/Schamane halten Aggro).
+ - Totems (Schamane) werden angegriffen, wenn sie Spott tragen oder naeher als Held sind.
+
+3. ARCHETYP-VERHALTEN
+ Nahkaempfer   : Chase bis Reichweite, Angriffsintervall, kein Ausweichen.
+ Fernkaempfer  : halten 70-90 % Reichweite, weichen langsam zurueck, wenn Held < 40 % Reichweite; Projektil-Geschwindigkeit moderat (Held darf nicht jedes ausweichen koennen: kein Held-Ausweichen).
+ Schwarm       : sehr viele, niedrige HP; umzingeln (Formation "Ring"), schwache Einzeltreffer.
+ Brecher/Tank  : langsam, Telegraph-Schlag (0.8 s), Flaechenschlag; Armor hoch.
+ Assassin/Jaeger: Dash auf Ziel (Distanz > 300), hohe Geschwindigkeit, Rueckzug nach 3 Treffern (Hit&Run). Ruinen-typisch.
+ Beschwoerer   : ruft alle 8-12 s 2-4 Adds, flieht aus Naehkampf, priorisiert Schutz durch Adds.
+ Heiler        : heilt Verbuendete < 60 % HP, schwacher Angriff; hohe Priorisierung der Helden-KI (Zielwahl).
+ Explosive     : laufen zum Ziel, explodieren nach 1.5 s Zuendung (Warnkreis).
+ Elementare    : hinterlassen Flaechenspuren (Feuer/Eis/Gift), Schaden ueber Zeit auf Boden.
+ Waechter      : stationaer bis Aggro, blocken Engstellen, Betaeubungs-Immunitaet.
+ Totems        : stationaer, schiessen/buffen, schaltbar (Haupt-Target erst).
+
+4. AFFIX-VERHALTEN (15)
+ Schnell: +40 % Tempo | Aufspaltend: bei Tod 2 kleinere (50 % HP) | Anziehend: Zugspuls alle 8 s | Vampirisch: 20 % des Schadens als Heilung.
+ Explosiv: Flaechenschaden beim Tod (Warnung 0.5 s).
+
+5. BOSS-KI
+ Phasen (100/60/30 %): Phasenwechsel -> Unverwundbar 2 s + Zwischenmechanik (Adds/Schild). Faehigkeiten-Zyklus mit Cooldowns und Gewichtungen.
+ Telegraph: 0.6-1.2 s sichtbar (Kreis/Linie/Kegel); Schaden erst nach Telegraph. Zufaellige Ziele fuer Fernangriffe.
+ Enrage 180 s. Arenen-Grenzen: Boss verlaesst Arena nicht (Leash an Arena).
+ Reset bei Heldentod: Boss heilt voll nach 5 s (Tempel/Ruinen: Boss-Respawn bei Retry).
+ Bossleiste: oben, Name, Tier-Farbe, Phasenmarker.
+
+6. SPAWN-LOGIK
+ - Statische Packs pro Map (Seed-fest). Respawn: keine in Einzel-Map-Run (Neustart = alles neu). Boss spawnt beim Betreten der Arena (Bug des Originals: Boss spawnte teils nicht -> Test).
+ - Dichte-Multiplikator: Map-Basis * (1 + Trait%). Einzigartige: "Nebenpfade", Chance auf zwei Einzigartige gleichzeitig (Trait 1:5).
+ - Schlachtfeld (Story) vs. Tempel/Ruinen: unterschiedliche Dichte-Parameter.
+
+7. PERFORMANCE
+ - Nur Gegner innerhalb 1500 px eines Helden aktiv simulieren (alle anderen DORMANT); Projektil-Pool; max. 400 aktive Gegner/Held.
+ - Kollisionsvermeidung (Separation-Steering) statt harter Kollision. Helden und Gegner kollidieren weich.
+
+8. TESTS
+ - Gegner kehren nach Leash zum Spawn zurueck (max. 2 s Abweichung).
+ - Boss-Phasen-Test (Schadensskript); Telegraph vor jedem Treffer.
+ - Pack-Aggro: 1 Monster angreifen -> restliches Pack folgt.

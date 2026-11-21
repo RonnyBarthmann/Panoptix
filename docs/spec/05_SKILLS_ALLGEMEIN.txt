@@ -1,0 +1,61 @@
+==============================================================================
+05_SKILLS_ALLGEMEIN.txt  -  Funktionsweise des Skill-Systems
+==============================================================================
+
+1. GRUNDREGELN
+ - Jeder Held hat 4 aktive Skill-Slots. Waehlbar: Klassen-Skills der eigenen Klasse + Allgemein-Skills (Utility).
+ - Skills haben Grad (Tier 0..3: Normal, Magisch, Selten, Einzigartig), Level 1..20, Mana-Kosten, Abklingzeit (CD),
+   Reichweite, Zielart, Wirkung, Cast-Zeit (skaliert mit Zaubertempo).
+ - Skill-Schaden steht als Prozent der Waffe/Stat-Basis (Datenbank speichert ganzzahlig: 1.000.000 = 100 %; 3.940.000 = 394 %).
+ - Skills werden von der KI automatisch gewirkt (siehe 16); per Mausklick kann der Spieler nur Bewegung/Ziel steuern;
+   zusaetzlich Hotkeys 1-4 zum manuellen Wirken.
+ - Max Level 20 ("Max" im Button).
+
+2. SKILLBUECHER & LEVELN
+ - Skillbuecher schalten Skills frei; doppelte Buecher "mergen" -> Skill-Level +1 (Level-Kosten: Buecher + Gold; Gold-Kosten steigen).
+ - Quellen: Tagesbelohnungen/Quests, Shop (Gratis/Diamanten/Zufall), Basislager-Haendler (30 Normal-Buecher je 30k Gold; woechentlich
+   Rare/Unique gegen Gold), seltene Kampfdrops.
+ - Skills koennen per Skillbuch-Kauf je Klasse gezielt gekauft werden (max. 10/Tag/Klasse zufaellig, Preis gleich).
+ - Item-Aktivierungs-Skills: Boss/Legendaer-Items koennen zusaetzlich einen Skill bereitstellen (optional V2).
+
+3. SKILL-ARTEN (Tags)
+ Einzelziel | Flaeche (AoE) | Mehrziel | DoT | Utility/Bewegung | Buff (Selbst/Gruppe) | Debuff | Heilung | Beschwoerung (Totem)
+ Faustregel fuer Skill-Sets (Guides): mind. 1 Einzelziel + 1 AoE + 1 Buff; ideal 1 Einzel + 1 AoE + 2 Buffs.
+ Bei hoher CDR sind mehrere gleichartige Damage-Skills redundant.
+
+4. KI-KONFIGURATION PRO SKILL (zentral fuer das Idle-Gameplay)
+ a) Prioritaet 0..8 (0 = zuerst). Empfohlene Reihenfolge: Heilung > Buffs > Utility > Einzelziel > AoE.
+ b) Bedingungen (Restriktionen), alle optional:
+    - Zieltier-Filter: Normal / Magisch / Selten / Einzigartig / Boss / Legendaer an/aus (z.B. Einzelziel nicht auf Normal).
+    - Gegneranzahl in Reichweite >= N.
+    - Zielentfernung <= D (Hinweis: bei Skill-Reichweite 300 am besten 250 setzen).
+    - Eigene HP/Mana-Schwellen (Ober-/Untergrenze in %).
+    - Verbuendete: Prioritaet "Selbst" vs "Verbuendete", HP/Mana-Schwellen der Verbuendeten (fuer Heilung/Support).
+    - Nur im Kampf / Nur beim Laufen / immer (Standard fuer Buffs: "nur beim Laufen" -> Empfehlung: abschalten bzw. fuer Tempo-Buffs behalten).
+    - Eigener Mindest-Cooldown (z.B. DoT-Skill: CD knapp unter Dauer, um Refresh-Spam zu vermeiden).
+    - Buff-Stapeln: nicht erlaubt (wartet bis Ablauf) / erlaubt (wirkt sofort bei CD-Ende).
+    - Wurfwinkel/Streuwinkel bei Mehrfach-Projektilen.
+ c) Standardwerte je Skill vom Spiel vorgeschlagen ("Empfohlen"-Button).
+ d) Presets speichern/kopieren zwischen Helden.
+
+5. SCHADENSFORMEL (Kurz)
+ Treffer = SkillBasis%(Lv) * Basiswert * Summe(%erhoeht) * Produkt(%mehr) * (Krit ? KritMult : 1)
+ %mehr-Quellen (multiplikativ): Waffen-Verbesserung ab +15, Buffs "Segen der Macht/Magie", Gruppenbuffs, Skill-Verzauberungen.
+ Skill-Skalierung Lv1..20: Basis%(Lv) = Basis% * (1 + 0.15*(Lv-1)) (linear als Start; per Skill ueberschreibbar).
+
+6. SKILL-DATENSATZ (JSON-Schema)
+ { id, name_de, name_en, class|"common", grade(0..3), tags[], target("single"|"aoe"|"cone"|"self"|"party"|"line"),
+   cooldown_s, mana, range_px, castTime_s, damage_pct[20], dotDuration_s, buff:{stat,pct,duration_s}, summon:{totemId,duration_s},
+   description_de, aiDefaults:{priority, minTargets, tierMask, buffAlways, ...}, enchantOptions[] }
+
+7. SPEZIALMECHANIKEN
+ Projektile: Anzahl, Durchdringung (Pierce), Abprallen, Explosion bei Treffer, Homing mit Neuzielsuche.
+ Mehrfachtreffer: "Mehrfach-Treffer auf dasselbe Ziel +1" erlaubt mehrere Treffer eines Projektils.
+ Totems: Beschwoerung mit Dauer; Aura-Effekte gelten nur im Radius (verschwinden beim Verlassen); Spott.
+ Rueckwaertsbewegung: Rueckschritt/Ruf der Heilung (Warp nach hinten + Heilung bei niedriger HP).
+ Selbstverbrennung (Item "Lebensbrenner-Stiefel"): nutzt HP statt Mana, wenn Mana leer (optional).
+ Cast-Speed: Wirkzeit/Animation = Basis / (1 + Zaubertempo). Bei 90 % CDR kann Wirkzeit der Flaschenhals werden.
+
+8. SKILL-VERZAUBERUNGEN (siehe 12)
+ Sekundaerwaffen tragen Skill-spezifische Optionen: "%mehr Schaden auf Skill X", "%Zaubertempo fuer Skill X",
+ "Reichweite", "Projektilgeschwindigkeit", "Mehr Dauer" u.a. Hoehere Tiers erlauben bessere Grade.

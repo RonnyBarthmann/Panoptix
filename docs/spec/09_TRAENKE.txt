@@ -1,0 +1,41 @@
+==============================================================================
+09_TRAENKE.txt  -  5 Trankarten x 6 Tiers = 30 Traenke (wiederbefuellbar)
+==============================================================================
+
+GRUNDPRINZIP (Vorgabe + Original-Verhalten)
+ Traenke sind FESTE Items, kein Verbrauchsmaterial. Jeder Trank besitzt eine Fuellung ("Ladungen").
+ - Jede Benutzung leert den Trank um eine Ladung (hoehere Tiers haben mehr Ladungen).
+ - Jede getoetete Kreatur fuellt ihn anteilig wieder auf.
+ - Zu Beginn jeder Map sind alle Traenke voll.
+ - Jeder Held hat 3 Trank-Slots (Duplikate erlaubt). Die KI loest sie per Schwellenwert aus (-> 16).
+ - Heiltraenke haben je Trank einen getrennten internen Cooldown (2-3 Heiltraenke verbrauchen nicht gleichzeitig).
+ - Traenke sind Level-1-Items (jeder Held kann jeden Trank tragen).
+
+LADUNGSMODELL
+ Fuellung = 100 Einheiten; Ladungen je Tier: Normal 2 | Magisch 3 | Selten 4 | Einzigartig 5 | Boss 6 | Legendaer 8
+ Kosten je Nutzung = 100 / Ladungen. Auffuellung je getoetetem Monster: 4 % (Normal-Mob), x2 Magisch, x4 Selten, x10 Elite/Boss.
+ Zusaetzlich: Leadership-Trait "passive Trank-Regeneration" (-> 20).
+ Rezept-Essenz: "Essenz" ist knapp (Guides: teuer im Shop) -> sparsam einsetzen.
+
+WIRKUNGSTABELLE (Startwerte)
+ Tier        | Heil %MaxHP | Mana %MaxMana | Eile (Lauftempo) | Eisenhaut (Ruestung/Zauberwid.) | Raserei (Angriffstempo) | Dauer
+ Normal      |   15 %      |   15 %        |  +10 %           |  +10 %                          |  +10 %                  |  8 s
+ Magisch     |   22 %      |   22 %        |  +20 %           |  +20 %                          |  +20 %                  | 10 s
+ Selten      |   30 %      |   30 %        |  +30 %           |  +35 %                          |  +30 %                  | 14 s
+ Einzigartig |   38 %      |   38 %        |  +40 %           |  +50 %                          |  +40 %                  | 18 s
+ Boss        |   48 %      |   48 %        |  +50 %           |  +75 %                          |  +50 %                  | 24 s
+ Legendaer   |   60 %      |   60 %        |  +60 %           |  +100 %                         |  +60 %                  | 30 s
+ Heiltraenke wirken sofort; Mana sofort; die drei anderen als anhaltender Effekt (Dauer wie Tabelle).
+ Effekte gleicher Art ueberschreiben sich (kein Stapeln); unterschiedliche Arten stapeln.
+
+NAMEN
+ Heiltrank   : Kleiner / Mittlerer / Grosser Heiltrank / Elixier der Genesung / Boss-Elixier "Phoenixblut" / Astrales Lebenselixier
+ Manatrank   : Kleiner Manatrank / Mittlerer / Grosser / Elixier des Geistes / "Sternentau" / Astrales Manaelixier
+ Eile        : Laeuferphiole / Windtrank / Falkentrank / Geisterelixier / Sturmelixier / Astrales Eilelixier
+ Eisenhaut   : Rindentrunk / Eisenhauttrank / Solid-Trank / Bollwerkselixier / Titanenhaut / Astrale Aegis-Essenz
+ Raserei     : Funkentrank / Brenntrank / Raserei-Elixier / Rabenwut / Blutrausch-Elixier / Astrale Raserei
+ (Tier-Reihenfolge Normal..Legendaer; Hintergrund im UI immer Tierfarbe.)
+
+CRAFTING: Essenz(Tier) + Glasphiole + Kraeuter(Tier); Rezepte immer verfuegbar ab Spielerlevel 1.
+SPEZIALTRAENKE (Erweiterung, aus Guides): "Geisterelixier": Lauftempo + Durchgehen durch Gegner;
+ "Rabenessenz": +1 Projektil, +1 Mehrfachtreffer; "Elixier der Wiedergeburt": 6 s HP-Regeneration. (optional E-02)

@@ -1,0 +1,54 @@
+==============================================================================
+22_ROADMAP_MVP_OFFENE_PUNKTE.txt
+==============================================================================
+
+1. MEILENSTEINE
+ M0  Projekt-Skelett: CMake-Build (C11 + SDL3), Tests (utest/Unity), ASan/UBSan-Lauf, Datenvalidierung (JSON), Platzhalter-Grafik, Sim-Loop 30 Hz.
+ M1  "Ein Held, eine Map": Held-KI (EXPLORE/ENGAGE), 3 Gegner-Archetypen, Stats, EXP, Tod, Retry. Klasse Ritter + Magier.
+ M2  Loot: Kisten-Wuerfe (6 Tiers), Kistenleiste, Einsammeln, Inventar, Kisten oeffnen, Items anlegen.
+ M3  Alle 7 Klassen, Skills (Grundfunktion), KI-Bedingungen, Traenke (Ladungen).
+ M4  Crafting, Verbessern +0..+20, Zerlegen, Stein-Umwandlung; Tier-Farben ueberall.
+ M5  Mehrheldenverwaltung: Heldenplaetze, 2x2-Kommandoansicht, Layouts, Weltkarte, Map-Zuteilung.
+ M6  Akte 1-5 (Daten), Boss-Mechaniken, Magiesteine; Shop (Gratis/Allgemein); Kommandeur-Traits/Skills/Kommandoposten.
+ M7  Verzaubern, Sekundaerwaffen, Schmuck/Fluegel-Drops; Akte 6-10 (A/B/C); Tempel + Ruinen.
+ M8  Akt 11 (Zweier-Teams), Legendaer-Tier, Fundament (optional); Politur, Audio, Lokalisierung, Barrierefreiheit.
+ M9  Oeffnung als GitHub-Projekt: Doku, Lizenzen, Beitrags-Leitfaden, Release 0.1.
+
+2. MVP (M0-M4) - Definition
+ 1 Akt (5 Maps), 3 Klassen, 3 Tiers (Normal/Magisch/Selten), Kisten+Inventar+Crafting+Verbessern, 1 Held sichtbar, 4 Helden simuliert.
+
+3. KONFLIKTE/ABWEICHUNGEN ZWISCHEN VORGABE, ORIGINAL UND DIESEM KATALOG
+ 1. Heldenanzahl: Vorgabe 4 -> 16; Original max 8 (kaempfend) / 12 (anlegbar). Katalog folgt Vorgabe.
+ 2. Legendaer-Tier (rosa): Vorgabe; Original hat es seit Update 1.1.0 (Mai 2026). Verwendet.
+ 3. Kistenchancen 1/10..1/1M: Vorgabe; Original nutzt Monster-Tier-Kisten; hier hierarchische Wuerfe (11).
+ 4. Tragetasche als eigener Slot + Brustpanzer-Kapazitaet: Vorgabe; Kapazitaets-Verteilung 10+30+30 = 70 ist meine Annahme.
+ 5. Sekundaerwaffen: Original 4 Stufen (Lv1/36/52/60); Katalog 6 Stufen (je Tier).
+ 6. [GEKLAERT] "Treffergenauigkeit" meinte kritische Trefferchance; kein Genauigkeits-/Ausweichsystem (wie im Original). Helm = Krit-Chance.
+ 7. [GEKLAERT] Handschuhe = Angriffstempo, Stiefel = Lauftempo; es gibt keine Hose.
+ 8. [GEKLAERT] "Bodenschuetze" = Bogenschuetze.
+ 9. Kriegerschmuck wirkt auf beide Schadensarten (Original: nur physisch).
+ 10. Tempel = tankig, Ruinen = hoher Angriff (Vorgabe); Original-Tempel/Ruinen-Details nur teilweise bekannt.
+ 11. Freischaltung Schattentempel: Quellen widerspruechlich (Spielerlevel 7 laut Wiki-Archiv, 25 laut Guide). Katalog: 15.
+ 12. [BESTAETIGT] Shop ohne Echtgeld; reines Offline-Spiel, keine externen Apps/APIs. Premium -> Diamanten (erspielbar).
+ 13. Skills: Namen/Anzahl aus Guides, Zahlenwerte (Dmg%, Mana, CD) bis auf Patch-Notes-Werte Schaetzungen.
+ 14. Akt-Namen, Bosse, Monsterlisten: frei erfunden (Original hat andere/mehr Details).
+
+4. QUELLENLAGE UND LUECKEN (ehrlich)
+ - Gelesen: Steam-Store-Seite, Steam-News/Patchnotes (1.1.0.x, Devlog), Steam-Guides (TurukTheCook "Stats, Skills, Gear choices and you" - ca. 100.000 von 145.000 Zeichen + Teil 2; Tenoshii/Peter-Guide
+   (note.com)), Treyex-Guide, Snippets des Community-Wikis (panoptyca-wiki.pages.dev: 7 Klassen, 245 Skills, 285 Ausruestung, 159 Maps, 113 Monster).
+ - Nicht abrufbar: Fandom-Wiki-Unterseiten, panoptyca.pages.dev (Archiv) und die Wiki-Datenbanken (Skills/Equipment/Monster/Maps) lieferten nur Fehler oder Metadaten.
+   -> Exakte Item-Werte, Monster-/Mapdaten und Skillzahlen des Originals fehlen und sind durch eigene Startwerte ersetzt.
+ - Keine Screenshots/Videos gesichtet -> UI-Wireframes (18) sind textbasiert abgeleitet.
+ EMPFEHLUNG: 5-10 eigene Screenshots (Heldenansicht, 2x2, Inventar, Crafting, Weltkarte, Shop, Skills/KI-Einstellung) bereitstellen, dann Wireframes verfeinern.
+
+5. ENTSCHEIDUNGEN (geklaert) UND OFFENE PUNKTE
+ ENTSCHIEDEN:
+ - Spielname: Panoptix | Lizenz: GPL-3.0-or-later | Tech-Stack: C + SDL (siehe 21)
+ - Offline-Fortschritt: nur Kommandoposten | reines Offline-Spiel, keine APIs
+ - Legendaer-Klasseneffekte: universelle Astral-Teile mit klassenabhaengigem Effekt (08)
+ OFFEN:
+ - Zahlenbalance: Startwerte mit Balance-Simulator kalibrieren.
+ - Wie viele Heldenplaetze gleichzeitig tatsaechlich simuliert werden (Performance-Grenze).
+
+6. GLOSSAR
+ Held, Kommandeur, Akt, Stage/Map, Tempel, Ruinen, Kiste, Tier, CDR (Abklingzeitreduktion), AS (Angriffstempo), MS (Lauftempo), DoT, AoE, Buff/Debuff, Magiestein, Verbesserung (Enhance), Verzauberung (Enchant), CR (Kommando-Credits).

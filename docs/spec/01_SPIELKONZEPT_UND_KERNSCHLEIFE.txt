@@ -1,0 +1,54 @@
+==============================================================================
+01_SPIELKONZEPT_UND_KERNSCHLEIFE.txt
+==============================================================================
+
+1. PITCH
+ Ein Idle-RPG-Manager im Stil von PANOPTYCA: Der Spieler ist "Kommandeur" und steuert bis zu 16 Helden
+ gleichzeitig. Jeder Held erkundet autonom seine eigene Map (Top-Down 2D, Held immer in Bildschirmmitte),
+ kaempft per KI, sammelt Kisten. Der Spieler verwaltet: Ausruestung, Skills, KI-Einstellungen, Map-Zuteilung.
+ Optional uebernimmt er per Mausklick die Steuerung eines Helden. Fokus: eigenstaendige KI.
+ Genre-Tags: Idler, Strategy-RPG, Auto-Battler, Hack&Slash, Top-Down, 2D, Single-Player, Split-Screen (2x2).
+ Original: Free-to-play, ~Nov 2025 veroeffentlicht (Steam), Entwickler Tesseract/Nugem Studio. Dieses Projekt ist ein
+ eigenstaendiger Open-Source-Nachbau ("Clone-inspired"), kein Code-/Asset-Port.
+
+2. DESIGNSAEULEN
+ S1  Idle zuerst: Alles Wesentliche laeuft ohne Eingriff. Eingreifen ist Bonus, nie Pflicht.
+ S2  Viele Helden, ein Blick: 2x2-Kommandoansicht, Vollbild pro Held, schnelle Wechsel (F-Tasten).
+ S3  Tier-System als roter Faden: Normal(grau) - Magisch(blau) - Selten(gelb) - Einzigartig(orange) - Boss(rot) - Legendaer(rosa)
+     bei Kisten, Items, Materialien, Monstern, Rezepten, UI-Farben, Effekten (-> 02).
+ S4  Loot-Schleife: toeten -> Kisten sammeln -> einsammeln -> oeffnen/zerlegen -> craften/verbessern -> staerkere Helden.
+ S5  Tiefe durch KI-Konfiguration: Skill-Prioritaeten, Bedingungen, Zielwahl, Trank-Schwellen (-> 05, 16).
+ S6  Moddbar & datengetrieben: Alle Inhalte in JSON, Simulation getrennt von Darstellung (-> 21).
+
+3. HELDEN
+ Klassen (7): Ritter, Krieger, Magier, Bogenschuetze ("Bodenschuetze" in der Vorgabe vermutlich Bogenschuetze), Assassine,
+ Schamane, Priester (-> 04). Jeder Held: eigener Name, Klasse, Level, Stats, Ausruestung, Skills, KI-Profil.
+ Startsituation: 4 Heldenplaetze; weitere mit Spieler-Level bis 16 (-> 03). Held-Erstellung frei aus allen Klassen,
+ auch mehrfach dieselbe Klasse.
+ Original zum Vergleich: bis zu 8 gleichzeitig kaempfende Helden, 12 anlegbar; hier Vorgabe 4->16.
+
+4. KERNSCHLEIFE (Minute-fuer-Minute)
+ a) Spieler weist Held X einer Map zu (Weltkarte). Held laeuft los, bekaempft Monster, gewinnt EXP/Gold, sammelt Kisten
+    (am unteren Bildschirmrand = "Kistenleiste").
+ b) Alle paar Minuten: "Einsammeln" (Taste F4 / Button): Kisten wandern in Spieler-Lager. Kistenkapazitaet pro Held begrenzt.
+ c) Kisten oeffnen: Inhalt = Materialien (haeufig), Ausruestung/Traenke (seltener), Schmuck/Fluegel (sehr selten) im Tier der Kiste.
+ d) Craften/Verbessern/Verzaubern; Items an Helden verteilen; Skills/Stats vergeben.
+ e) Map abgeschlossen -> Abschlussbelohnung -> automatisch wiederholen oder naechste Map.
+ f) Stall (Held kommt nicht mehr weiter / stirbt) -> besser ausruesten, KI anpassen, Map wechseln.
+ g) Tagesroutine: Kopfgeld-Quests, Gratis-Shop, Kommandoposten, Tempel-Tickets (-> 13, 20).
+
+5. WELTSTRUKTUR (Kurz; Details 14)
+ Story-Kapitel mit Akten und Maps (zunaechst 1 Held/Map), Tempel (tankige Monster, Paare), Ruinen (hohe Angriffswerte),
+ spaetere Kapitel mit 2..4 Helden pro Map. Boss-Maps liefern Magiesteine/Verbesserungssteine.
+
+6. SPIELZEIT/OFFLINE
+ Original hat KEINEN Offline-Fortschritt; stattdessen "Kommandoposten" (Idle-Credits, 60 CR/h, max 8 h/Tag) (-> 20).
+ ENTSCHEIDUNG: Der Kommandoposten ist der EINZIGE Offline-Fortschrittsmechanismus. Es gibt keine Offline-Simulation (auch nicht optional).
+
+7. NICHT-ZIELE (V1)
+ Reines Offline-Spiel: kein Multiplayer, kein Netzwerkzugriff, keine Konten, keine externen Apps/APIs, keine Echtgeld-Transaktionen, kein Marktplatz, keine Cloud-Saves. Rangliste nur lokal/optional per Export.
+ Keine Handlung mit Cutscenes (Story kurz und textbasiert).
+
+8. PLATTFORM
+ Native Desktop-Anwendung (Windows/Linux/macOS) in C mit SDL. Eingabe Maus + Tastatur (Controller optional).
+ Zielaufloesung 1280x720 bis 4K, UI skalierbar.

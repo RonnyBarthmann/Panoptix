@@ -1,0 +1,77 @@
+==============================================================================
+21_TECHNIK_ARCHITEKTUR_DATENMODELL.txt  -  PANOPTIX: C + SDL, GPL-3.0-or-later
+==============================================================================
+
+0. ENTSCHEIDUNGEN (Auftraggeber)
+ Name: Panoptix | Lizenz: GPL-3.0-or-later | Sprache: C (C11, spaeter ggf. C17) | Multimedia: SDL3 (Fallback SDL2)
+ Reines Offline-Spiel: kein Netzwerkcode, keine Konten, keine APIs, kein Telemetrie-/Update-Check. Offline-Fortschritt nur via Kommandoposten (20).
+
+1. TECH-STACK
+ Sprache/Build : C11, CMake (>= 3.20), Compiler gcc/clang/MSVC; Warnungen -Wall -Wextra -Wpedantic -Wconversion, CI mit -Werror.
+ Fenster/Input/Audio/Render: SDL3 (SDL_Renderer 2D, GPU-Beschleunigung); SDL3_image (oder stb_image), SDL3_ttf (oder stb_truetype / Bitmap-Fonts).
+ Audio         : SDL-Audio + stb_vorbis (OGG) oder miniaudio.
+ JSON-Daten    : cJSON oder parson (MIT-Lizenz, GPL-kompatibel). Alternative: eigenes kompaktes Textformat (INI/CSV) fuer grosse Tabellen.
+ UI            : eigenes Immediate-Mode-UI (klein, passend zu Pergament-Stil) oder Nuklear/Clay (Lizenz pruefen: GPL-kompatibel). Kein schweres Framework.
+ Tests         : utest.h oder Unity; Property-/Monte-Carlo-Tests fuer Formeln, Drops, Enhancement; Replay-Tests ueber Seeds.
+ Qualitaet     : clang-format, clang-tidy, cppcheck; ASan/UBSan-Lauf in CI; Valgrind optional.
+ Lizenzregel   : Alle Abhaengigkeiten muessen GPL-3.0-kompatibel sein (zlib, MIT, BSD, Public Domain/stb sind ok). Lizenzen in THIRD_PARTY.md.
+ Begruendung   : kleine, schnelle, portable Binaries; deterministische Sim leicht moeglich; keine Laufzeit-Abhaengigkeiten ausser SDL.
+ HINWEIS Vibe-Coding in C: Speichersicherheit ist die Hauptgefahr (Buffer-Overflows, Use-after-free). Gegenmassnahmen: Arena-/Pool-Allocator statt
+   verstreutem malloc, feste Obergrenzen (MAX_HEROES=16, MAX_ENTITIES_PER_RUN, MAX_PROJECTILES), Laengen-Checks-Helfer (Slice/String-Builder), Sanitizer in CI,
+   keine unsicheren libc-Funktionen (strcpy/sprintf/gets) -> snprintf/eigene Str-Helfer.
+ Optional spaeter: Emscripten-Build (Web), Threads fuer Sim-Runs.
+
+2. SCHICHTEN (Ordner unter src/)
+ sim/    : deterministische Simulation (Entities als Struct-of-Arrays oder Pool), feste Zeitschritte 30 Hz, seeded RNG (xoshiro/pcg32), KEIN SDL-Include.
+ rules/  : Formeln (03), Loot (11), Crafting (12), Skill-Auswertung (05), KI Helden (16) und Gegner (17). Reine Funktionen, kein I/O.
+ data/   : Lader + Validierung der JSON-Inhalte -> Tabellen im Speicher (tiers, classes, skills, items, monsters, maps, shop, traits, quests, balance).
+ render/ : SDL-Renderer, Kamera, Sprite-Atlanten, Partikel, Tier-Glow.
+ ui/     : Immediate-Mode-Panels (Inventar, Crafting, Weltkarte, Shop ...), Tooltips, Fokus/Controller-Navigation.
+ app/    : Main-Loop, Savegame, Settings, Audio, i18n, Hotkeys, Auto-Save.
+ tools/  : CLI: Daten-Validator, Balance-Simulator (headless), Map-Generator, Atlas-Packer.
+ tests/  : siehe oben.
+
+3. SIMULATIONSMODELL
+ - Ein "Run" pro (Helden-Team, Map): eigene World-Struct (Entities, Navgitter, Spawns). Bis 16 gleichzeitig; gerendert werden nur die sichtbaren (1-4).
+ - Zeitschritt 1/30 s (Accumulator-Loop). Unsichtbare Runs laufen mit gleichem Takt; bei Lastspitzen Zeitfaktor-Drosselung, nie Auslassen von Ticks.
+ - Offline-Fortschritt: KEINE Simulation bei geschlossenem Spiel. Beim Start wird die Abwesenheitszeit nur fuer den Kommandoposten (20) verrechnet
+   (CR = Stunden * 60, Tageslimit 8 h, Speicher max. 600 CR; Uhr-Manipulation: Zeit nur vorwaerts, Sprung > 24 h wird gekappt).
+ - Ereignis-Queue (Ring-Buffer): Kill, Drop, LevelUp, Tod, MapClear -> UI/Audio/Stats.
+ - Determinismus: gleicher Seed + gleiche Eingaben = gleicher Ablauf. Keine Fliesskomma-Abhaengigkeit von Plattform (Compiler-Flag -ffp-contract=off, kein -ffast-math);
+   Kritische Ablaeufe optional in Festkomma. Replay-Dateien fuer Bug-Reports.
+ - Performance-Ziel: 16 Runs x 150 Entities < 6 ms/Frame auf Mittelklasse-Laptop; Spatial-Hash, Objekt-Pools fuer Projektile, keine Allokation im Tick.
+
+4. DATEN-SCHEMAS (Auszug; JSON, validiert mit eigenem Validator-Tool gegen schemas/*.json)
+ Item: { id, kind:"weapon|sub|armor|potion|ring|necklace|wings|bag|material|stone|chest", slot, class?, tier(0-5), minLevel,
+         base:{...}, additional:{...}, legendaryEffects?:{classId:effectId}, enchantable:bool, craft:{recipeId?}, icon, name:{de,en} }
+ Recipe: { id, output, tier, inputs:[{itemId,count}], goldCost, unlock:{playerLevel?, blueprint?} }
+ Hero: { id, name, class, level, exp, stats:{str,dex,int,free}, equipment:{14 Slots}, skills:[4], skillLevels:{}, ai:{...}, state }
+ Savegame: { version, player:{level,exp,gold,diamonds,cr,traits,skills,quests,lastSeenTimestamp}, heroes[], inventory:{items,chests,materials},
+             world:{progress,assignments}, rngState }
+ C-Entsprechung: Daten-IDs werden beim Laden in Integer-Indizes (enum/Handle) aufgeloest; Strings nur fuer Anzeige.
+ Savegame: Binaer mit Header (Magic, Version, CRC32) ODER JSON; Schreiben atomar (temp-Datei + rename), Backup-Slot, Migration migrate(version).
+ Alle Formel-Parameter in balance.json, Tier-Tabellen in tiers.json (02).
+
+5. ORDNERSTRUKTUR
+ /src/{sim,rules,data,render,ui,app}  /data  /schemas  /assets  /tools  /tests  /third_party  /docs (diese TXT-Dateien als docs/spec/)  /.github (CI, Issue-Templates)
+ CMakeLists.txt, README.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, LICENSE (GPL-3.0), COPYING, CREDITS.md, THIRD_PARTY.md, CHANGELOG.md.
+ Jede Quelldatei beginnt mit: /* SPDX-License-Identifier: GPL-3.0-or-later */ und Copyright-Zeile.
+
+6. QUALITAET / CI (GitHub Actions)
+ Matrix Linux/Windows/macOS: CMake-Build, clang-format-Check, clang-tidy/cppcheck, Unit-Tests, ASan+UBSan-Testlauf, Daten-Validierung bei jedem PR,
+ Balance-Smoke-Test (Held simuliert Akt 1-3 headless), Release-Artefakte (zip/AppImage).
+ Beitragsregeln: Daten-PRs (Items/Maps/Skills in JSON) sind die einfachsten Einstiegspunkte (Good-First-Issues) - dafuer ist kein C-Wissen noetig.
+
+7. MODDING
+ Datenpakete (mods/<name>/data/*.json + assets) ueberlagern Basisdaten, Ladereihenfolge in mods.json, Validierung gegen Schemas. Kein Skripting in V1
+ (optional spaeter Lua; Lizenz MIT, GPL-kompatibel). Lokalisierung: i18n/<lang>.json; fehlende Keys fallen auf en zurueck.
+
+8. RECHT / HERKUNFT
+ Gameplay-Mechaniken sind nicht schuetzbar, Code/Assets/Namen/Grafiken des Originals aber schon -> eigene Assets, eigene Bezeichnungen wo noetig,
+ keine Marken (Panoptyca-Logo/-Name) im Spielnamen. Projektname: Panoptix. Hinweis "inspiriert von PANOPTYCA" in der README.
+ Code: GPL-3.0-or-later. Assets: CC BY-SA 4.0 oder CC0 (GPL-kompatibel); Schriften OFL. Keine Original-Assets verwenden.
+ Beitragende stimmen per DCO (Signed-off-by) der Lizenzierung unter GPL-3.0-or-later zu.
+
+9. VIBE-CODING-REIHENFOLGE (Roadmap siehe 22)
+ 1) CMake-Skelett + SDL-Fenster + Sim-Kern + Platzhalter-Grafik; 2) Held-KI + Gegner-KI + 1 Map; 3) Kisten/Inventar; 4) Crafting;
+ 5) UI 2x2; 6) restliche Inhalte per Daten (JSON). Jede Stufe mit Tests und Sanitizer-Lauf abschliessen, bevor die naechste beginnt.

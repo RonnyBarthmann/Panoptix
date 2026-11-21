@@ -1,0 +1,81 @@
+==============================================================================
+14_MAPS_CHAPTER_UND_WELT.txt  -  Weltaufbau, Maps, Kapitel, Tempel, Ruinen
+==============================================================================
+Orientierung am Original (Community-Archiv: 159 Zonen in 10 Akten + Spezialdungeons; Kapitelwechsel alle 3 Akte; Akt 10 als "Ziel";
+Akt 11 "Orc Wasteland/Velkaron" mit 2 Helden). Thema/Namen der Akte sind HIER frei erfunden (Platzhalter, aenderbar).
+
+1. HIERARCHIE
+ Welt -> Kapitel (Story-Kapitel I..IV + Sonderkapitel) -> Akt (1..11) -> Map/Stage ("x-y", z.B. 3-7; Akt 10: A-/B-/C-1..10)
+ Sonderinhalte: Schattentempel ("Tempel"), Ruinen (Alte Ruinen + Overdrive-Ruinen), Fundament (optional).
+ Weltkarte (UI): pro Akt eine Karte mit Knoten; Spielerlevel/Fortschritt schaltet frei.
+
+2. KAPITEL (Spieler-Sicht)
+ Kapitel I   : Akte 1-3   | 1 Held pro Map
+ Kapitel II  : Akte 4-6   | 1 Held pro Map
+ Kapitel III : Akte 7-9   | 1 Held pro Map
+ Kapitel IV  : Akt 10 (A/B/C) | 1 Held; Boss-Rush fuer Ahel-Magiesteine
+ Kapitel V   : Akt 11 (Ork-Oedland) | bis 2 Helden pro Map, groessere Karten, mehr HP/Loot
+ Kapitel VI+ : Akte 12+ (spaeter, Erweiterungen) | 3-4 Helden (Raid); Vorgabe: spaeter mehrere Helden zusammen
+ Spezialkapitel: "Tempel" (tankige Monster, Paare) und "Ruinen" (hohe Angriffswerte). (Vorgabe.)
+ Regel: Pro Map-Kachel nur EIN Held bzw. Team; ein Held nur auf einer Map; Wechsel jederzeit (Weltkarte, Drag&Drop).
+ Nach Abschluss: "gleiche Map wiederholen" (Standard AN, bleibt nach Kampf gespeichert; Original-Bug: Haken fiel manchmal weg).
+
+3. AKTE (Entwurf)
+ Akt | Thema (erfunden)           | Map-Level | Maps | Beispielmonster                | Besonderheit
+  1  | Gruenland                   | 1-5       | 5    | Goblins, Wölfe, Riesenspinnen  | Tutorial, 1 Boss (1-5)
+  2  | Moorlande                   | 5-15      | 10   | Froschkrieger, Irrlichter      | x-5 Zwischenboss
+  3  | Heisse Duenen               | 15-25     | 10   | Skorpione, Mumien              | Kapitel-I-Ende
+  4  | Eisgebirge                  | 25-35     | 10   | Yeti, Frostgeister
+  5  | Glutkrater                  | 35-45     | 10   | Feuerelementare, Lavagolems
+  6  | Fluchwald                   | 45-55     | 10   | Baumgeister, Hexen
+  7  | Sturmkueste                 | 55-65     | 10   | Piraten-Untote, Seeungeheuer
+  8  | Katakomben                  | 65-75     | 10   | Skelette, Ghule, Nekromanten
+  9  | Himmelsruinen               | 75-85     | 10   | Golems, Wächter, Engel-Konstrukte
+ 10  | Panoptyca-Tor               | 85-100    | 30   | Daemonen (Stufen A 85-90, B 90-95, C 95-100)
+ 11  | Velkaron (Ork-Oedland)      | 100-110   | 15   | verderbte Orks, Geister, besessene Totems
+ Maps gesamt (Story): 5 + 8x10 + 30 + 15 = 130. Tempel 15 Stufen + Ruinen 16 = 31 -> ~161 (nahe Original 159).
+ Akt-Boss: x-10 (Akt 1: 1-5). Zwischenboss x-5. Jede Boss-Map vergibt 1 Kommandeur-Punkt bei Erstabschluss (10 gesamt aus Story).
+
+4. MAP-AUFBAU
+ - Groesse: 60x40 bis 200x120 Kacheln (32 px). Akt 11: ~2x groesser.
+ - Struktur: Startpunkt -> Raumkette/Wege mit optionalen Nebenpfaden -> Boss-Arena (abgesperrt, Boss spawnt beim Betreten) -> Ausgang/Abschlusstor.
+ - "Kuerzester Weg" (Hauptpfad) vs. "Voller Pfad" (Nebenpfade mit Einzigartigen). Einzigartige Monster liegen oft in Nebenpfaden.
+ - Spawns: Monsterpacks (Gruppen 3-12), Einzelelite, Patrouillen; Dichte pro Map; Dichte-Traits skalieren (+40 % Schlachtfeld).
+ - Fallen/Hindernisse: Felsen, Baeume, Wasser (nicht begehbar), Daempfungsboden (-30 % Tempo), Teleporter (Ruinen), Heilquellen (selten).
+ - Kollisionskarten: Tilemap-Grid + Navmesh (Pfadfindung A* auf 16-px-Raster). "Stuck in corners": Ecken abrunden, Stuck-Detektor (16 s keine Bewegung -> Teleport zum letzten Wegpunkt).
+ - Erzeugung: Handgebaute "Raum-Schablonen" (einfaches JSON-Mapformat (Tiled-kompatibel, per cJSON lesbar)) + Generator mit FESTEM Seed pro Map (deterministisch wie ein fester Level).
+   Community kann Maps per Tiled-Datei ersetzen (maps/<id>.tmj).
+ - Hintergrund/Biome: pro Akt 1 Tileset (Boden, Wand, Props), Ambient-Partikel, Beleuchtung (parchment-tinted).
+ - Map-Metadaten (JSON): id, act, index, level, size, tileset, spawnGroups[], bossId?, rewards{clear:{exp,gold,items}}, maxHeroes, minPlayerLevel.
+
+5. MAP-ABSCHLUSS & RETRY
+ - Abschluss = Boss tot oder (ohne Boss) Zielzone erreicht + Rest nach Setting. Abschlussbelohnung (Clear Rewards, in "Clear Rewards"-Tab der Map-Info).
+ - Auto-Retry: nach 12 s Wartezeit (7 s mit Zeitpass/Traits, Faith verkuerzt weiter). Nach Tod: 300 s (Strafe nur auf EXP; Faith-Trait kuerzt).
+ - Erstabschluss-Boni: Kommandeur-EXP, Kommandeur-Punkt (alle 10 Akt-Bosse + weitere Meilensteine), Akt-Truhe (Magiestein/Verbesserungsstein).
+ - Rote "Beste Beute"-Kiste: extrem selten (<0.001 %), Fischen-Element wie Original.
+
+6. BOSS-MAPS (x-5, x-10; Akt 10: A3/A6/A10, B3/B6/B10, C3/C6/C10)
+ Garantierte Magiesteine: Akt 10: A: 1 Ahel, B: 2 Ahel, C: 3 Ahel (pro Abschluss; Basis 50 % Bonus auf jede Akt-10-Map).
+ Speedrun-Builds (Original) farmen 9-10/C-10 in 3-12 s: Design muss schnelle Loops zulassen (Retry-Timer-Optionen).
+
+7. SCHATTENTEMPEL ("Tempel")
+ - Freischaltung: Spielerlevel 15 [Annahme; Quellen schwanken: Wiki 7, Guide 25].
+ - 15+ Stufen (Temple 1..15+), je 2 Helden, 30 Tickets/Tag, Monster = TANKY (viel HP, geringe Angriffswerte). Boss je 10. Stufe.
+ - Liefert Rabenmuenzen (+10 T1, +20 T4), Rezepte (Waffen/Ruestung/Sekundaer), Runen, Essenz der Dunkelheit, Mystische Asche, seltene Ringe ab T4.
+ - Zwei Helden in selber Stufe: Kommandeur-EXP nur einmal -> Verteilung auf verschiedene Stufen effizienter.
+ - Typische Laufzeit Endgame 55-80 s pro Run mit Buffs/Schriftrollen.
+ - Wirkt: Drop-Rate-Buffs gelten (Kommandeur-Skills, Schriftrollen).
+7b. RUINEN (Vorgabe: Monster mit besonders hohen Angriffswerten)
+ - Alte Ruinen ("Ancient Ruins"): Zugang per Zeitlosen Steinen, garantierte Spezialkiste am Ende (Segen/Reliktteile) fuer Boss-Sets (z.B. Sideros). 2 Helden.
+ - Overdrive-Ruinen: Dropfaktor multipliziert, hohe Angriffswerte, Kosten reduzierbar ueber Exploration-Trait; Level 1..11+.
+ - Teleportzonen innerhalb der Ruinen; "Reliktjagd".
+
+8. FUNDAMENT (optional V2, aus Patchnotes erschlossen)
+ Endloser Modus mit Debuffs (Monster-HP+, Monster-Tempo+), kein Einfluss auf Helden (Bugfix-Lehre: Debuffs duerfen nur Monster treffen).
+
+9. TEAM-MAPS
+ Akt 11: bis 2 Helden; spaeter 4. Alle Teammitglieder starten zusammen, KI-Verbund-Settings (16). Mehrere Teams duerfen verschiedene Stufen belegen.
+
+10. TESTS
+ - Jede Map: Pfad Start->Boss erreichbar (Automatik-Test), kein Stuck bei Bot-Lauf mit Standard-KI.
+ - Akt-1-Maps: 1 Held (Level 1) schafft 1-1..1-5 mit Startausruestung.

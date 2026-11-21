@@ -1,0 +1,43 @@
+==============================================================================
+04_HELDENKLASSEN.txt  -  7 Klassen
+==============================================================================
+Gemeinsam: 4 Skill-Slots (aus Klassen-Skills + Allgemein-Skills), 3 Trank-Slots, 14 Ausruestungs-Slots (-> 11/18).
+Optik: jede Klasse hat festes Volk (kosmetisch, wie Original): Ritter Mensch, Krieger Ork, Bogenschuetze Elf,
+ Priester Mensch, Assassine Dunkelelf, Schamane Ork, Magier Mensch.
+
+Klasse        | Rolle                         | Reichweite | Haupt-Stat | Waffe / Sekundaer   | Basistempo | Basis-Angriff
+--------------+-------------------------------+------------+------------+---------------------+------------+---------------------------
+Ritter        | Tank / physischer DPS         | Nah        | STR        | Schwert / Schild    | 1.0/s      | Schwerthieb, leichte Flaeche
+Krieger       | Frontkaempfer, Support/DPS    | Nah        | STR        | Axt / Banner        | 0.9/s      | Axthieb, Bogen-Flaeche
+Magier        | Flaechenmagie / Burst         | Fern       | INT        | Stab / Orb          | 0.8/s      | Magiegeschoss (Reichweite 800-900)
+Bogenschuetze | Einzelziel-DPS, hohes Tempo   | Fern       | DEX        | Bogen / Koecher     | 1.3/s      | Pfeil (Flugweite 1500)
+Assassine     | Burst, Mobilitaet, Gift       | Nah+Dash   | DEX(/INT)  | Dolch / Messergurt  | 1.6/s      | Dolchstich mit Dash zum Ziel
+Schamane      | Totems, Debuffs, Support      | Fern       | INT        | Totemstab / Totem   | 0.9/s      | Geisterblitz
+Priester      | Heiler, Buffer, leichter DPS  | Fern       | INT/STR    | Zepter / Gebetbuch  | 1.0/s      | Homing-Lichtgeschoss
+
+KLASSENDETAILS
+ RITTER   Sehr robust (Basis-Ruestung 2). Ruft Gegner an sich. Staerke: Frontlinie in Paaren (mit Priester/Krieger).
+          Typische Skills: Hurrikanhieb, Vitalstoss, Vollmondschnitt, Schrittstoss. Nachteil: geringerer DPS als Krieger/Assassine.
+ KRIEGER  Mehr Schaden, weniger Haltbarkeit; Party-Buffs (Schlachtruf = %mehr Angriff, Berserkerruf = %mehr Angriffstempo),
+          Debuff "Einschuechternder Schrei". Mana-hungrig bei Wirbelwind-Spam (Mana ueber Ringe/Orb-Alternativen absichern).
+ MAGIER   Flaechenschaden, ideal gegen Massen. Zweite Staerke: Debuffs (Fluch der Schwaeche/Gebrechlichkeit). Teleport als Mobilitaet.
+          Hat im Original kein Ausweichen -> KI kitet nicht; Rueckwaerts-Skills (Rueckschritt) empfohlen.
+ BOGENSCHUETZE  Hoechstes Tempo, aber zerbrechlich ohne Ausweichen. Kitet nicht automatisch; "Rueckschuss"-Skills sinnvoll.
+          Projektile: Mehr-Projektil zunaechst nur Flaechenabdeckung, nicht mehr Schaden auf Einzelziel (Mechanik aus Original).
+ ASSASSINE  Basisangriff enthaelt Dash. Zwei Builds: Angriff (Krit, Dolchwurf) oder Gift (DoT-Skills, Zauberschaden).
+          Nahkampf, aber viele Distanzskills (Dolchwurf, Messerspur). Hybrid-Schadensart.
+ SCHAMANE Neu (Orc). Beschwoert Totems (Aggro/Buffs/Flaechenangriffe), Debuffs. 13 Skills. Totems erzeugen keine EXP-Verluste:
+          Kills durch Totems geben dem Schamanen EXP und Kisten (Bugfix-Lehre aus dem Original!). Totem-Treffer duerfen nicht
+          automatisch krit sein.
+ PRIESTER Heilt sich und Verbuendete, Mana-Batterie ("Mind Heal"), Buffs fuer Angriff/Tempo, nur 2 Flaechen-Angriffsskills.
+          Allein schwach, im Paar stark ("Boost-Bot").
+
+FRUEHE/SPAETE ROLLEN IN TEAMS (Maps mit 2-4 Helden, ab Kapitel 5)
+ Tank vorne (Ritter/Krieger/Schamane-Totem), Fern-DPS dahinter, Priester als Support. Empfohlene Duos: Magier+Priester,
+ Ritter+Krieger, Bogenschuetze+Priester, Magier+Schamane, Krieger+Assassine, Assassine+Priester.
+ 4er-Raid (Spaeter): Ritter (Front), Bogenschuetze (Hinten), Krieger (Buffs), Priester (Heilung).
+
+HELDENERSTELLUNG
+ Eingabe: Name (frei aenderbar), Klasse, Aussehen (Haar/Haut/Farbvariante), Startstats nach Klasse vorgeschlagen (Auto-Verteilung optional).
+ Startausruestung: Level-0-Waffe der Klasse, keine Ruestung, 1 Normal-Heiltrank.
+ Limit: Anzahl durch Heldenplaetze (03). Loeschen mit Rueckgabe der Ausruestung ins Lager.

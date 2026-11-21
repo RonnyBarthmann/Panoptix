@@ -1,0 +1,59 @@
+==============================================================================
+15_GEGNER_MONSTER_UND_BOSSE.txt  -  Monster, Tiers, Affixe, Bosse, Design
+==============================================================================
+Original: ~113 Monstertypen. Ziel V1: ~60 Archetypen (Akte 1-11) + Tempel/Ruinen-Varianten; erweiterbar per JSON.
+
+1. MONSTER-TIERS (= Spiel-Tiers, 02)
+ Normal (grau, kein Glanz) | Magisch (blau) | Selten (gelb) | Einzigartig (orange, Quest-/Nebenpfad-Elite) | Boss (roter Schimmer) | Legendaer (rosa Schimmer, selten, Akt 11+).
+ Spawn-Gewichte je Pack: Normal 85 % | Magisch 11 % | Selten 3 % | Einzigartig 0.9 % (Trait kann verdoppeln) | Boss 0.1 % (nur Arenen) | Legendaer 0.01 %.
+ Stat-Multiplikatoren (HP/Schaden/EXP): Normal 1/1/1 | Magisch 3/1.3/2.5 | Selten 8/1.7/6 | Einzigartig 20/2.2/15 | Boss 60/3/40 | Legendaer 150/4/120.
+ Akt-Boss (x-10) zusaetzlich 3-6x Boss-Multiplikator.
+
+2. STAT-SKALIERUNG (Startwerte)
+ HP(L)      = 25 + 6 * L^1.7        (L45 ~ 3.9k fuer Normal)
+ Schaden(L) = 3 + 1.4 * L^1.35      (Treffer vor Ruestungsminderung)
+ Ruestung(L)= 8*L ; Zauberwiderstand(L) = 6*L ; Tempo/Reichweite nach Archetyp
+ Tempel-Monster : HP x3.0, Schaden x0.6 (TANKY)      | Ruinen-Monster: HP x1.0, Schaden x2.5 (HOHER ANGRIFF)
+ Akt 11: HP x2.0 und entsprechend mehr Loot (Original: "much higher HP, correspondingly more loot boxes").
+ Gegner haben kein Ausweichen (siehe 03: kein Genauigkeits-/Ausweichsystem).
+
+3. ARCHETYPEN (Verhalten-Details -> 17)
+ Nahkaempfer (Wolf, Goblin, Skelett) | Fernkaempfer (Bogen-Goblin, Hexe) | Schwarm (Ratten, Spinnenbrut, Insekten) | Brecher/Tank (Golem, Oger; langsam, schwere Treffer)
+ Assassine/Jaeger (schnell, hohe Bewegungsgeschwindigkeit; Ruinen) | Beschwoerer (Nekromant: ruft Skelette) | Heiler/Support (Shaman-Gegner: heilt/schuetzt) | Explosive (Selbstsprenger, Bomber)
+ Elementare (Feuer/Eis/Gift-Flaechenspuren) | Wächter/Konstrukte (immun gg. Betaeubung) | Totems (Akt 11: besessene Totems, stationaer) | Dämonen (Akt 10: gemischtes Repertoire).
+ Je Akt 5-8 Archetypen (siehe Tabelle 5).
+
+4. AFFIXE (nur Magisch+), 1 pro Tier-Stufe ueber Magisch (Magisch 1, Selten 2, Einzigartig 3, Boss feste Mechanik)
+ Schnell (+40 % Tempo) | Gepanzert (+50 % Ruestung) | Regenerierend (HP-Regen) | Vampirisch (Heilung bei Treffer) | Explosiv (stirbt mit Flaeche) |
+ Aufspaltend (teilt sich bei Tod) | Geschuetzt (Schild 20 % HP) | Anziehend (zieht Helden heran) | Giftspur | Frostaura (Verlangsamung) | Flammenaura | Reflektierend (nicht im Fruehspiel).
+
+5. BOSSE (x-10 Akt-Bosse, x-5 Zwischenbosse; Namen erfunden, bitte spaeter ersetzen)
+ Akt | x-5 Zwischenboss          | x-10 Akt-Boss                | Mechanik-Idee
+  1  | -                           | Goblinkoenig Grukk (1-5)     | ruft Goblins, Rundumschlag, Telegraph-Kreis
+  2  | Riesenfrosch                | Sumpfhexe Morga              | Giftpfuetzen, ruft Irrlichter, Verlangsamung
+  3  | Skorpionkoenigin            | Pharao Ahmet-Ra              | Sandsturm (Sicht), Mumien-Adds
+  4  | Eisriese                    | Frostdrache Kryos            | Frost-Atem (Kegel), Eisschollen
+  5  | Lavakoloss                  | Glutfuerst Pyron             | Feuersaeulen, Enrage unter 30 %
+  6  | Uralter Ent                 | Waldgeist Vexara             | Wurzelfessel, Heilung ueber Adds
+  7  | Kraken                      | Geisterkapitaen Dreadmar     | Kanonenfeuer (Linien), Tentakel
+  8  | Knochenfuerst               | Lich Mortheus                | Beschwoerungen, Todesstrahl
+  9  | Schildwaechter              | Himmelsrichter Auriel        | Phasen (Schild, Rotation), Blitzgitter
+ 10  | A3/A6/A10, B3/B6/B10, C3/C6/C10 | Panoptyca-Tor-Waechter (C-10) | Mini-Bosse je Stufe; schnelle Phasen (Speedrun-tauglich)
+ 11  | Orkschamane Grol'Dar        | Velkaron, Gefallener Orkkoenig | Totem-Phase, verderbte Geister
+ Tempel: Boss alle 10 Stufen (Rabenfuerst). Ruinen: Reliktwaechter (hoher Schaden, Telegraphen).
+ Boss-Design-Regeln:
+  - 2-3 Phasen (100/60/30 % HP) mit neuen Angriffen; sichtbarer Telegraph (Kreis/Linie/Kegel, 0.6-1.2 s) -> auch fuer KI nutzbar (Ausweich-Logik V2).
+  - Enrage-Timer 180 s (Schaden x2), HP/Ruestung nach Akt.
+  - Bosse bleiben am Spawn ("Leash"), kehren zurueck -> manuelles Kiten moeglich (Original-Verhalten).
+  - Belohnung: garantierte Magiesteine + Boss-Truhe (nicht Kiste-System-Wahrscheinlichkeit) + EXP.
+
+6. DESIGN (Optik)
+ - Top-Down-Sprites, TRPG-Tokenstil: dicker dunkler Umriss (Tinte), flache Farben, Pergament-Schatten.
+ - Pro Archetyp 1 Basis-Sprite, Tier-Variationen ueber Aura/Farbtoenung statt neuer Sprites (spart Assets).
+ - Groessen: Klein 32 px (Schwarm), Standard 48, Gross 80, Boss 128-256.
+ - Animationen: Idle (2 Frames), Move (4), Attack (4), Hit (1), Death (4). Telegraph-Overlays als Dekal.
+ - Gegner-Gesundheitsleiste: ueber dem Kopf, Tierfarbe als Rand; Boss: grosse Leiste oben im Bild.
+
+7. DATENFORMAT monsters.json
+ { id, name_de, archetype, act, levelBand[min,max], baseSize, hpFactor, dmgFactor, speed, attackRange, projectile?, abilities[],
+   affixPool[], loot:{expMult, goldMult}, sprites:{...}, tierOverrides{} }

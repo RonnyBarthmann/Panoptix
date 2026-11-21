@@ -1,0 +1,71 @@
+==============================================================================
+16_KI_HELDEN.txt  -  Helden-KI (Kern des Idle-Gameplays)
+==============================================================================
+Ziel: Der Held spielt selbststaendig sinnvoll. Einstellbar, aber mit guten Standardwerten. Deterministisch (seeded RNG) und testbar.
+
+1. ZUSTANDSAUTOMAT (je Held, 30 Hz Tick)
+ SPAWN -> EXPLORE -> ENGAGE -> (COMBAT_LOOP) -> LOOT/CLEAR -> BOSS_ENTER -> BOSS_FIGHT -> MAP_CLEAR -> RETRY_WAIT
+ Nebenzustaende: DEAD (Timer), STUCK_RECOVER, MANUAL (Spielersteuerung), PAUSED (Held nicht aktiv zugeteilt).
+ EXPLORE : folgt Wegpunktliste (Navmesh-A*). Naechstes Ziel nach Einstellung (siehe 3). Aggro-Pruefung jeden Tick (Radius 700 px, Sicht).
+ ENGAGE  : Zielwahl -> Laufen in Skill-/Angriffsreichweite -> Angriff.
+ LOOT    : Kisten werden im Vorbeigehen automatisch aufgenommen (kein eigener Zustand; Pickup-Radius 80 px).
+
+2. KAMPFSCHLEIFE (jeder Tick)
+ a) Trank-Check (Schwellen; HP-Traenke getrennte CDs; Mana; Effekt-Traenke "bei Kampf/immer").
+ b) Skill-Auswahl: Skills nach Prioritaet 0..8 durchgehen; erster Skill, dessen Bedingungen (05, Abschnitt 4) erfuellt sind und der nicht auf CD ist und Mana reicht, wird gewirkt.
+ c) Falls keiner: Basisangriff, wenn Ziel in Reichweite; sonst bewegen zur Reichweite.
+ d) Bewegung: Nahkaempfer laufen heran; Fernkaempfer halten Wunsch-Distanz (80 % Skillreichweite), kein Kiting im Standard
+    (Original-KI kitet nicht; Option "Abstand halten" = V2, siehe 6).
+ e) Cast-Animation: Held steht waehrend Cast still, ausser Skill ist als "Bewegung waehrend Cast" markiert (Wirbelwind).
+
+3. EINSTELLUNGEN (Zahnrad neben "Auto", pro Held; Presets)
+ Erkundungsreichweite : Kuerzester Weg (Standard) | Voller Pfad (alle Nebenpfade; fuer Einzigartigen-Quests/Tempel/Ruinen) | Minimal (Boss-Rush)
+ Gegner-Raeumung     : Boss direkt | Vollstaendige Vernichtung (Full Sweep, Standard)
+ Zielpriorisierung   : Hoeheres Tier zuerst (Standard) | Niedrigeres Tier zuerst | Naechster zuerst
+                       Ausnahmen empfohlen: Bogenschuetze/Priester/Magier ohne Einzelziel-Skill -> Naechster/Niedrigeres zuerst.
+ Zieltier-Filter     : welche Monster-Tiers aktiv angegriffen werden (Normal abwaehlbar, z.B. mit Geisterelixier, das durch Gegner laeuft).
+                       Wird ein Held blockiert, greift er Normals trotzdem an, um sich freizukaempfen.
+ Bewegungstempo      : Keine Anpassung (Standard; schneller Held laeuft vorne) | Tempo an Verbuendete angleichen (Squishy bleibt hinten).
+ Gruppen-Setting     : Alle Teammitglieder gleiche Erkundungsreichweite/Raeumung einstellen, sonst laufen sie getrennte Wege.
+ Kistenverhalten     : (Tab "Kisten") Normal/Magisch aufnehmen ja/nein; Sofort zerlegen ja/nein; Kisten sofort einsammeln bei Voll-Prozent N.
+ Trank-Schwellen     : je Slot: HP < x %, Mana < y %, Kampf ja/nein, Mindest-CD.
+ Wiederholen         : "Gleiche Map wiederholen" an/aus; "Nach Abschluss Tempel/Ruinen automatisch erneut" an/aus.
+
+4. ZIELWAHL-ALGORITHMUS
+ Kandidaten = sichtbare lebende Gegner innerhalb Aggro/Chase-Radius.
+ Score = TierGewicht*PrioModus + NaehePunkte + BedrohungsBonus (greift Verbuendeten an) + "Fokus bleibt" (Hysterese 1.5 s; Original: Held verfolgt ein
+   einmal gewaehltes Ziel bis Tod, auch wenn es wegrennt -> optional "Fokus verlieren nach 3 s ausser Reichweite").
+ Unterbrechung: Boss-Arena betreten -> Boss ist Ziel.
+
+5. NAVIGATION
+ - Navmesh/A* auf Kollisionsraster, Pfadglaettung, Wegpunktliste aus Kartendaten (Hauptpfad + Nebenpfade).
+ - Stuck-Detektor: wenn sich Held 6 s lang <20 px bewegt, aber Ziel existiert -> Position nachschieben / Ziel verwerfen / Mikro-Teleport (Ecken-Bug der Originalmaps).
+ - Tempo: Lauftempo aus Stats. Spezialfaelle: Soul/Geisterelixier (durch Gegner gleiten).
+ - Rueckweg zu Beginn der Boss-Arena nach Tod: Karte neu starten (Retry), Position Start.
+
+6. ERWEITERTE VERHALTENS-OPTIONEN (V2, deaktiviert im Standard)
+ - Kiting fuer Fernkaempfer: wenn Gegner < 40 % Skillreichweite und Rueckwaerts-Skill bereit, nutze Rueckschritt/Rueckschuss.
+ - Rueckzug bei HP < x % ohne Trank: zum letzten Heilbrunnen/Spawn laufen, Trank auffuellen (Original: manuelles "Wegrennen und warten" bei Boss).
+ - Telegraph-Ausweichen (sidestep).
+ - Fokus-Heiler: Priester priorisiert niedrigste HP-Verbuendete.
+
+7. TEAM-KI (2-4 Helden)
+ - Anker = Held mit "Keine Anpassung" und hoechster Haltbarkeit (Tank), andere folgen im Abstand 250-400 px.
+ - Heiler priorisiert Verbuendete laut Support-Einstellungen (Ally/Allies-Prioritaeten, Schwellen).
+ - Gemeinsames Aggro-Management: Spott-Skills (Totem Schildkroete, Ansturm) haben Vorrang bei Zielauswahl der Monster.
+ - Buffs der Gruppe: verteilen an alle im Radius; Totem-Radius beachten (Helden bleiben im Radius solange Kampf, "Totem-Anker").
+ - Beispiel-Presets: "Wizard+Priest": Priester Nearest-First/No Adjustment (vorne), Wizard Higher-Tier/Match Ally Speed (hinten).
+
+8. SPIELERSTEUERUNG (Manuell)
+ - Klick ins Bild: Held laeuft dorthin (Maus gedrueckt halten = Dauerlauf). Klick auf Monster: gezielter Angriff.
+ - Tasten 1-4: Skills manuell; Q/W/E Traenke (optional). AUTO-Toggle (Taste Leertaste): Wechsel zwischen Auto/Manuell.
+ - Nach Wechsel zurueck zu Auto geht der Held ggf. zum letzten Wegpunkt (Original: fuehrte zu Zurueckspringen -> besser: naechstgelegener Wegpunkt).
+ - Manuell hat keine DPS-Vorteile gegenueber Auto im Standardfall (Auto soll besser sein).
+
+9. PARAMETER (Balancing)
+ aggroRadius=700, pickupRadius=80, targetHysteresis=1.5 s, stuckTimeout=6 s, retryWait=12 s, deathWait=300 s, followDist=250..400.
+
+10. TESTS
+ - 100 Seeds x Akt-1-Map: Held (Lv1..5, Startgear) clear-Rate >= 95 %, Tod-Rate <= 5 %.
+ - Prioritaeten: gleiche Eingaben -> gleiche Skill-Reihenfolge (Replay-Test).
+ - Skill-Bedingungen einzeln unit-getestet (Tier-Filter, Mindestziele, Schwellen, Buff-Stacking).

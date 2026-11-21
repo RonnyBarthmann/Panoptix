@@ -1,0 +1,44 @@
+==============================================================================
+02_TIER_SYSTEM_UND_FARBSCHEMA.txt  -  Der rote Faden des Spiels
+==============================================================================
+
+1. DIE SECHS TIERS (Reihenfolge/Index fix, in Code als Enum Tier 0..5)
+ Idx | ID          | Name         | Farbe  | HEX     | Kisten-Chance je Kill | Glanz/Aura bei Monstern
+  0  | NORMAL      | Normal       | grau   | #9AA0A6 | 1 : 10                | keine
+  1  | MAGISCH     | Magisch      | blau   | #4A90E2 | 1 : 100               | blauer Rand
+  2  | SELTEN      | Selten       | gelb   | #F2C94C | 1 : 1.000             | gelber Rand + leichter Puls
+  3  | EINZIGARTIG | Einzigartig  | orange | #F2994A | 1 : 10.000            | orange Glut, Partikel
+  4  | BOSS        | Boss         | rot    | #E5484D | 1 : 100.000           | roter Schimmer, Bodenring
+  5  | LEGENDAER   | Legendaer    | rosa   | #FF6FB5 | 1 : 1.000.000         | rosa Schimmer, Glitzer, Lichtsaeule
+ Farbe ist immer ZUSAETZLICH durch Form/Symbol codiert (Barrierefreiheit): Raute-Anzahl 0..5 oder Rahmenmuster.
+
+2. WO DAS TIER-SYSTEM GILT
+ - Kisten: Tier der Kiste = Tier der enthaltenen Items (Boss-Kiste -> Boss-Items usw.).
+ - Items: Waffen, Sekundaerwaffen, Ruestung, Traenke, Ringe, Halsketten, Fluegel, Taschen (alle 6 Tiers).
+ - Materialien/Bausteine: jede Materialart existiert je Tier (z.B. Boss-Metall = rot hinterlegt).
+   Regel: Items, die man zum Craften einer Boss-Waffe braucht, sind Boss-Tier-Items (roter Hintergrund im Inventar).
+ - Verbesserungssteine und Verzauberungssteine: je Tier (-> 12).
+ - Skills/Skillbuecher: Grade Normal..Einzigartig (Boss/Legendaer nur als Item-Aktivierungs-Skills).
+ - Monster: Tier bestimmt Wert/Staerke/Optik (-> 15). Zielwahl der KI kann nach Tier priorisieren.
+ - UI: Item-Icon-Hintergrund = Tierfarbe; Rahmen, Tooltips, Namenszeilen, Kistenleiste, Trefferzahlen-Farbakzente.
+ - Map-/Chapter-Schwierigkeitsbadges, Shop-Angebote, Quests: Belohnungs-Tiers farbig markiert.
+
+3. FARB-REGELN (UI/GRAFIK)
+ R1  Item-Icon: quadratischer Hintergrund in Tierfarbe (Saettigung ~60 %, leichter Verlauf), Item-Motiv in neutralen Farben.
+ R2  Boss-Waffen: Hintergrund ROT; Waffenmotiv selbst darf anders gefaerbt sein (Vorgabe).
+ R3  Kisten-Sprite: Holzkiste mit Beschlag in Tierfarbe; Boss rot leuchtend, Legendaer rosa mit Partikeln.
+ R4  Monster Boss: roter Schimmer; Legendaer: rosa Schimmer (Vorgabe).
+ R5  Tierfarben nicht fuer andere Zwecke verwenden: Schadenszahlen weiss, Krit weiss mit Goldrand, Heilung gruen,
+     Mana tuerkis, Gift violett (kollisionsfrei zu den Tierfarben).
+ R6  Farbenblind-Modus: Palette tauschbar (Deuteranopie/Protanopie/Tritanopie) + Symbolrauten.
+
+4. TIER-LOGIK IN DER SIMULATION
+ - Vergleich/Sortierung: nach Tier, dann Level, dann Name.
+ - Dismantle-/Verkaufsfilter arbeiten pro Tier (-> 11).
+ - "Ein Tier hoeher" Umwandlung bei Steinen (-> 12): 20 N -> 1 M; 10 M -> 1 S; 10 S -> 1 E; 10 E -> 1 B; 10 B -> 1 L.
+ - Chancenmodifikatoren (Kommandeur-Buffs, Traits, Schriftrollen) verschieben nur die Wahrscheinlichkeiten (11).
+
+5. DATENMODELL (Auszug)
+ enum Tier { NORMAL=0, MAGISCH=1, SELTEN=2, EINZIGARTIG=3, BOSS=4, LEGENDAER=5 }
+ tiers.json: [{id, name_de, name_en, hex, dropOneIn, itemMult, glowStyle, symbol}]
+ Jede Item-Definition: { id, tier, minLevel, slot, ... }

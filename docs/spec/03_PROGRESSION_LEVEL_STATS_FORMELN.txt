@@ -1,0 +1,58 @@
+==============================================================================
+03_PROGRESSION_LEVEL_STATS_FORMELN.txt
+==============================================================================
+Alle Zahlen sind STARTWERTE (kalibrierbar in data/balance.json). Quellen: Vorgaben + Community-Guides des Originals.
+
+1. LEVELSYSTEME
+ Held-Level (1..100): eigenes Level pro Held. Level-Up: +1 Stat-Punkt (Start: 5 freie Punkte).
+ Spieler-/Kommandeur-Level (1..100): bestimmt in V1 NUR Heldenplaetze und Freischaltungen (siehe 3.4, 20).
+ EXP je Kill: Held bekommt EXP; Spieler bekommt gleichzeitig denselben Basiswert (vor Abzuegen).
+
+2. EXP-KURVE
+ EXP bis Level L: round(40 * L^2.1)   (L=10: 5.036 | 30: 50.584 | 60: 216.859 | 100: ~ 620.717 bis Lv99 gesamt je Stufe)
+ Monster-EXP = 6 * MapLevel^1.55 * TierEXPMult (Normal 1 | Magisch 2.5 | Selten 6 | Einzigartig 15 | Boss 40 | Legendaer 120)
+ EXP-Rate (Original-Mechanik): Liegt das Held-Level ueber dem Map-Level, sinkt die EXP-Rate von 100 % graduell:
+   Rate = max(0.20 ; 1 - 0.05*(HeldLv - MapLv))   (angezeigt neben dem Heldenicon und auf der Karte)
+ Tod-Strafe: 300 s Wartezeit bis Auto-Wiedereintritt (manueller Wiedereintritt ignoriert); Faith-Trait verkuerzt. Ruecksprung kostet keine Items.
+ Wiederbelebung sofort fuer 50 Diamanten (optional).
+
+3. STATS (pro Held, Punkte frei verteilbar, Reset gegen Diamanten/Gold)
+ STR : +1 flacher Angriffsschaden | +2 % Ruestung | +5 Max-HP           (Ruestung Basis 1; Ritter hat Basis 2)
+ DEX : +1.5 % Angriffstempo (Assassine 1.8 %) | +1.5 % Krit-Schaden | +0.5 % Lauftempo
+ INT : +1 flacher Zauberschaden | +0.2 % CDR | +5 Max-Mana | +0.2 % Krit-Chance
+ Klassen-Empfehlung (Original-Guides): Krieger/Ritter STR; Bogenschuetze DEX(+STR 25..50); Magier INT (+15 STR);
+ Priester gemischt STR/INT/DEX; Assassine 25-50 STR + DEX (Angriffs-Build) oder STR/INT (Gift-Build); Schamane 15 STR + INT.
+
+4. SPIELER-LEVEL -> HELDENPLAETZE
+ Spieler-Lv: 1 -> 4 Plaetze | 8 -> 5 | 15 -> 6 | 22 -> 7 | 30 -> 8 | 38 -> 9 | 46 -> 10 | 54 -> 11 | 62 -> 12 | 70 -> 13 | 78 -> 14 | 86 -> 15 | 95 -> 16.
+ Zusatz: Platz-Erweiterungstickets im Shop (Diamanten/Gold) (-> 13), begrenzt auf 16.
+ Alle Helden simulieren immer gleichzeitig (auch wenn nicht sichtbar).
+
+5. ABGELEITETE KAMPFWERTE
+ MaxHP   = (50 + 12*L + 5*STR + Gear) * (1 + %HP)
+ MaxMana = (30 + 3*L + 5*INT + Gear) * (1 + %Mana)
+ Ruestung = (Basis 1 + Summe Ruestungsteile) * (1 + 0.02*STR + %Ruestung)
+ Schadensminderung (Phys): R / (R + 60*MonsterLv + 300)    (gedeckelt 85 %); Zauberwiderstand analog mit SpellRes.
+ Angriffsschaden = (Waffe W + STR + flach) * (1+%ang) * (%mehr-Faktoren) ; Zauberschaden entsprechend mit INT.
+ Skillschaden = Basis(Skill,Lv)% * Waffenschaden-bzw-Stat * Multiplikatoren
+ Krit: Chance = Basis 5 % + Items (Helm, Handschuhe, Waffe, Schmuck, Verzauberung) + 0.2*INT, Cap 100 % ; Krit-Schaden Basis 150 % + DEX + Items.
+   Helm erhoeht die kritische Trefferchance (Vorgabe, bestaetigt). Es gibt KEINEN Genauigkeits- oder Ausweichwert: jeder Angriff/Skill trifft immer (ausser Projektil verfehlt per Geometrie).
+ Handschuhe erhoehen das Angriffstempo, Stiefel das Lauftempo (Vorgabe, bestaetigt).
+ CDR (Abklingzeit-Reduktion): Summe, Cap 80 % (90 % mit Spezialausruestung; Hard-Cap 90 %). Mindest-Cooldown-Boden 0.5 s.
+ Angriffstempo/Zaubertempo: multiplikativ mit Basistempo der Waffe; Zaubertempo (Cast Speed) ist eigener Wert.
+ Mana: Regeneration passiv (Basis 1 %/s des Max) + Items; Skills kosten Mana; KI kann Mana-Schwellen nutzen.
+ Lauftempo: Basis 300 px/s (Klassenfaktor 0.9..1.1) * (1 + Fluegel + Stiefel + DEX + Buffs + Traits).
+
+6. SCHADENSTYPEN & WIRKUNGEN
+ Physisch (Angriffsschaden), Magisch (Zauberschaden; Elemente rein kosmetisch/Resist-Gruppen in V2), Gift/DoT (zaehlt als Zauberschaden),
+ Heilung (Heilkraft = Zauberschaden-Stat). Mehrfach-DoT desselben Skills stapelt NICHT; verschiedene DoT-Skills stapeln.
+ Statuseffekte: Verlangsamung, Betaeubung (nur Boss-resistent kurz), Spott (Taunt), Debuffs (%weniger Angriff/%mehr erlittener Schaden).
+
+7. WAEHRUNGEN & RESSOURCEN (Kurz; Details 13)
+ Gold, Diamanten (frei erspielbar), Kommando-Credits (CR), Raben-Muenzen & Rabenfedern (Tempel), Magiesteine (Boss-Maps),
+ Verbesserungssteine, Verzauberungssteine.
+
+8. KALIBRIERZIELE (fuer Balancing-Tests)
+ - Held Lv=MapLv, Gear passend: Normal-Mob stirbt in 2-4 s; Boss 30-90 s; Tod-Rate < 1 pro 20 Maps.
+ - Hoechstes Item-Tier erreicht Held Lv~60 (Boss), Lv80 Legendaer.
+ - Speedrun-Endgame: Boss-Map in <10 s moeglich (Bonus-Kategorie).

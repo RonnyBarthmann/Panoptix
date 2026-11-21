@@ -1,0 +1,40 @@
+==============================================================================
+13_SHOP_UND_WAEHRUNGEN.txt  -  Shop, Basislager-Haendler, Waehrungen
+==============================================================================
+Der Original-Shop enthaelt Echtgeld-Pakete (Diamanten, Supporter-Pack 3,99 USD, Idle-Pass). Panoptix ist ein reines Offline-Spiel:
+KEINE Echtgeld-Transaktionen, keine Zahlungsanbieter, keine Netzwerk-APIs (Auftraggeber-Entscheidung). Alle Angebote sind erspielbar: alle Angebote sind ueber Spielwaehrungen erspielbar. "Premium"-Tab heisst "Diamanten".
+
+1. WAEHRUNGEN
+ Gold            : Kills, Verkauf, Quests. Verbrauch: Crafting, Verbessern, Skills, Shop. Werte steigen in 10-Mio-Bereiche.
+ Diamanten       : NUR erspielbar: 1000/Tag (Gratis), 2000/Woche, 5000/Monat, Quests/Erfolge. Nutzung: Slots, Reset, Wiederbelebung (50), Manasteine.
+ Kommando-Credits (CR): Kommandoposten (20).
+ Raben-Muenzen   : Schattentempel-Abschluesse (+10 bei Temple 1, +20 bei Temple 4, ...). Haendler "Rabenhaendler".
+ Rabenfedern     : Tempel-Tickets/Waehrung.
+ Steine/Materialien: siehe 11.
+
+2. SHOP-TABS (Aufbau wie Original, Verkaeuferin "lachende Haendlerin")
+ a) GRATIS: alle taeglich/woechentlich/monatlich einforderbaren Pakete (Diamanten, Zufallskisten (Ring/Halskette/Skill), Tickets).
+ b) DIAMANTEN: Tagesangebote; Fluegel (5000+ Diamanten = hoechste Preise, begrenzte Menge), Slot-Erweiterungen, Manasteine (50 Stk. fuer 500 Diamanten, 1x taeglich).
+ c) ZUFALLSKISTEN: Ringe, Halsketten, Skillbuecher; Gratis-Pull taeglich; Skillbuecher-Zufall bis 10/Tag/Klasse gleicher Preis.
+    Wahrscheinlichkeitsanzeige Pflicht (Tier-Verteilung angezeigt).
+ d) ALLGEMEIN:
+    - Verbesserungssteine fuer Gold (Tageslimit je Tier; Normal-Steine nicht kaufbar/unattraktiv).
+    - Slot-Erweiterungstickets (Inventar, Lager, Heldenplaetze): erst per Gold, dann per Diamanten. Kauf legt Item ins Inventar -> "Benutzen".
+      Preislogik: Menge x Stueck teurer; Hinweis im UI. Heldenplatz-Tickets ab Spieler-Level 15/20/25 (Original: 8 -> 12 Helden; hier bis 16).
+    - Rucksaecke: "Exquisites Rucksackbuendel" frueh kaufen; Altes Rucksackbuendel (Gold); Lederbeutel (Gold) - Diamantenversion lohnt nicht.
+    - Verbrauch: Schwache Manasteine (Verzauberung Selten) fuer Gold (Tageslimit); hoehere nur Diamanten (10 pro Kauf).
+      Essenz (Tranke) - absichtlich teuer; Rabenfeder-Pakete; Schriftrollen (Drop-Menge/-Qualitaet) - optional.
+ e) SKILLBUECHER-Haendler (Basislager "Skillbuch-NPC"): Normal-Buch 30.000 Gold x30; Rare-Buch woechentlich bis 20 (Gold); Zufaelliges Unique-Buch woechentlich bis 5; Gewaehltes Unique-Buch woechentlich bis 3 fuer 500 Mio Gold.
+ f) RABENHAENDLER (Basislager): Rucksaecke, Platin/Mithril-Barren, Skillbuecher (Rare), Verbesserungssteine (Boss, Konvertierung), 25k Raben-Muenzen-Kisten
+    (z.B. Boss-Schmuckstein x3, Zufallsbuch x3, Einzigartig-Ruestungssteine x10, 5 Mio Gold).
+
+3. PREISVORSCHLAEGE (Startwerte)
+ Slot Inventar +20: 50.000 Gold | Lager +20: 100.000 Gold | Heldenplatz-Ticket: 10.000 Diamanten
+ Faint Mana Stone: 25.000 Gold (max 5/Tag) | Mana Stone x10: 100 Diamanten | Zufalls-Ring/Halskette: 200 Diamanten
+ Wiederbelebung: 50 Diamanten | Trait-Reset: 500 Diamanten | Stat-Reset: 100 Diamanten (Held)
+
+4. REGELN
+ - Tageslimits resetten 04:00 lokale Zeit (konfigurierbar), Wochen-Reset Montag, Monats-Reset am 1.
+ - Alle Kaeufe mit Bestaetigungsdialog ab Preis > 1000 Diamanten.
+ - Keine Dark-Patterns: kein FOMO-Timer, kein Verlust von Gratis-Pulls bei Nichtnutzung (Stapeln bis 7 Tage).
+ - Anti-Cheat nicht erforderlich (Single-Player), Savegame manipulierbar (offen dokumentiert).

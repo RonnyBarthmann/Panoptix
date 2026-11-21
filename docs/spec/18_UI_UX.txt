@@ -1,0 +1,91 @@
+==============================================================================
+18_UI_UX.txt  -  Benutzeroberflaechen
+==============================================================================
+HINWEIS: Ich konnte keine Screenshots/Videos des Originals auswerten. Die Layouts sind aus Textbeschreibungen (Steam-Seite, Guides: Kommandoansicht F2,
+ Heldenliste F1, Einsammeln F4, ESC-Menue, Zahnrad neben "Auto") abgeleitet. Bitte eigene Screenshots gegenpruefen und Wireframes anpassen.
+
+1. GLOBALES
+ - Tastenkuerzel: F1 Heldenliste/Vollbild-Held | F2 Kommandoansicht (2x2) | F3 Weltkarte | F4 Kisten einsammeln | ESC Menue | I Inventar | C Crafting | K Skills | M Weltkarte | Leertaste Auto/Manuell | 1-4 Skills | Tab naechster Held | Strg+1..4 Layouts
+ - Obere globale Leiste: Spieler-Level + EXP, Gold, Diamanten, CR, Hilfe, Einstellungen.
+ - Benachrichtigungen (Toast unten rechts): Kisten voll, Held tot, Map abgeschlossen, Drop mit Tier >= Einzigartig (Tierfarbe + Sound).
+ - Tooltips mit Tierfarben, Vergleich zu Ausgeruestetem; Pop-up-Stil statt Vollbild fuer Ranking/Mail/Erfolge/Kopfgeld/Squad (Original 1.1.0).
+ - Zahleneingaben: Tippen moeglich.
+
+2. HELDEN-VOLLBILD (Combat View)
+ +--------------------------------------------------------------------------+
+ | [Icon Lv] Name  Kl.   EXP-Rate 100%   Map 3-7 (Lv 22)   [Auto][Zahnrad]  |
+ |  HP ======== 1523/1800   Mana ====== 120/200                              |
+ |                                                                          |
+ |                         (Welt scrollt, Held in Mitte)                    |
+ |                                                                          |
+ | [Skill1][Skill2][Skill3][Skill4]   [Trank1][Trank2][Trank3]  [Einsammeln]|
+ | Kisten: [#][#][#][#][#][#] ........ 34/70                                  |
+ +--------------------------------------------------------------------------+
+ - Top-Down, Kamera mittig auf Held; Zoom 0.75-1.5.
+ - Skill-Leiste mit Abklingzeit-Kreis; Trank-Fuellung als Fuellstand (wiederbefuellend).
+ - Kistenleiste unten (Tierfarben, Anzahl pro Tier-Zusammenfassung ab 70 % voll blinkend).
+ - Hit-Zahlen schwebend (Farben siehe 02 R5).
+ - Boss: grosse Leiste oben mittig.
+ - Zahnrad -> KI-Einstellungs-Pop-up (Tabs: Bewegung | Ziele | Skills | Traenke | Kisten).
+
+3. KOMMANDOANSICHT 2x2 (F2)
+ +--------------------+--------------------+
+ | Held A (Mini-View) | Held B             |
+ +--------------------+--------------------+
+ | Held C             | Held D             |
+ +--------------------+--------------------+
+ - Jedes Feld: Mini-Combat-View mit HP/Mana, Kistenzaehler, Auto-Toggle, "Einsammeln", Klick = Vollbild. Rechtsklick/Zahnrad = Schnell-Einstellungen.
+ - Mehrere 2x2-Layouts anlegen (Tabs L1, L2, ...), nur eines aktiv. Held per Drag&Drop in ein Feld ziehen. Layout-Benennung.
+ - Ruhende Helden ausserhalb des aktiven Layouts simulieren weiter (nur kein Rendering).
+ - Kopfleiste: Ueberblick aller Helden (Mini-Liste, Todes-Timer, Kisten%).
+
+4. HELDENLISTE / SQUAD-MANAGEMENT (F1, Pop-up)
+ - Zeilen je Held: Icon, Name, Klasse, Level, Map, HP, Kisten, Status. Buttons: Vollbild, Ausruestung, Skills, Stats, KI.
+ - "Held erstellen" (nur wenn Platz): Dialog mit Klassenwahl (7 Kacheln, Beschreibung, Rolle), Name, Aussehen, Bestaetigen.
+ - Heldenplatz-Anzeige "6/8", gesperrte Plaetze mit Freischalt-Bedingung (Spieler-Lv).
+
+5. AUSRUESTUNG/HELDENDETAILS (Charakterbild)
+ Links Charakterpuppe mit 14 Slots (Waffe, Sekundaer, Helm, Brust, Handschuhe, Stiefel, Tasche, Halskette, Ring1, Ring2, Trank1-3, Fluegel);
+ rechts Stats (STR/DEX/INT + Punkte-Buttons, abgeleitete Werte, Ruestung, CDR, Krit-Chance, Angriffs-/Lauftempo, Kistenkapazitaet).
+ Unten Skills (4 Slots + Liste). Slot-Hintergrund = Tierfarbe des eingesetzten Items. Klick Slot -> filtert Inventar passend.
+
+6. INVENTAR (I)
+ - Raster (8x?), Tabs: Kisten | Materialien | Waffen | Sekundaer | Ruestung | Traenke | Schmuck | Fluegel/Taschen | Steine.
+ - Icons: quadratisch, Hintergrund Tierfarbe, Rahmen bei Verbesserungsstufe (+n) und Schloss.
+ - Rechts Detail/Tooltip, Aktionen: Anlegen, Zerlegen, Verkaufen, Sperren, Verbessern, Verzaubern.
+ - Oben: Suche, Filter (Tier, Level, Klasse), Sortierung, "Zerlege-Filter" konfigurieren, "Alle Kisten oeffnen".
+ - Kisten-Tab: Stapel pro Tier mit "Oeffnen (x)" und Ergebnisfenster (Item-Karten mit Aufblitzen, Tier-Sound).
+ - Lager: Kapazitaetsanzeige, Erweiterungs-Button.
+
+7. WELTKARTE / MAP-AUSWAHL (M/F3)
+ - Kopf: Kapitel-Tabs (I..VI, Tempel, Ruinen). Akt-Auswahl horizontale Leiste.
+ - Karte: Knotennetz ("x-y"), Boss-Knoten gross, Farbumrandung nach Tier (Boss rot), Fortschritts-/Schlosssymbole.
+ - Jeder Knoten zeigt zugeteilte Helden (Icon); EXP-Rate pro Held bei Hover.
+ - Seitenpanel "Map-Info": Level, Monster-Tiers, Dichte, Bossname, Tab "Clear Rewards", Button "Held zuweisen" (Dropdown/Drag), Checkbox "Wiederholen".
+ - Regel: pro Knoten nur 1 Held/Team; Teammaps (Akt 11+) zeigen 2..4 Slots.
+ - Unten rechts: Kommandeur-Punkt-Abholung nach Akt-Abschluss.
+ - Tempel/Ruinen: Ticket-Zaehler (30/Tag), Raben-Waehrung, Stufenliste.
+
+8. CRAFTING (C) siehe 12
+ Linke Liste (Kategorien, Tier-Filter, Sortierung), Mitte Detail (Item-Vorschau mit Wert), Rechts Zutaten (Bestand/Bedarf in Tierfarbe),
+ Button "Herstellen (xN)", Level-Auswahl innerhalb Tier-Band, Anzeige Kosten/Verfuegbarkeit.
+ Unterseiten: Verbessern (Item auswaehlen, Stein-Anzeige, Erfolgschance), Verzaubern (Roulette-Animation, Siegeln, Neu wuerfeln), Umwandeln (Steine).
+
+9. SHOP (13)
+ Tabs: Gratis | Diamanten | Zufallskisten | Allgemein. Kartenraster, Preis + Tageslimit-Anzeige, Haendlerin-Illustration.
+
+10. BASISLAGER (Menue)
+ Haendler: Skillbuecher, Rabenhaendler, Quest-Brett (Kopfgeld). Zutritt nur, wenn ein Held nicht auf Map ist (Original-Ärgernis -> besser: Zutritt immer, ohne Held-Abzug).
+
+11. KOMMANDEUR-SCREENS
+ Traits (4 Baeume im Kreis/Netz, Punkte, Reset), Kommandeur-Skills (4 Buffs, Dauer 1 h), Kommandoposten (CR, Befehle), Kopfgeldquests (15/Tag, Refresh-Kosten), Erfolge, Rangliste (lokal), Mailbox, Einstellungen (Grafik, Ton, Sprache, Farbenblind, Hotkeys, Autosave).
+ (Detail -> 20.)
+
+12. SKILLS-SCREEN (K)
+ Links Skill-Liste je Klasse (Grad-Farbe, Level, Merge-Fortschritt), Mitte 4 Slots, Rechts Detail inkl. KI-Bedingungen (Prioritaet, Tier-Filter, Distanz, Mindestgegner, Schwellen, Buff-Stacking). Presets.
+
+13. BARRIEREFREIHEIT & LOKALISIERUNG
+ UI-Skalierung 75-200 %, Farbenblindmodi, Symbol-Rauten fuer Tiers, Sprachen: Deutsch, Englisch (weitere per i18n-JSON), Schriftgroessen-Slider, Controller-Navigation (V2).
+
+14. LEISTUNGS-/ZUSTANDSANFORDERUNGEN
+ UI-Ereignisse nicht in Simulation blockieren (UI = View-Schicht ueber Store/Events). 16 Helden gleichzeitig simulierbar bei 60 FPS Rendering von max. 4 Helden.

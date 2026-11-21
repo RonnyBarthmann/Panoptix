@@ -1,0 +1,40 @@
+==============================================================================
+20_KOMMANDEUR_SYSTEM_UND_META.txt  -  Spieler-Ebene: Traits, Buffs, Kommandoposten, Quests
+==============================================================================
+Der "Kommandeur" ist der Spieler. Spieler-Level (03) steigt durch Kills und Quests. Nach Original: Hauptlevel = Kommandeur-Level (Quests liefern viel).
+
+1. KOMMANDEUR-TRAITS (Baum, 4 Aeste; Punkte aus Akt-Bossen (10), Level-Ups, Meilensteinen)
+ Punkte-Reset kostet Diamanten (Tagesaenderungen moeglich).
+ EXPLORATION : Kistenmenge, Kistenrarity, Monsterdichte (+40 bis +56 % Schlachtfeld), Duplikat-Kisten (1 %), Einzigartigen-Haeufigkeit (Chance auf 2 statt 1),
+               Tempel-/Ruinen-Dichte, Overdrive-Kostenreduktion; "Spoils of the Abyss" (0,01 % x100-Kiste, schwach).
+ ECONOMY     : Shop-/Crafting-Kosten, Basislager-Rabatte, zusaetzliche Kopfgeld-Slots.
+ FAITH       : kuerzere Todes-/Wiederbelebungszeit (bis 3x), groessere Kistenkapazitaet pro Held, mehr gratis Lagerplaetze (Normal-/Magisch-Kisten:
+               100 -> 500 -> 1000), Retry-Timer-Verkuerzung.
+ LEADERSHIP  : Lauftempo, flacher Angriffs-/Zauberschaden, Ruestung%/Zauberwiderstand%, CDR, Trank-Passiverholung. (11 Punkte ~ +70 Schaden, +7 % CDR, +7 % Ruestung, +7 % Zauberwid., +6 % Lauftempo.)
+ Empfehlung (Guides): zuerst Leadership-Trank-Regeneration (optional) und Exploration; Faith bei langen Idle-Phasen.
+
+2. KOMMANDEUR-SKILLS (4 Buffs, 1 h Dauer, CD ~ 1-2 h, gelten fuer alle Helden/Maps)
+ Entdeckersicht (mehr Kisten) | Verborgener Berater (mehr EXP) | Kommandeurs-Glueck (hoehere Kisten-Raritaet) | Augen der Fuelle (mehr Gold).
+ Alle vier gleichzeitig nutzbar; vor langen Sessions aktivieren.
+
+3. KOMMANDOPOSTEN (Idle-Bonus; Original-Mechanik; EINZIGER Offline-Fortschritt in Panoptix)
+ - Idle-Zeit liefert 60 CR/Stunde, max. 8 h/Tag (480 CR/Tag), Speicher max. 600 CR. Tagesreset (Config).
+ - 4 AN/AUS-Befehle kosten je 30 CR/h: Versorgungsbefehl (mehr Drop-Menge), Plünderungsbefehl (mehr Raritaet), Suchbefehl (mehr Magiesteine, nur Boss-Maps), Eliteausbildung (EXP+Gold).
+ - "Adjutantenbefehl" (60 CR): sofortige Gutschrift von 1 h Idle-Ertrag (EXP, Gold, Kisten, unabhaengig vom Kistenlimit; Drops gemaess aktueller Solo-Map; Tempel zaehlt als Solo-Map; Magiesteine fuer 1 h bei Boss-Map).
+ - Weitere Befehle/Schriftrollen beeinflussen den Adjutanten nicht.
+
+4. KOPFGELDQUESTS (Bounty)
+ 15 pro Tag, Quest-Board im Menue oder Basislager. Typen: X Monster eines Tiers/Archetyps toeten, Map abschliessen, Items craften, Kisten oeffnen. Belohnung: Kommandeur-EXP, Gold, Diamanten, Buecher.
+ Refresh der Angebote kostet Gold (steigend). Mehr Slots via Economy-Trait.
+
+5. HAUPTQUESTS (Story)
+ Linear, z.B. "Besiege 100 Magische", "Stelle 1 Mysterioese Kiste her", "Besiege 17.600 seltene Monster" (Original-Zahlen als Inspiration). Belohnung: viel Kommandeur-EXP.
+
+6. ERFOLGE, RANGLISTE
+ Erfolge (Tod-Achievement, Speedrun-Erfolge, Tier-Drops). Rangliste: nur lokal pro Klasse (Kampfkraft), optional als Datei exportierbar. Kein Online-Ranking (reines Offline-Spiel).
+
+7. MAILBOX
+ Lokale System-Post (Willkommensgeschenke, Meilenstein-Belohnungen, Hinweise bei Updates). Keine Online-Gutscheincodes, keine Wartungs-Entschaedigungen.
+
+8. SPEICHERN
+ Autosave alle 60 s + bei Szenenwechsel, mehrere Slots, Export/Import als JSON. Kein Cloud-Save (reines Offline-Spiel).

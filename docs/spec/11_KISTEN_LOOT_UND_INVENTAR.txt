@@ -1,0 +1,58 @@
+==============================================================================
+11_KISTEN_LOOT_UND_INVENTAR.txt  -  Kisten, Drops, Materialien, Inventar, Auto-Regeln
+==============================================================================
+
+1. KISTEN-DROPS (Vorgabe)
+ Pro getoetetem Monster wuerfelt das Spiel von HOCH nach NIEDRIG: Legendaer 1:1.000.000, Boss 1:100.000, Einzigartig 1:10.000,
+ Selten 1:1.000, Magisch 1:100, Normal 1:10. Der erste Treffer erzeugt EINE Kiste dieses Tiers; sonst keine Kiste.
+ Damit ~10 % aller Kills -> Normal-Kiste (Rest meist "keine Kiste").
+ Modifikatoren: DropMenge (Anzahl Wuerfe), DropQualitaet (Chancen-Multiplikator je Tier ab Magisch), Monster-Tier-Rollenzahl
+ (Normal 1 | Magisch 3 | Selten 10 | Einzigartig 30 | Boss 100 | Legendaer 300), Kommandeur-Buffs, Schriftrollen, Traits.
+ Dupe-Chance (Trait): kleine Chance auf Doppelkiste.
+ Boss-Maps: garantierte Magiesteine am Ende (X-5, X-10 sowie A3/A6/A10, B3/B6/B10, C3/C6/C10 in Akt 10).
+
+2. KISTENLEISTE (pro Held, unten am Bildschirm)
+ - Zeigt gesammelte Kisten als Icons in Tierfarbe, Zaehler "n/Kapazitaet".
+ - Kapazitaet = 10 + Brustpanzer (max +30) + Tragetasche (max +30) = max 70 (+ Faith-Traits).
+ - Wenn voll: neue Kiste ersetzt die niedrigste Tier-Kiste (nie eine hoehere); ist die neue Kiste die niedrigste, verfaellt sie.
+   Konfigurierbar: "Normal-/Magisch-Kisten nicht aufnehmen" (spart Platz fuer teure Kisten).
+ - Taste F4 / Button "Einsammeln": Kisten des aktuellen Helden ins Lager; "Alle einsammeln": alle Helden.
+ - Lagergrenzen fuer Normal/Magisch-Kisten (Faith-Trait erhoeht: 100 -> 500 -> 1000).
+
+3. KISTEN OEFFNEN
+ Kiste Tier T enthaelt Anzahl Items: Normal 3 | Magisch 4 | Selten 5 | Einzigartig 6 | Boss 8 | Legendaer 10.
+ Je Item-Wurf: Material 79,995 % (Rest) | Trank 4 % | Waffe/Sekundaerwaffe 5 % | Ruestungsteil 6 % | Schmuck 2.25 % (Ring 1.5, Halskette 0.75) | Fluegel 0.005 % | Tragetasche 1 % | Skillbuch 1.75 %.
+ Alle Items haben das Tier der Kiste (Boss-Kiste -> Boss-Items). Level des Items: zufaellig innerhalb der Tier-Bänder, gewichtet
+ auf das Map-Level +/-10.
+ Legendaer-Kisten enthalten ausschliesslich Ausruestung (+Legendaere Steine) (Original-Regel).
+ Sekundaerwaffen droppen nie (nur Bauplan-Craft). Fluegel/Schmuck sind nicht craftbar.
+ Auto-Oeffnen/Auto-Zerlegen: freischaltbar ueber Spieler-Level 20 (kein Echtgeld!), pro Held aktivierbar.
+
+4. MATERIALIEN (je Tier, alle 6)
+ Metall (Barren)  : Kupfer, Silber, Platin, Mithril, Adamant, Astralmetall
+ Holz             : Eiche, Esche, Eibe, Ebenholz, Weltenbaumholz, Himmelsholz
+ Gewebe/Leder     : Leinen, Seide, Spinnenseide, Schattenleder, Abgrundgewebe, Astralgewebe
+ Kristall         : Quarz, Saphir, Rubin, Smaragd, Blutstein, Astralkristall
+ Essenz/Kraeuter  : Schwache/Gute/Reine/Mächtige/Boss-/Astrale Essenz (Traenke)
+ Verbesserungssteine: Waffen / Ruestung / Schmuck je Tier (+ Konvertierung, 12)
+ Verzauberungssteine: Schwacher Manastein (Selten), Manastein (Einzigartig), Manakern (Boss), Orpheon (Legendaer)
+ Magiesteine (Akt-gebunden): Magiestein I/II/III, Ahel (Akt 10), Orpheon (Akt 11), nur von Boss-Maps -> Crafting von Boss/Legendaer.
+ Reliktteile (Ruinen), Zeitlose Steine (Ruinen-Zugang), Rabenfedern (Tempel), Wesenz der Dunkelheit, Mystische Asche (Boss-Schmuck-Upgrades).
+ Regel: Materialien und Kisten-Hintergrund = Tierfarbe (Boss-Materialien rot).
+
+5. SPIELER-INVENTAR (Lager)
+ Tabs: Kisten | Materialien | Waffen | Sekundaerwaffen | Ruestung | Traenke | Schmuck | Fluegel/Taschen | Steine/Spezial.
+ Slots: Basis 200 Gegenstaende, erweiterbar per Slot-Tickets (Gold/Diamanten) bis 1000; "Gemeinsames Inventar".
+ Stapel: Materialien/Steine stapeln bis 9999; Ausruestung nicht.
+ Filter/Suche: nach Tier, Level, Slot, Klasse, Verbesserungsgrad, "besser als ausgeruestet" (Pfeil gruen/rot).
+ Sortierung: Tier absteigend, Level, Name.
+ Zerlegen (Dismantle): Ausruestung -> Materialien/Steine + etwas Gold. Der "Zerlege-Filter" markiert automatisch Items unter Tier/Level-Grenzen.
+ Verkaufen: Gold nach Tier (Normal 5 .. Legendaer 100000 x Level).
+ Sperren-Funktion (Schloss) gegen versehentliches Zerlegen.
+ Tooltip: Name (Tierfarbe), Slot, Min-Level, Hauptwerte, Zusatzeffekte, Verbesserungsgrad (+n), Verzauberungen, Vergleich mit Ausruestetem.
+
+6. HELDEN-AUSRUESTUNGSSLOTS (14)
+ Waffe, Sekundaerwaffe, Helm, Brustpanzer, Handschuhe, Stiefel, Tragetasche, Halskette, Ring 1, Ring 2,
+ Trank 1, Trank 2, Trank 3, Fluegel. (4 Ruestungsteile: Helm, Brustpanzer, Handschuhe, Stiefel; keine Hose.)
+ Items gehoeren dem Lager; Ausruesten verschiebt Item an den Helden (Drag&Drop oder "Anlegen"). Klassenpruefung nur bei (Sekundaer-)Waffe.
+ Optional (V2): "Ausruestungs-Sets/Loadouts" speichern.

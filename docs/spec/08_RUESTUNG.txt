@@ -1,0 +1,150 @@
+==============================================================================
+08_RUESTUNG.txt  -  4 Teile x 21 Stufen = 84 Ruestungsteile (klassenuebergreifend)
+==============================================================================
+
+SLOTS: Helm | Brustpanzer | Handschuhe | Stiefel. (Klarstellung des Auftraggebers: Es gibt keine Hose;
+ 4 Ruestungsteile = Helm, Brustpanzer, Handschuhe, Stiefel.
+ Die Tragetasche ist ein EIGENER Slot (-> 10).)
+Jedes Teil existiert in denselben 21 Level-/Tierstufen wie Waffen:
+ Normal 0,1,5,10,15,20,25 | Magisch 20,25,30,35,45 | Selten 27,37,46,55 | Einzigartig 44,52,58 | Boss 60 | Legendaer 80
+
+GRUNDWERTE (Startwerte): Ruestung R = round( (4 + 2.2 * L^1.25) * TierMult * SlotFaktor )
+ SlotFaktor: Helm 1.0 | Brustpanzer 1.6 | Handschuhe 0.7 | Stiefel 0.7
+
+SLOT-SPEZIALEFFEKT (Basiseffekt, steigt mit Stufe)
+ Helm        : Kritische Trefferchance +round((1+0.07*L)*TierMult,1) %   [Vorgabe Auftraggeber]
+ Brustpanzer : Kistenkapazitaet    +2 (erste Normal-Stufe) bis +30 (Legendaer), linear ueber 21 Stufen
+               => Basis 10 + Brust max 30 + Tragetasche max 30 = 70 Kisten (Vorgabe: 10 -> 70)
+ Handschuhe  : Angriffsgeschwindigkeit (Angriffstempo) +1..10 %   [Vorgabe Auftraggeber, bestaetigt]
+ Stiefel     : Bewegungsgeschwindigkeit (Lauftempo) +2..12 %     [Vorgabe Auftraggeber, bestaetigt]
+ (Zaubertempo/Cast Speed ist ein eigener Wert und kommt nur von Boss-Teilen, Verzauberungen und Buffs.)
+ Krit-Chance gesamt ist auf 100 % gedeckelt (Quellen: Basis 5 %, INT, Helm, Handschuhe, Waffe, Schmuck, Verzauberungen, Skills).
+
+ZUSATZEFFEKTE NACH TIER (feste "Additional Effects"; Struktur laut Community-Guides)
+ Helm       Magisch: nur Lvl35 +5 Manaregen | Selten: CDR +4 % | Einzigartig: CDR +7 %, Angriffstempo +5 %
+ Brust      Magisch: 5 flacher Angriffsschaden-Abzug (Lvl35 zusaetzlich Manaregen +8)
+            Selten: 10 Angriffs- / 5 Zauber-Abzug | Einzigartig: 15 Angriffs- / 7 Zauber-Abzug (Lvl58: 8), +5 % Max-HP
+ Handschuhe Magisch: Krit-Chance +3 % | Selten: Krit +5 %, Krit-Schaden +10 % | Einzigartig: Krit +5 %, Krit-Schaden +25 %
+ Stiefel    Magisch: Krit-Schaden +10 % | Selten: +25 % | Einzigartig: +35 %
+ Boss       : zusaetzlich Set-Bonus (siehe unten) und Zaubertempo/Angriffstempo je nach Teil
+ Legendaer  : Astral-Set: +10..30 % Zauberwiderstand pro Teil; klassenspezifische Legendaer-Effekte (siehe unten)
+
+SET-BONI (ab 2/4 Teilen desselben Sets, nur Boss/Legendaer; Beispiele, erweiterbar)
+ Aschekoenig (Boss Lv60): 2 Teile +10 % Angriffsschaden | 4 Teile Basisangriff loest Kettenblitz aus
+ Astral (Legendaer Lv80): 2 Teile +10 % Zauberwiderstand | 4 Teile +5 % maximale CDR (Obergrenze 85 %)
+
+LEGENDAERE KLASSEN-EFFEKTE (Astral-Teile sind universell tragbar; der Effekt wirkt nur fuer die passende Klasse;
+ abgeleitet aus Patch 1.1.0 des Originals - 28 Effekte = 7 Klassen x 4 Slots; hier Beispiele, Rest bei der Implementierung)
+ Bogenschuetze/Stiefel   : "Explosive Spur" - alle Projektile loesen Explosionen aus.
+ Magier/Handschuhe       : "Arkane Emission" - feuert periodisch Magieprojektile auf nahe Gegner.
+ Priester/Stiefel        : "Marsch des Lichts" - +Projektile, hoeheres Treffer-Limit pro Ziel, Homing sucht neues Ziel.
+ Ritter/Brust            : "Wallender Stahl" - 15 % der erlittenen Treffer werden als Flaechenschaden zurueckgegeben.
+ Krieger/Helm            : "Blutrausch" - unter 50 % HP +30 % Angriffstempo.
+ Assassine/Helm          : "Henkersmaske" - 50 % Splash-Schaden bei Treffer.
+ Schamane/Brust          : "Totem-Echo" - beschworene Totems explodieren beim Verschwinden.
+ ENTSCHEIDUNG (Auftraggeber): Legendaere Klasseneffekte = UNIVERSELLE Astral-Teile mit KLASSENABHAENGIGEM Effekt. Jedes der 4 Astral-Teile
+ traegt 7 Effektdefinitionen (je Klasse eine); aktiv ist die Definition der traegenden Klasse. Datenfeld: item.legendaryEffects{classId: effectId}.
+ Alle 28 Effekte sind bei der Implementierung auszuformulieren (Vorlagen oben).
+
+REGELN
+ - Mindestlevel = Itemlevel (Held lvl 1 kann KEINE Boss-Ruestung tragen). Ausnahme: Schmuck/Fluegel/Traenke Lvl 1.
+ - Jedes Teil ist craftbar (-> 12), kann aus Kisten fallen (seltener als Material), ist verbesserbar +0..+20.
+ - Ab Selten verzauberbar (-> 12).
+
+--- Helm ---
+  Nr | Name                    | Tier        | Lvl | Ruestung | Basiseffekt
+  01 | Lumpen-Helm             | Normal      |   0 |        4 | Krit-Chance +1.0%
+  02 | Leinen-Helm             | Normal      |   1 |        6 | Krit-Chance +1.1%
+  03 | Leder-Helm              | Normal      |   5 |       20 | Krit-Chance +1.4%
+  04 | Kupfer-Helm             | Normal      |  10 |       43 | Krit-Chance +1.7%
+  05 | Eisen-Helm              | Normal      |  15 |       69 | Krit-Chance +2.0%
+  06 | Schuppen-Helm           | Normal      |  20 |       97 | Krit-Chance +2.4%
+  07 | Ketten-Helm             | Normal      |  25 |      127 | Krit-Chance +2.8%
+  08 | Silber-Helm             | Magisch     |  20 |      109 | Krit-Chance +2.7%
+  09 | Runen-Helm              | Magisch     |  25 |      142 | Krit-Chance +3.1%
+  10 | Sturm-Helm              | Magisch     |  30 |      177 | Krit-Chance +3.5%
+  11 | Mana-Helm               | Magisch     |  35 |      214 | Krit-Chance +3.9%
+  12 | Waechter-Helm           | Magisch     |  45 |      292 | Krit-Chance +4.6%
+  13 | Platin-Helm             | Selten      |  27 |      174 | Krit-Chance +3.6%
+  14 | Sternen-Helm            | Selten      |  37 |      256 | Krit-Chance +4.5%
+  15 | Phoenix-Helm            | Selten      |  46 |      334 | Krit-Chance +5.3%
+  16 | Titanen-Helm            | Selten      |  55 |      417 | Krit-Chance +6.1%
+  17 | Mithril-Helm            | Einzigartig |  44 |      360 | Krit-Chance +5.8%
+  18 | Drachen-Helm            | Einzigartig |  52 |      442 | Krit-Chance +6.6%
+  19 | Nachthimmel-Helm        | Einzigartig |  58 |      506 | Krit-Chance +7.2%
+  20 | Aschekoenig-Helm        | Boss        |  60 |      594 | Krit-Chance +8.3%
+  21 | Astral-Helm             | Legendaer   |  80 |      981 | Krit-Chance +12.2%
+
+--- Brustpanzer ---
+  Nr | Name                    | Tier        | Lvl | Ruestung | Basiseffekt
+  01 | Lumpen-Brustpanzer      | Normal      |   0 |        6 | Kistenkapazitaet +2
+  02 | Leinen-Brustpanzer      | Normal      |   1 |       10 | Kistenkapazitaet +3
+  03 | Leder-Brustpanzer       | Normal      |   5 |       33 | Kistenkapazitaet +5
+  04 | Kupfer-Brustpanzer      | Normal      |  10 |       69 | Kistenkapazitaet +6
+  05 | Eisen-Brustpanzer       | Normal      |  15 |      110 | Kistenkapazitaet +8
+  06 | Schuppen-Brustpanzer    | Normal      |  20 |      155 | Kistenkapazitaet +9
+  07 | Ketten-Brustpanzer      | Normal      |  25 |      203 | Kistenkapazitaet +10
+  08 | Silber-Brustpanzer      | Magisch     |  20 |      174 | Kistenkapazitaet +12
+  09 | Runen-Brustpanzer       | Magisch     |  25 |      228 | Kistenkapazitaet +13
+  10 | Sturm-Brustpanzer       | Magisch     |  30 |      284 | Kistenkapazitaet +15
+  11 | Mana-Brustpanzer        | Magisch     |  35 |      343 | Kistenkapazitaet +16
+  12 | Waechter-Brustpanzer    | Magisch     |  45 |      467 | Kistenkapazitaet +17
+  13 | Platin-Brustpanzer      | Selten      |  27 |      279 | Kistenkapazitaet +19
+  14 | Sternen-Brustpanzer     | Selten      |  37 |      410 | Kistenkapazitaet +20
+  15 | Phoenix-Brustpanzer     | Selten      |  46 |      535 | Kistenkapazitaet +22
+  16 | Titanen-Brustpanzer     | Selten      |  55 |      667 | Kistenkapazitaet +23
+  17 | Mithril-Brustpanzer     | Einzigartig |  44 |      576 | Kistenkapazitaet +24
+  18 | Drachen-Brustpanzer     | Einzigartig |  52 |      707 | Kistenkapazitaet +26
+  19 | Nachthimmel-Brustpanzer | Einzigartig |  58 |      809 | Kistenkapazitaet +27
+  20 | Aschekoenig-Brustpanzer | Boss        |  60 |      951 | Kistenkapazitaet +29
+  21 | Astral-Brustpanzer      | Legendaer   |  80 |     1570 | Kistenkapazitaet +30
+
+--- Handschuhe ---
+  Nr | Name                    | Tier        | Lvl | Ruestung | Basiseffekt
+  01 | Lumpen-Handschuhe       | Normal      |   0 |        3 | Angriffstempo +1%
+  02 | Leinen-Handschuhe       | Normal      |   1 |        4 | Angriffstempo +1%
+  03 | Leder-Handschuhe        | Normal      |   5 |       14 | Angriffstempo +2%
+  04 | Kupfer-Handschuhe       | Normal      |  10 |       30 | Angriffstempo +2%
+  05 | Eisen-Handschuhe        | Normal      |  15 |       48 | Angriffstempo +3%
+  06 | Schuppen-Handschuhe     | Normal      |  20 |       68 | Angriffstempo +3%
+  07 | Ketten-Handschuhe       | Normal      |  25 |       89 | Angriffstempo +4%
+  08 | Silber-Handschuhe       | Magisch     |  20 |       76 | Angriffstempo +4%
+  09 | Runen-Handschuhe        | Magisch     |  25 |      100 | Angriffstempo +5%
+  10 | Sturm-Handschuhe        | Magisch     |  30 |      124 | Angriffstempo +5%
+  11 | Mana-Handschuhe         | Magisch     |  35 |      150 | Angriffstempo +5%
+  12 | Waechter-Handschuhe     | Magisch     |  45 |      204 | Angriffstempo +6%
+  13 | Platin-Handschuhe       | Selten      |  27 |      122 | Angriffstempo +6%
+  14 | Sternen-Handschuhe      | Selten      |  37 |      179 | Angriffstempo +7%
+  15 | Phoenix-Handschuhe      | Selten      |  46 |      234 | Angriffstempo +7%
+  16 | Titanen-Handschuhe      | Selten      |  55 |      292 | Angriffstempo +8%
+  17 | Mithril-Handschuhe      | Einzigartig |  44 |      252 | Angriffstempo +8%
+  18 | Drachen-Handschuhe      | Einzigartig |  52 |      309 | Angriffstempo +9%
+  19 | Nachthimmel-Handschuhe  | Einzigartig |  58 |      354 | Angriffstempo +9%
+  20 | Aschekoenig-Handschuhe  | Boss        |  60 |      416 | Angriffstempo +10%
+  21 | Astral-Handschuhe       | Legendaer   |  80 |      687 | Angriffstempo +10%
+
+--- Stiefel ---
+  Nr | Name                    | Tier        | Lvl | Ruestung | Basiseffekt
+  01 | Lumpen-Stiefel          | Normal      |   0 |        3 | Lauftempo +2%
+  02 | Leinen-Stiefel          | Normal      |   1 |        4 | Lauftempo +2%
+  03 | Leder-Stiefel           | Normal      |   5 |       14 | Lauftempo +3%
+  04 | Kupfer-Stiefel          | Normal      |  10 |       30 | Lauftempo +4%
+  05 | Eisen-Stiefel           | Normal      |  15 |       48 | Lauftempo +4%
+  06 | Schuppen-Stiefel        | Normal      |  20 |       68 | Lauftempo +4%
+  07 | Ketten-Stiefel          | Normal      |  25 |       89 | Lauftempo +5%
+  08 | Silber-Stiefel          | Magisch     |  20 |       76 | Lauftempo +6%
+  09 | Runen-Stiefel           | Magisch     |  25 |      100 | Lauftempo +6%
+  10 | Sturm-Stiefel           | Magisch     |  30 |      124 | Lauftempo +6%
+  11 | Mana-Stiefel            | Magisch     |  35 |      150 | Lauftempo +7%
+  12 | Waechter-Stiefel        | Magisch     |  45 |      204 | Lauftempo +8%
+  13 | Platin-Stiefel          | Selten      |  27 |      122 | Lauftempo +8%
+  14 | Sternen-Stiefel         | Selten      |  37 |      179 | Lauftempo +8%
+  15 | Phoenix-Stiefel         | Selten      |  46 |      234 | Lauftempo +9%
+  16 | Titanen-Stiefel         | Selten      |  55 |      292 | Lauftempo +10%
+  17 | Mithril-Stiefel         | Einzigartig |  44 |      252 | Lauftempo +10%
+  18 | Drachen-Stiefel         | Einzigartig |  52 |      309 | Lauftempo +10%
+  19 | Nachthimmel-Stiefel     | Einzigartig |  58 |      354 | Lauftempo +11%
+  20 | Aschekoenig-Stiefel     | Boss        |  60 |      416 | Lauftempo +12%
+  21 | Astral-Stiefel          | Legendaer   |  80 |      687 | Lauftempo +12%
+
+SUMME: 4 x 21 = 84 Teile. Lvl-45-Magisch-Set (Wert) ergibt in Summe 1167 Ruestung vor STR-Multiplikator.
