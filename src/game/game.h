@@ -310,6 +310,7 @@ typedef struct Game {
     double tick_acc;          /* Akkumulator fuer feste Simulationsschritte */
     double second_timer;      /* 1-s-Takt fuer Resets/Stats */
     double post_timer;        /* 60-s-Takt fuer den Kommandoposten */
+    float run_fail_t[MAX_MAPS]; /* Sperrzeit nach fehlgeschlagenem run_create je Map (additiv) */
 } Game;
 
 /* ======================================================================== */
@@ -318,6 +319,8 @@ typedef struct Game {
 /* Neues Spiel: leerer Spielstand mit Startinhalt (1 Held? nein: Spieler
  * erstellt Helden selbst; Startgeld, Startkisten, Willkommenspost). */
 void game_init_new(Game *g, u64 seed);
+/* Additiv: leerer Grundzustand ohne Startinhalt (von game_init_new und load_game genutzt). */
+void game_reset_state(Game *g, u64 seed);
 /* Gibt Runs frei (vor dem Verwerfen/Neuladen aufrufen). */
 void game_shutdown(Game *g);
 
