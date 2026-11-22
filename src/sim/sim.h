@@ -115,6 +115,22 @@ typedef struct RunHero {
     float clear_wait;
     u32 buff_cast_mask;
     Vec2 last_safe_pos;
+    /* ---- weitere Interna (additiv) ---- */
+    int ignore_enemy[8];     /* Gegner, die nicht erreichbar waren (Jagd) */
+    int ignore_n;
+    int stuck_count;
+    float rest_t;            /* Rastzeit (Erholung ausserhalb des Kampfes) */
+    bool resting;
+    bool hunting;            /* Full-Sweep: laeuft gezielt zu einem Rest-Gegner */
+    int hunt_enemy;
+    bool arena_entered;
+    float skill_gcd;         /* kurze Sperre zwischen zwei Skills */
+    float combat_t;          /* Sekunden seit letztem Kampfkontakt */
+    float hp_prev;
+    float fountain_t;
+    Vec2 path_goal;
+    float lightning_t;       /* Legendaer: periodische Effekte */
+    u32 last_skill_mask;
 } RunHero;
 
 typedef enum EnemyState {
@@ -147,6 +163,27 @@ typedef struct Enemy {
     float charge_t;
     int parent;              /* fuer Adds: Index des Beschwoerers oder -1 */
     Vec2 aux;
+    /* ---- weitere Interna (additiv) ---- */
+    bool side;               /* stammt von einem Nebenpfad-Packpunkt */
+    bool no_loot;            /* Adds/Explosionen: keine Belohnung */
+    float invuln;            /* Unverwundbarkeit (Bossphase) */
+    float shield_hp;         /* Schild (Affix/Faehigkeit) */
+    float regen_acc;
+    float aura_t, trail_t, pull_t;
+    float cast_lock;         /* steht still (Telegraph/Wirken) */
+    int hits_done;           /* Treffer seit letztem Rueckzug (Jaeger) */
+    float shield_cd;
+    float alert_t;
+    float retarget_t;
+    float heal_t;
+    float fuse_t;            /* Explosive: Zuendung */
+    float ranged_cd;
+    float out_of_combat_t;
+    Vec2 nav_path[4];
+    int nav_len, nav_pos;
+    Vec2 nav_goal;
+    float nav_t;
+    float atk_speed_mult;    /* Affix/Phasen */
 } Enemy;
 
 /* Affix-Bits (Spec 15/17) */
@@ -307,6 +344,13 @@ typedef struct Run {
     int runs_completed;          /* Anzahl Durchlaeufe seit Erstellung */
     u32 next_pack_id;
     bool arena_sealed;           /* [oeffentlich] Arena abgesperrt */
+    /* ---- weitere Interna (additiv) ---- */
+    int main_spawned;            /* Gegner ohne Adds/Splitter bei Start */
+    int main_killed;
+    float boss_reset_t;          /* Zeit ohne lebenden Helden in der Arena */
+    float clear_time;            /* Dauer bis zum Abschluss */
+    int hero_dead_count;
+    float enemy_tick_acc;
 } Run;
 
 /* ======================================================================== */
