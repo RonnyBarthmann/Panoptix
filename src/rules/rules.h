@@ -228,6 +228,8 @@ void quests_refresh_daily(Game *g, bool paid, char *err_unused);
 void quests_progress(Game *g, QuestKind kind, int param, int amount);
 bool quest_claim(Game *g, int bounty_index, char *err);
 bool main_quest_claim(Game *g, char *err);
+/* Additiv: Gold-Kosten fuer das bezahlte Neu-Auswuerfeln der Kopfgelder. */
+i64 quests_refresh_cost(const Game *g);
 /* Post */
 void mail_add(Game *g, const char *title, const char *text, Currency cur, i64 amount);
 bool mail_claim(Game *g, int index);
