@@ -142,6 +142,10 @@ typedef struct RunHero {
     float hunt_t;
     float respawn_wait;      /* Wartezeit nach dem Wiedereintritt (kurze Schonfrist) */
     float spawn_grace;
+    /* ---- weitere Interna (additiv, hero_ai.c) ---- */
+    u32 behavior_mask;       /* Bit je LegendBehavior (aus Ausruestung/Set) */
+    bool bloodrage_on;       /* Legendaer "Blutrausch" gerade aktiv */
+    float ignore_clear_t;    /* Zeit bis die Ignorierliste geleert wird */
 } RunHero;
 
 typedef enum EnemyState {
@@ -195,6 +199,10 @@ typedef struct Enemy {
     Vec2 nav_goal;
     float nav_t;
     float atk_speed_mult;    /* Affix/Phasen */
+    /* ---- weitere Interna (additiv, enemy_ai.c) ---- */
+    float retreat_t;         /* Jaeger/Beschwoerer: weicht zurueck */
+    float pending_t;         /* Boss: Ansturm nach Telegraph ausstehend */
+    bool enrage_said;        /* Enrage-Hinweis schon gesendet */
 } Enemy;
 
 /* Affix-Bits (Spec 15/17) */
