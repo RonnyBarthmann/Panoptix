@@ -97,4 +97,18 @@ float hero_basic_reach(const Run *r, const Game *g, int slot);
 /* Totem-Hilfen */
 void totem_expire(Run *r, Game *g, int ti);
 
+/* ---- weitere gemeinsame Helfer (additiv) -------------------------------------- */
+/* run.c */
+bool hero_wants_chest(const Game *g, int hero_idx, Tier tier);
+/* hero_ai.c */
+bool hero_has_behavior(const RunHero *h, LegendBehavior b);
+/* skills_exec.c / hero_ai.c */
+int sim_nearest_enemy(const Run *r, Vec2 p, float max_d);
+int sim_count_enemies(const Run *r, Vec2 p, float radius);
+Vec2 sim_dash_dest(const Run *r, Vec2 from, Vec2 dir, float dist, bool teleport, float radius);
+/* enemy_ai.c */
+void enemy_separate_all(Run *r);
+void enemy_summon_adds(Run *r, int ei, int count);
+bool enemy_reset_boss(Run *r, Game *g);
+
 #endif

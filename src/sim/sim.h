@@ -131,6 +131,17 @@ typedef struct RunHero {
     Vec2 path_goal;
     float lightning_t;       /* Legendaer: periodische Effekte */
     u32 last_skill_mask;
+    /* ---- weitere Interna (additiv, run.c/hero_ai.c/skills_exec.c) ---- */
+    int last_level;          /* Heldenlevel beim letzten Tick (Levelup-Erkennung) */
+    float mana_cost_pct;     /* Manakosten-Modifikator in % (Stat MANA_COST) */
+    bool moved;              /* hat sich in diesem Tick bewegt */
+    Vec2 rest_spot;          /* Ziel der Erholung (Heilquelle) */
+    bool rest_spot_set;
+    float potion_value[POTION_SLOTS]; /* Staerke des laufenden Trank-Effekts */
+    int potion_kind[POTION_SLOTS];    /* PotionType des laufenden Effekts */
+    float hunt_t;
+    float respawn_wait;      /* Wartezeit nach dem Wiedereintritt (kurze Schonfrist) */
+    float spawn_grace;
 } RunHero;
 
 typedef enum EnemyState {
@@ -351,6 +362,13 @@ typedef struct Run {
     float clear_time;            /* Dauer bis zum Abschluss */
     int hero_dead_count;
     float enemy_tick_acc;
+    /* ---- weitere Interna (additiv) ---- */
+    bool populating;             /* Startbesetzung wird gerade angelegt */
+    int active_list[MAX_ENEMIES];/* aktive (nicht schlafende) lebende Gegner dieses Ticks */
+    int active_n;
+    bool clear_reported;         /* game_on_map_clear wurde gerufen */
+    float exit_hold;
+    int pickups_taken;
 } Run;
 
 /* ======================================================================== */
