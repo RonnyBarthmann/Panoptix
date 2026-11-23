@@ -24,6 +24,8 @@ void hero_die(Run *r, Game *g, int slot);
 /* Anzahl lebender Helden. */
 int run_heroes_alive(const Run *r);
 bool run_in_arena(const Run *r, Vec2 p);
+/* Akt der Map (Tempel/Ruinen: aus dem Map-Level abgeleitet), additiv. */
+int run_act(const Run *r);
 
 /* ---- combat.c --------------------------------------------------------------- */
 typedef struct Hit {
