@@ -42,6 +42,7 @@ typedef struct ViewFx {
     float shake;
     int last_map;
     double time;
+    float frame_dt;     /* letztes dt aus view_fx_update (Kamera-Glaettung) */
 } ViewFx;
 
 typedef struct ViewOpts {
