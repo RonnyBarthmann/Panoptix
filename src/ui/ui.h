@@ -9,6 +9,7 @@
 #ifndef PNX_UI_UI_H
 #define PNX_UI_UI_H
 
+#include "core/i18n.h"
 #include "game/game.h"
 #include "render/gfx.h"
 
