@@ -20,10 +20,6 @@ void screen_combat(App *app, Rect area) {
 /* TEMP */
 void screen_command(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
-void screen_herolist(App *app, Rect area) { (void)app; (void)area; }
-/* TEMP */
-void screen_hero(App *app, Rect area) { (void)app; (void)area; }
-/* TEMP */
 void screen_skills(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
 void screen_inventory(App *app, Rect area) { (void)app; (void)area; }
@@ -37,5 +33,3 @@ void screen_shop(App *app, Rect area) { (void)app; (void)area; }
 void screen_commander(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
 void screen_settings(App *app, Rect area) { (void)app; (void)area; }
-/* TEMP */
-void screen_menu(App *app, Rect area) { (void)app; (void)area; }
