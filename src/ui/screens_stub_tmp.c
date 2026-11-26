@@ -4,22 +4,6 @@
 #include "app/screens.h"
 
 /* TEMP */
-void screen_combat(App *app, Rect area) {
-    if (!app_has_hero(app)) {
-        return;
-    }
-    int hero = app->sel_hero;
-    Run *run = app->game.hero_run[hero];
-    if (!run) {
-        return;
-    }
-    ViewOpts o = {false, true, true, true, true, true, false};
-    view_draw_run(&app->gfx, &app->game, run, run_slot_of_hero(run, hero), &app->fx[hero], area, &o);
-}
-
-/* TEMP */
-void screen_command(App *app, Rect area) { (void)app; (void)area; }
-/* TEMP */
 void screen_skills(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
 /* TEMP */
