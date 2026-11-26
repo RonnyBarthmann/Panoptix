@@ -4,8 +4,6 @@
 #include "app/screens.h"
 
 /* TEMP */
-void screen_skills(App *app, Rect area) { (void)app; (void)area; }
-/* TEMP */
 /* TEMP */
 void screen_commander(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
