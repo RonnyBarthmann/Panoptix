@@ -22,7 +22,6 @@ void screen_command(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
 void screen_skills(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
-void screen_worldmap(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
 void screen_shop(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
