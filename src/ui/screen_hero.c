@@ -44,7 +44,7 @@ static void draw_equip_cell(App *app, Hero *h, Rect cell, int slot, int cs) {
         ui_result(app, ok, err, NULL);
     }
     ui_text_center(ui, rect_make(cell.x, cell.y + cs + ui_px(ui, 2), cell.w, ui_px(ui, 16)), tr(g_equip_slot_names[slot]),
-                   COL_PARCHMENT, FS_TINY);
+                   COL_INK, FS_TINY);
     ui_pop_id(ui);
 }
 

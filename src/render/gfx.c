@@ -417,7 +417,7 @@ void gfx_text_centered(Gfx *g, Rect r, const char *text, Color c, int size) {
 int gfx_text_wrapped(Gfx *g, Rect r, const char *text, Color c, int size, bool draw) {
     int line_h = size + size / 5;
     int y = 0;
-    char line[256];
+    char line[256] = "";
     int len = 0;
     const char *p = text;
     while (*p) {
