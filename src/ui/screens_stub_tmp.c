@@ -23,8 +23,6 @@ void screen_command(App *app, Rect area) { (void)app; (void)area; }
 void screen_skills(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
 /* TEMP */
-void screen_shop(App *app, Rect area) { (void)app; (void)area; }
-/* TEMP */
 void screen_commander(App *app, Rect area) { (void)app; (void)area; }
 /* TEMP */
 void screen_settings(App *app, Rect area) { (void)app; (void)area; }
