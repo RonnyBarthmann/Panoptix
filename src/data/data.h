@@ -36,8 +36,8 @@
     BAL(armor_k, 2.2)                                                                            \
     BAL(armor_pow, 1.25)                                                                         \
     BAL(hp_base, 50.0)                                                                           \
-    BAL(hp_per_level, 12.0)                                                                      \
-    BAL(hp_per_str, 5.0)                                                                         \
+    BAL(hp_per_level, 20.0)                                                                      \
+    BAL(hp_per_str, 8.0)                                                                         \
     BAL(mana_base, 30.0)                                                                         \
     BAL(mana_per_level, 3.0)                                                                     \
     BAL(mana_per_int, 5.0)                                                                       \
@@ -54,11 +54,11 @@
     BAL(base_move_speed, 300.0)                                                                  \
     BAL(move_speed_cap_pct, 450.0)                                                               \
     BAL(skill_level_scale, 0.15)     /* Basis% * (1 + k*(Lv-1)) */                               \
-    BAL(monster_hp_base, 25.0)       /* HP(L) = base + k*L^pow */                                \
-    BAL(monster_hp_k, 6.0)                                                                       \
+    BAL(monster_hp_base, 6.0)       /* HP(L) = base + k*L^pow */                                \
+    BAL(monster_hp_k, 2.2)                                                                       \
     BAL(monster_hp_pow, 1.7)                                                                     \
-    BAL(monster_dmg_base, 3.0)                                                                   \
-    BAL(monster_dmg_k, 1.4)                                                                      \
+    BAL(monster_dmg_base, 2.0)                                                                   \
+    BAL(monster_dmg_k, 0.5)                                                                      \
     BAL(monster_dmg_pow, 1.35)                                                                   \
     BAL(monster_armor_per_lv, 8.0)                                                               \
     BAL(monster_res_per_lv, 6.0)                                                                 \

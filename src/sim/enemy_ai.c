@@ -8,8 +8,8 @@
 #include "sim/sim_internal.h"
 
 #define DOT_PULSE_TICKS 15
-#define AGGRO_NORMAL 500.0f
-#define AGGRO_ELITE 600.0f
+#define AGGRO_NORMAL 350.0f
+#define AGGRO_ELITE 420.0f
 #define AGGRO_GUARDIAN 280.0f
 #define AGGRO_TOTEM 600.0f
 #define PACK_RADIUS 400.0f

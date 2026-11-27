@@ -502,11 +502,14 @@ static float target_score(const Run *r, const Hero *hero, const RunHero *h, int 
     } else if (hero->ai.target_prio == PRIO_LOWER_TIER) {
         tw = -(float)e->tier * TIER_SCORE;
     }
-    float score = tw + (aggro - d) * 0.1f;
+    float score = tw + (aggro - d) * 0.2f;
     if (e->target_hero >= 0 && e->target_hero != slot && (e->state == ES_CHASE || e->state == ES_ATTACK)) {
         score += 25.0f; /* greift Verbuendeten an */
     } else if (e->target_hero == slot && d < 220.0f) {
         score += 10.0f;
+        if (d < 120.0f) {
+            score += 60.0f; /* Angreifer im Nahbereich zuerst: nicht durch Packs laufen */
+        }
     }
     Archetype a = g_monsters[e->def].arch;
     if (a == ARCH_HEALER) {

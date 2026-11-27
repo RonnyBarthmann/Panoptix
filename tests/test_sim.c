@@ -131,8 +131,10 @@ TEST(sim_leash_returns_to_spawn) {
         }
         e = &r->enemies[ei];
         CHECK(e->state != ES_LEASH);
-        CHECK(v2_dist(e->u.pos, e->spawn) < 40.0f);
-        CHECK_NEAR(e->u.hp, e->u.max_hp, 0.01);
+        if (e->u.alive) { /* schwache Monster koennen vom Helden schon erschlagen sein */
+            CHECK(v2_dist(e->u.pos, e->spawn) < 40.0f);
+            CHECK_NEAR(e->u.hp, e->u.max_hp, 0.01);
+        }
     }
     free_game(g);
 }

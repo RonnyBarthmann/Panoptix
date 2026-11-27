@@ -102,7 +102,7 @@ static void draw_candidate(App *app, Hero *h, Rect r, int inv_i) {
     Ui *ui = &app->ui;
     const Item *it = &app->game.inv.items[inv_i];
     ui_push_id(ui, inv_i);
-    UiClick c = ui_item_slot(ui, r, &app->game, &h->eq[s_slot], it, false);
+    UiClick c = ui_item_slot(ui, r, &app->game, (const Hero *)h, it, false);
     char err[96] = "";
     if (!hero_can_use(h, &g_items[it->def], err)) {
         gfx_fill_rect(ui->gfx, r, RGBA(40, 0, 0, 130));

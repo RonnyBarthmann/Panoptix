@@ -130,6 +130,7 @@ int main(int argc, char **argv) {
         Run *r = g->hero_run[idx[0]];
         if (r && o.trace > 0 && ticks % (long)(o.trace * 30) == 0) {
             const RunHero *h = &r->heroes[0];
+            if (ticks == 0) printf("[atk %.1f spell %.1f hp %.0f armor %.1f aspd %.2f]\n", (double)h->eff.attack_power, (double)h->eff.spell_power, (double)h->u.max_hp, (double)h->eff.armor, (double)h->eff.attack_speed);
             printf("t=%6.1f %-10s hp %5.0f/%5.0f pos %4.0f,%4.0f feinde %3d kills %d wp %d/%d\n", (double)r->time,
                    hero_state_name(h->state), (double)h->u.hp, (double)h->u.max_hp, (double)h->u.pos.x,
                    (double)h->u.pos.y, run_enemies_alive(r), r->kills, h->wp_pos, h->wp_count);

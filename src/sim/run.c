@@ -460,7 +460,7 @@ static int affix_count_for(Tier t) {
 }
 
 /* Fruehe Maps: kleinere Packs (Spec 14: Level-1-Held schafft Akt 1). */
-static float level_pack_factor(int level) { return clampf(0.5f + 0.05f * (float)level, 0.5f, 1.0f); }
+static float level_pack_factor(int level) { return clampf(0.35f + 0.03f * (float)level, 0.35f, 1.0f); }
 
 static int pack_size_for(Rng *rng, Tier lead, float density, int level) {
     int base;
