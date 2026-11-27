@@ -38,9 +38,6 @@ void ui_begin_frame(Ui *ui, Gfx *gfx, const UiInput *in, double time, float dt) 
     ui->cursor_blink = (int)(time * 2.0) & 1;
     s_clip_n = 0;
     s_in_modal = false;
-    if (!in->lmb_down) {
-        ui->active = 0;
-    }
 }
 
 void ui_push_id(Ui *ui, int n) {
@@ -94,6 +91,9 @@ UiClick ui_region(Ui *ui, Rect r, u32 id) {
 }
 
 void ui_end_frame(Ui *ui) {
+    if (!ui->in.lmb_down) {
+        ui->active = 0;
+    }
     if (!ui->tip_set) {
         return;
     }
@@ -293,7 +293,7 @@ bool ui_button_ex(Ui *ui, Rect r, const char *label, UiStyle style, bool enabled
         fs--;
     }
     gfx_text_centered(g, r, label, text, fs);
-    return enabled && c.down;
+    return enabled && c.clicked;
 }
 bool ui_button(Ui *ui, Rect r, const char *label) { return ui_button_ex(ui, r, label, UI_BTN_WAX, true); }
 bool ui_button_tip(Ui *ui, Rect r, const char *label, UiStyle style, bool enabled, const char *tip) {
