@@ -42,7 +42,7 @@
     BAL(mana_per_level, 3.0)                                                                     \
     BAL(mana_per_int, 5.0)                                                                       \
     BAL(base_mana_regen_pct, 1.0)    /* % des Max-Mana pro Sekunde */                            \
-    BAL(base_hp_regen_pct, 0.2)      /* % des Max-HP pro Sekunde ausserhalb Kampf */             \
+    BAL(base_hp_regen_pct, 1.5)      /* % des Max-HP pro Sekunde ausserhalb Kampf */             \
     BAL(armor_k_mlv, 60.0)           /* R / (R + k*Lv + c) */                                    \
     BAL(armor_c, 300.0)                                                                          \
     BAL(armor_cap, 0.85)                                                                         \

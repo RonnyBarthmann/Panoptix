@@ -110,7 +110,7 @@ def gen_tiers():
             id=t, name=TIER_NAMES[i], color=cols[i],
             drop_one_in=[10, 100, 1000, 10000, 100000, 1000000][i],
             item_mult=TIER_MULT[i], exp_mult=[1, 2.5, 6, 15, 40, 120][i],
-            hp_mult=[1, 3, 8, 20, 18, 150][i], dmg_mult=[1, 1.3, 1.7, 2.2, 1.8, 4][i],
+            hp_mult=[1, 2.5, 5, 9, 18, 150][i], dmg_mult=[1, 1.2, 1.4, 1.7, 1.8, 4][i],
             spawn_weight=[85, 11, 3, 0.9, 0.1, 0.01][i],
             chest_items=[3, 4, 5, 6, 8, 10][i], monster_rolls=[1, 3, 10, 30, 100, 300][i],
             potion_charges=[2, 3, 4, 5, 6, 8][i],
@@ -546,7 +546,7 @@ POTION_NAMES = {
     "iron": ["Rindentrunk", "Eisenhauttrank", "Solid-Trank", "Bollwerkselixier", "Titanenhaut", "Astrale Ägis-Essenz"],
     "frenzy": ["Funkentrank", "Brenntrank", "Raserei-Elixier", "Rabenwut", "Blutrausch-Elixier", "Astrale Raserei"],
 }
-POTION_VALUE = {"heal": [15, 22, 30, 38, 48, 60], "mana": [15, 22, 30, 38, 48, 60],
+POTION_VALUE = {"heal": [35, 40, 45, 50, 55, 60], "mana": [15, 22, 30, 38, 48, 60],
                 "haste": [10, 20, 30, 40, 50, 60], "iron": [10, 20, 35, 50, 75, 100],
                 "frenzy": [10, 20, 30, 40, 50, 60]}
 POTION_DURATION = [8, 10, 14, 18, 24, 30]

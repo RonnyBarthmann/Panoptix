@@ -322,11 +322,11 @@ ring_life_boss	Phönixring	ring	boss	1	ring	any	0	hp=900;hp_regen=7	0		0			3	0	0
 neck_life_boss	Blutrote Lebenshalskette	necklace	boss	1	necklace	any	0	hp=1800;hp_regen=14	0		0			3	0	0	0		0
 ring_life_legendary	Astraler Lebensring	ring	legendary	1	ring	any	0	hp=1500;hp_regen=10	0		0			3	0	0	0		0
 neck_life_legendary	Astrale Lebenshalskette	necklace	legendary	1	necklace	any	0	hp=3000;hp_regen=20	0		0			3	0	0	0		0
-potion_heal_normal	Kleiner Heiltrank	potion	normal	1	potion	any	15		0	heal	2			0	0	1	0		0
-potion_heal_magic	Mittlerer Heiltrank	potion	magic	1	potion	any	22		0	heal	3			0	0	1	0		0
-potion_heal_rare	Großer Heiltrank	potion	rare	1	potion	any	30		0	heal	4			0	0	1	0		0
-potion_heal_unique	Elixier der Genesung	potion	unique	1	potion	any	38		0	heal	5			0	0	1	0		0
-potion_heal_boss	Phönixblut	potion	boss	1	potion	any	48		0	heal	6			0	0	1	0		0
+potion_heal_normal	Kleiner Heiltrank	potion	normal	1	potion	any	35		0	heal	2			0	0	1	0		0
+potion_heal_magic	Mittlerer Heiltrank	potion	magic	1	potion	any	40		0	heal	3			0	0	1	0		0
+potion_heal_rare	Großer Heiltrank	potion	rare	1	potion	any	45		0	heal	4			0	0	1	0		0
+potion_heal_unique	Elixier der Genesung	potion	unique	1	potion	any	50		0	heal	5			0	0	1	0		0
+potion_heal_boss	Phönixblut	potion	boss	1	potion	any	55		0	heal	6			0	0	1	0		0
 potion_heal_legendary	Astrales Lebenselixier	potion	legendary	1	potion	any	60		0	heal	8			0	0	1	0		0
 potion_mana_normal	Kleiner Manatrank	potion	normal	1	potion	any	15		0	mana	2			0	0	1	0		0
 potion_mana_magic	Mittlerer Manatrank	potion	magic	1	potion	any	22		0	mana	3			0	0	1	0		0
