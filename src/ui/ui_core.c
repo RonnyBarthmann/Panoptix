@@ -293,7 +293,7 @@ bool ui_button_ex(Ui *ui, Rect r, const char *label, UiStyle style, bool enabled
         fs--;
     }
     gfx_text_centered(g, r, label, text, fs);
-    return enabled && c.clicked;
+    return enabled && c.down;
 }
 bool ui_button(Ui *ui, Rect r, const char *label) { return ui_button_ex(ui, r, label, UI_BTN_WAX, true); }
 bool ui_button_tip(Ui *ui, Rect r, const char *label, UiStyle style, bool enabled, const char *tip) {
